@@ -1,0 +1,107 @@
+[
+  {
+    "key": "group_clv_dv1",
+    "title": "Service 1 – Passion to Profit",
+    "fields": [
+      {"key":"field_dv1_sticky_title","label":"Sticky Bar – Tiêu đề","name":"dv1_sticky_title","type":"text","default_value":"🔥 Passion to Profit – Workshop F&B Online"},
+      {"key":"field_dv1_sticky_meta","label":"Sticky Bar – Meta info","name":"dv1_sticky_meta","type":"text","default_value":"📅 14–15/03/2026 · 🕘 9:00–11:00 AM · 💰 499.000 VNĐ · Chỉ 30 chỗ"},
+      {"key":"field_dv1_badge","label":"Hero – Badge text","name":"dv1_badge","type":"text","default_value":"Workshop F&B Online · 2 ngày"},
+      {"key":"field_dv1_hero_image","label":"Hero – Ảnh coach","name":"dv1_hero_image","type":"image","return_format":"array","preview_size":"medium"},
+      {"key":"field_dv1_coach_label","label":"Hero – Label trên ảnh","name":"dv1_coach_label","type":"text","default_value":"Vũ Kiều Loan – F&B Coach"},
+      {"key":"field_dv1_title_line1","label":"Hero – Tiêu đề dòng 1 (HTML)","name":"dv1_title_line1","type":"text","default_value":"PASSION <span>TO</span>","instructions":"Có thể dùng <span> cho màu đỏ"},
+      {"key":"field_dv1_title_line2","label":"Hero – Tiêu đề dòng 2","name":"dv1_title_line2","type":"text","default_value":"PROFIT"},
+      {"key":"field_dv1_tagline","label":"Hero – Tagline","name":"dv1_tagline","type":"text","default_value":"\"Bạn có phù hợp để kinh doanh nhà hàng không?\""},
+      {"key":"field_dv1_description","label":"Hero – Mô tả","name":"dv1_description","type":"textarea","rows":4},
+      {"key":"field_dv1_time","label":"Hero – Giờ học","name":"dv1_time","type":"text","default_value":"9:00–11:00 AM"},
+      {"key":"field_dv1_date","label":"Hero – Ngày học","name":"dv1_date","type":"text","default_value":"14–15/03/2026"},
+      {"key":"field_dv1_price","label":"Hero – Học phí","name":"dv1_price","type":"text","default_value":"499.000 VNĐ"},
+      {"key":"field_dv1_slots","label":"Hero – Số chỗ","name":"dv1_slots","type":"text","default_value":"30"},
+      {"key":"field_dv1_countdown_target","label":"Hero – Ngày đếm ngược","name":"dv1_countdown_target","type":"text","instructions":"Format: March 14, 2026 09:00:00","default_value":"March 14, 2026 09:00:00"},
+      {"key":"field_dv1_cta_label","label":"Hero – Nhãn nút CTA","name":"dv1_cta_label","type":"text","default_value":"Đăng Ký Ngay – Chỉ 30 chỗ"},
+      {"key":"field_dv1_scholarship_note","label":"Hero – Ghi chú học bổng","name":"dv1_scholarship_note","type":"text"},
+
+      {"key":"field_dv1_cred_title","label":"Credibility – Tiêu đề section","name":"dv1_cred_title","type":"text","default_value":"Từ Đam mê đến Lợi nhuận bền vững"},
+      {"key":"field_dv1_cred_image","label":"Credibility – Ảnh giảng viên lớn","name":"dv1_cred_image","type":"image","return_format":"array","preview_size":"medium","instructions":"Ảnh giảng viên đang dạy học. Mặc định: dv1/instructor_1.png"},
+      {
+        "key":"field_dv1_stats","label":"Credibility – Stat cards (4 con số)","name":"dv1_stats","type":"repeater",
+        "button_label":"Thêm stat",
+        "instructions":"Thêm 4 rows. Mặc định: 15+, 9+, 1000+, 30+",
+        "sub_fields":[
+          {"key":"field_dv1_stat_num","label":"Con số (15+)","name":"stat_num","type":"text"},
+          {"key":"field_dv1_stat_label","label":"Mô tả","name":"stat_label","type":"textarea","rows":2}
+        ]
+      },
+
+      {"key":"field_dv1_target_title","label":"Target – Tiêu đề section","name":"dv1_target_title","type":"text","default_value":"Chương trình này dành cho bạn nếu"},
+      {
+        "key":"field_dv1_targets","label":"Target – Danh sách đối tượng","name":"dv1_targets","type":"repeater",
+        "button_label":"Thêm đối tượng",
+        "sub_fields":[
+          {"key":"field_dv1_target_number","label":"Số (01, 02...)","name":"target_number","type":"text"},
+          {"key":"field_dv1_target_text","label":"Nội dung (có thể dùng <strong>)","name":"target_text","type":"textarea","rows":3}
+        ]
+      },
+
+      {"key":"field_dv1_benefits_title","label":"Benefits – Tiêu đề","name":"dv1_benefits_title","type":"text","default_value":"Từ Ước mơ mở quán đến Bản đồ hành động rõ ràng"},
+      {
+        "key":"field_dv1_benefits","label":"Benefits – Danh sách lợi ích","name":"dv1_benefits","type":"repeater",
+        "button_label":"Thêm lợi ích",
+        "sub_fields":[
+          {"key":"field_dv1_benefit_icon","label":"Emoji icon","name":"benefit_icon","type":"text"},
+          {"key":"field_dv1_benefit_title","label":"Tiêu đề","name":"benefit_title","type":"text"},
+          {"key":"field_dv1_benefit_description","label":"Mô tả","name":"benefit_description","type":"textarea","rows":3}
+        ]
+      },
+
+      {"key":"field_dv1_modules_title","label":"Modules – Tiêu đề","name":"dv1_modules_title","type":"text","default_value":"Hành trình 2 ngày học tập"},
+      {
+        "key":"field_dv1_modules","label":"Modules – Các module","name":"dv1_modules","type":"repeater",
+        "button_label":"Thêm module",
+        "sub_fields":[
+          {"key":"field_dv1_module_label","label":"Label (MODULE 1)","name":"module_label","type":"text"},
+          {"key":"field_dv1_module_title","label":"Tiêu đề","name":"module_title","type":"text"},
+          {"key":"field_dv1_module_description","label":"Mô tả","name":"module_description","type":"textarea","rows":4}
+        ]
+      },
+
+      {
+        "key":"field_dv1_testimonials","label":"Testimonials – Học viên","name":"dv1_testimonials","type":"repeater",
+        "min":0,"max":0,
+        "button_label":"Thêm học viên",
+        "instructions":"Mỗi 3 học viên sẽ hiển thị thành 1 hàng",
+        "sub_fields":[
+          {"key":"field_dv1_testi_image","label":"Ảnh","name":"testi_image","type":"image","return_format":"array","preview_size":"thumbnail"},
+          {"key":"field_dv1_testi_name","label":"Tên","name":"testi_name","type":"text"},
+          {"key":"field_dv1_testi_location","label":"Địa điểm","name":"testi_location","type":"text"},
+          {"key":"field_dv1_testi_quote","label":"Câu quote","name":"testi_quote","type":"textarea","rows":4}
+        ]
+      },
+
+      {"key":"field_dv1_instructor_image","label":"Instructor – Ảnh","name":"dv1_instructor_image","type":"image","return_format":"array","preview_size":"medium"},
+      {"key":"field_dv1_instructor_name","label":"Instructor – Tên","name":"dv1_instructor_name","type":"text","default_value":"Vũ Kiều Loan"},
+      {"key":"field_dv1_instructor_title","label":"Instructor – Chức danh","name":"dv1_instructor_title","type":"text","default_value":"F&B Startup Coach · ICF PCC"},
+      {
+        "key":"field_dv1_credentials","label":"Instructor – Credentials","name":"dv1_credentials","type":"repeater",
+        "button_label":"Thêm credential",
+        "sub_fields":[
+          {"key":"field_dv1_cred_number","label":"Số (01...)","name":"cred_number","type":"text"},
+          {"key":"field_dv1_cred_text","label":"Nội dung","name":"cred_text","type":"textarea","rows":2}
+        ]
+      },
+
+      {
+        "key":"field_dv1_faqs","label":"FAQ – Câu hỏi thường gặp","name":"dv1_faqs","type":"repeater",
+        "button_label":"Thêm câu hỏi",
+        "sub_fields":[
+          {"key":"field_dv1_faq_question","label":"Câu hỏi","name":"faq_question","type":"text"},
+          {"key":"field_dv1_faq_answer","label":"Câu trả lời","name":"faq_answer","type":"textarea","rows":4}
+        ]
+      },
+
+      {"key":"field_dv1_cta_quote","label":"CTA Final – Quote","name":"dv1_cta_quote","type":"textarea","rows":3},
+      {"key":"field_dv1_cta_final_label","label":"CTA Final – Nhãn nút","name":"dv1_cta_final_label","type":"text","default_value":"Đăng ký ngay hôm nay – Chỉ 30 chỗ cho Passion to Profit"}
+    ],
+    "location": [[ {"param":"page_template","operator":"==","value":"page-passion-to-profit.php"} ]],
+    "active": true
+  }
+]

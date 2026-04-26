@@ -1,0 +1,133 @@
+[
+  {
+    "key": "group_clv_dv2",
+    "title": "Service 2 – Business to Freedom",
+    "fields": [
+      {"key":"field_dv2_sticky_title","label":"Sticky – Tiêu đề","name":"dv2_sticky_title","type":"text","default_value":"🎯 Business to Freedom – Khoá học 10 tuần"},
+      {"key":"field_dv2_sticky_meta","label":"Sticky – Meta","name":"dv2_sticky_meta","type":"text","default_value":"Khai giảng K3: 27/03/2026 · 15.000.000 VNĐ · Chỉ 10 học viên"},
+      {"key":"field_dv2_badge","label":"Hero – Badge","name":"dv2_badge","type":"text","default_value":"Khoá học Chuyên sâu 10 tuần"},
+      {"key":"field_dv2_hero_image","label":"Hero – Ảnh coach","name":"dv2_hero_image","type":"image","return_format":"array","preview_size":"medium"},
+      {"key":"field_dv2_title","label":"Hero – Tiêu đề (xuống dòng = \\n)","name":"dv2_title","type":"textarea","rows":2,"default_value":"BUSINESS\nto FREEDOM"},
+      {"key":"field_dv2_tagline","label":"Hero – Tagline","name":"dv2_tagline","type":"text","default_value":"Tự do khi quán vận hành không cần bạn 24/7"},
+      {"key":"field_dv2_description","label":"Hero – Mô tả","name":"dv2_description","type":"textarea","rows":3},
+      {"key":"field_dv2_schedule","label":"Hero – Lịch học","name":"dv2_schedule","type":"text","default_value":"10:00–12:00 Thứ 6"},
+      {"key":"field_dv2_cohort_label","label":"Hero – Nhãn khai giảng","name":"dv2_cohort_label","type":"text","default_value":"Khai giảng (K3)"},
+      {"key":"field_dv2_start_date","label":"Hero – Ngày khai giảng","name":"dv2_start_date","type":"text","default_value":"27/03/2026"},
+      {"key":"field_dv2_price","label":"Hero – Học phí","name":"dv2_price","type":"text","default_value":"15.000.000 VNĐ"},
+      {"key":"field_dv2_slots_note","label":"Hero – Ghi chú số chỗ","name":"dv2_slots_note","type":"text","default_value":"* Khoá học chỉ nhận tối đa 10 học viên để đảm bảo chất lượng"},
+      {"key":"field_dv2_countdown_target","label":"Hero – Ngày đếm ngược","name":"dv2_countdown_target","type":"text","default_value":"March 27, 2026 10:00:00"},
+      {"key":"field_dv2_cta_label","label":"Hero – Nhãn nút CTA","name":"dv2_cta_label","type":"text","default_value":"ĐĂNG KÍ NGAY"},
+
+      {
+        "key":"field_dv2_pains","label":"Pain Points","name":"dv2_pains","type":"repeater",
+        "button_label":"Thêm vấn đề",
+        "sub_fields":[
+          {"key":"field_dv2_pain_icon","label":"Số/Icon","name":"pain_icon","type":"text","instructions":"Nhập số thứ tự (01, 02...) hoặc emoji"},
+          {"key":"field_dv2_pain_title","label":"Tiêu đề","name":"pain_title","type":"text"},
+          {"key":"field_dv2_pain_description","label":"Mô tả","name":"pain_description","type":"textarea","rows":3}
+        ]
+      },
+
+      {
+        "key":"field_dv2_targets","label":"Target Audience","name":"dv2_targets","type":"repeater",
+        "button_label":"Thêm đối tượng",
+        "sub_fields":[
+          {"key":"field_dv2_target_title","label":"Tiêu đề","name":"target_title","type":"text"},
+          {"key":"field_dv2_target_description","label":"Mô tả","name":"target_description","type":"textarea","rows":3}
+        ]
+      },
+
+      {
+        "key":"field_dv2_benefits","label":"Benefits (M-M-F)","name":"dv2_benefits","type":"repeater",
+        "button_label":"Thêm giá trị",
+        "sub_fields":[
+          {"key":"field_dv2_benefit_letter","label":"Chữ cái lớn (M / F)","name":"benefit_letter","type":"text"},
+          {"key":"field_dv2_benefit_title","label":"Tiêu đề","name":"benefit_title","type":"text"},
+          {"key":"field_dv2_benefit_description","label":"Mô tả","name":"benefit_description","type":"textarea","rows":3}
+        ]
+      },
+
+      {
+        "key":"field_dv2_differentiators","label":"Why Different","name":"dv2_differentiators","type":"repeater",
+        "button_label":"Thêm điểm khác biệt",
+        "sub_fields":[
+          {"key":"field_dv2_diff_title","label":"Tiêu đề","name":"diff_title","type":"text"},
+          {"key":"field_dv2_diff_description","label":"Mô tả","name":"diff_description","type":"textarea","rows":3}
+        ]
+      },
+
+      {
+        "key":"field_dv2_compare_rows","label":"Comparison Table Rows","name":"dv2_compare_rows","type":"repeater",
+        "button_label":"Thêm dòng so sánh",
+        "sub_fields":[
+          {"key":"field_dv2_row_label","label":"Cột 1 (Nhãn)","name":"row_label","type":"text"},
+          {"key":"field_dv2_row_p2p","label":"Cột 2 (P2P)","name":"row_p2p","type":"textarea","rows":2},
+          {"key":"field_dv2_row_b2f","label":"Cột 3 (B2F)","name":"row_b2f","type":"textarea","rows":2}
+        ]
+      },
+      {"key":"field_dv2_compare_quote","label":"So sánh – Quote cuối bảng","name":"dv2_compare_quote","type":"textarea","rows":3,"instructions":"Hiển thị dưới bảng so sánh P2P vs B2F","default_value":"Nếu coi Passion to Profit là tấm bản đồ giúp bạn nhìn rõ địa hình, thì Business to Freedom là hành trình thực sự – nơi bạn đi từng bước, được trang bị đủ công cụ và có người đồng hành bên cạnh."},
+
+      {
+        "key":"field_dv2_outcomes","label":"Outcomes – Bạn nhận được gì sau 10 tuần?","name":"dv2_outcomes","type":"repeater",
+        "button_label":"Thêm kết quả",
+        "instructions":"6 kết quả hiển thị dạng grid trước phần Curriculum",
+        "sub_fields":[
+          {"key":"field_dv2_outcome_number","label":"Số (01, 02...)","name":"outcome_number","type":"text"},
+          {"key":"field_dv2_outcome_title","label":"Tiêu đề","name":"outcome_title","type":"text"},
+          {"key":"field_dv2_outcome_description","label":"Mô tả","name":"outcome_description","type":"textarea","rows":3}
+        ]
+      },
+
+      {
+        "key":"field_dv2_modules","label":"Curriculum – 10 tuần","name":"dv2_modules","type":"repeater",
+        "button_label":"Thêm tuần",
+        "sub_fields":[
+          {"key":"field_dv2_module_week","label":"Tuần số","name":"module_week","type":"text","instructions":"VD: TUẦN 1"},
+          {"key":"field_dv2_module_title","label":"Tiêu đề","name":"module_title","type":"text"},
+          {"key":"field_dv2_module_description","label":"Mô tả","name":"module_description","type":"textarea","rows":3}
+        ]
+      },
+
+      {"key":"field_dv2_instructor_image","label":"Instructor – Ảnh giảng viên","name":"dv2_instructor_image","type":"image","return_format":"array","preview_size":"medium","instructions":"Ảnh Coach Vũ Kiều Loan. Mặc định: dv2/instructor.jpg"},
+      {
+        "key":"field_dv2_instructor_points","label":"Instructor – Các điểm nổi bật","name":"dv2_instructor_points","type":"repeater",
+        "button_label":"Thêm điểm",
+        "instructions":"3 bullet points về kinh nghiệm giảng viên",
+        "sub_fields":[
+          {"key":"field_dv2_point_text","label":"Nội dung","name":"point_text","type":"textarea","rows":2}
+        ]
+      },
+
+      {
+        "key":"field_dv2_testimonials","label":"Testimonials","name":"dv2_testimonials","type":"repeater",
+        "button_label":"Thêm học viên",
+        "sub_fields":[
+          {"key":"field_dv2_testi_image","label":"Ảnh","name":"testi_image","type":"image","return_format":"array","preview_size":"thumbnail"},
+          {"key":"field_dv2_testi_name","label":"Tên","name":"testi_name","type":"text"},
+          {"key":"field_dv2_testi_location","label":"Địa điểm","name":"testi_location","type":"text"},
+          {"key":"field_dv2_testi_result","label":"Kết quả nổi bật","name":"testi_result","type":"text"},
+          {"key":"field_dv2_testi_quote","label":"Câu quote","name":"testi_quote","type":"textarea","rows":4}
+        ]
+      },
+
+      {"key":"field_dv2_price_main","label":"Pricing – Học phí chính","name":"dv2_price_main","type":"text","default_value":"15.000.000 VNĐ"},
+      {"key":"field_dv2_price_vip","label":"Pricing – Gói VIP (để trống nếu không có)","name":"dv2_price_vip","type":"text"},
+      {"key":"field_dv2_payment_note","label":"Pricing – Ghi chú thanh toán","name":"dv2_payment_note","type":"textarea","rows":2},
+
+      {
+        "key":"field_dv2_faqs","label":"FAQ","name":"dv2_faqs","type":"repeater",
+        "button_label":"Thêm câu hỏi",
+        "sub_fields":[
+          {"key":"field_dv2_faq_question","label":"Câu hỏi","name":"faq_question","type":"text"},
+          {"key":"field_dv2_faq_answer","label":"Câu trả lời","name":"faq_answer","type":"textarea","rows":4}
+        ]
+      },
+
+      {"key":"field_dv2_cta_heading","label":"CTA Final – Tiêu đề H2","name":"dv2_cta_heading","type":"text","default_value":"Bắt đầu hành trình từ Đam mê đến Tự do","instructions":"Dòng tiêu đề lớn trên nút bấm"},
+      {"key":"field_dv2_cta_subtext","label":"CTA Final – Dòng phụ (ngày/số chỗ)","name":"dv2_cta_subtext","type":"text","default_value":"Khai giảng 27/03/2026 – Chỉ 10 chỗ/khoá","instructions":"Hiển thị dưới tiêu đề, trên nút bấm"},
+      {"key":"field_dv2_cta_final_label","label":"CTA Final – Nhãn nút","name":"dv2_cta_final_label","type":"text","default_value":"ĐĂNG KÝ GIỮ CHỖ"}
+    ],
+    "location":[ [{"param":"page_template","operator":"==","value":"page-business-to-freedom.php"}] ],
+    "active": true
+  }
+]

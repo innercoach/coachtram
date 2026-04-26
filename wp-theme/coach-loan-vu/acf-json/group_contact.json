@@ -1,0 +1,22 @@
+[
+  {
+    "key": "group_clv_contact",
+    "title": "Contact Page",
+    "fields": [
+      {"key":"field_contact_title","label":"Tiêu đề H1","name":"contact_title","type":"text","default_value":"Hãy kết nối cùng tôi"},
+      {"key":"field_contact_subtitle","label":"Subtitle","name":"contact_subtitle","type":"text","default_value":"Buổi tư vấn đầu tiên hoàn toàn miễn phí — không có cam kết."},
+      {"key":"field_contact_intro","label":"Đoạn giới thiệu","name":"contact_intro","type":"textarea","rows":3,"default_value":"Đừng ngần ngại liên hệ qua bất kỳ kênh nào bạn thấy tiện nhất. Tôi sẽ phản hồi trong vòng 24 giờ."},
+      {"key":"field_contact_email","label":"Email hiển thị","name":"contact_email","type":"email"},
+      {"key":"field_contact_phone","label":"Số điện thoại","name":"contact_phone","type":"text"},
+      {"key":"field_contact_facebook_url","label":"Facebook URL","name":"contact_facebook_url","type":"url"},
+      {"key":"field_contact_hours","label":"Giờ làm việc","name":"contact_hours","type":"text","default_value":"Thứ 2 – Thứ 7, 8:00 – 21:00"},
+      {"key":"field_contact_form_title","label":"Tiêu đề form","name":"contact_form_title","type":"text","default_value":"Đặt lịch tư vấn miễn phí"},
+      {
+        "key":"field_contact_form_id","label":"Contact Form 7 – ID shortcode","name":"contact_form_id","type":"number",
+        "instructions":"Tìm ID form trong WP Admin → Contact → Contact Forms → cột Shortcode. VD: [contact-form-7 id=\"123\"] → điền 123"
+      }
+    ],
+    "location":[ [{"param":"page_template","operator":"==","value":"page-lien-he.php"}] ],
+    "active": true
+  }
+]

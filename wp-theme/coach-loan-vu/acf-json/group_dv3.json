@@ -1,0 +1,108 @@
+[
+  {
+    "key": "group_clv_dv3",
+    "title": "Service 3 – Business Mastery",
+    "fields": [
+      {"key":"field_dv3_sticky_title","label":"Sticky – Tiêu đề","name":"dv3_sticky_title","type":"text","default_value":"✨ Business Mastery – Coaching 1:1 Chiến Lược Dài Hạn"},
+      {"key":"field_dv3_sticky_meta","label":"Sticky – Meta","name":"dv3_sticky_meta","type":"text","default_value":"🎁 Buổi tư vấn 1:1 miễn phí trị giá $200 · Chỉ 5 học viên/năm"},
+      {"key":"field_dv3_badge","label":"Hero – Badge","name":"dv3_badge","type":"text","default_value":"COACHING 1:1 CHIẾN LƯỢC DÀI HẠN"},
+      {"key":"field_dv3_hero_image","label":"Hero – Ảnh coach","name":"dv3_hero_image","type":"image","return_format":"array","preview_size":"medium"},
+      {"key":"field_dv3_title","label":"Hero – Tiêu đề","name":"dv3_title","type":"text","default_value":"BUSINESS MASTERY"},
+      {"key":"field_dv3_tagline","label":"Hero – Tagline","name":"dv3_tagline","type":"text","default_value":"Làm chủ mô hình của bạn ở cấp độ chiến lược"},
+      {"key":"field_dv3_description","label":"Hero – Mô tả","name":"dv3_description","type":"textarea","rows":3},
+      {"key":"field_dv3_gift_text","label":"Hero – Ưu đãi quà tặng","name":"dv3_gift_text","type":"text","default_value":"Ưu đãi: Buổi tư vấn 1:1 cùng Loan miễn phí trị giá $200"},
+      {"key":"field_dv3_cta_label","label":"Hero – Nhãn CTA","name":"dv3_cta_label","type":"text","default_value":"ĐĂNG KÍ NGAY"},
+
+      {
+        "key":"field_dv3_pains","label":"Pain Points","name":"dv3_pains","type":"repeater",
+        "button_label":"Thêm vấn đề",
+        "sub_fields":[
+          {"key":"field_dv3_pain_number","label":"Số","name":"pain_number","type":"text"},
+          {"key":"field_dv3_pain_title","label":"Tiêu đề","name":"pain_title","type":"text"},
+          {"key":"field_dv3_pain_description","label":"Mô tả","name":"pain_description","type":"textarea","rows":3},
+          {"key":"field_dv3_pain_full_width","label":"Hiển thị full width?","name":"pain_full_width","type":"true_false","default_value":0}
+        ]
+      },
+
+      {
+        "key":"field_dv3_targets","label":"Ai nên tham gia?","name":"dv3_targets","type":"repeater",
+        "button_label":"Thêm đối tượng",
+        "sub_fields":[
+          {"key":"field_dv3_target_icon","label":"Emoji icon","name":"target_icon","type":"text","instructions":"VD: 🏆 💼 📊 🌱"},
+          {"key":"field_dv3_target_title","label":"Tiêu đề","name":"target_title","type":"text"},
+          {"key":"field_dv3_target_description","label":"Mô tả","name":"target_description","type":"textarea","rows":3}
+        ]
+      },
+
+      {
+        "key":"field_dv3_not_like","label":"Không giống khoá học thông thường","name":"dv3_not_like","type":"repeater",
+        "button_label":"Thêm điểm",
+        "sub_fields":[
+          {"key":"field_dv3_not_text","label":"Nội dung","name":"not_text","type":"text"}
+        ]
+      },
+
+      {
+        "key":"field_dv3_you_get","label":"Thay vào đó bạn nhận được","name":"dv3_you_get","type":"repeater",
+        "button_label":"Thêm điểm",
+        "sub_fields":[
+          {"key":"field_dv3_get_text","label":"Nội dung","name":"get_text","type":"text"}
+        ]
+      },
+
+      {
+        "key":"field_dv3_focus_badges","label":"Focus Badges","name":"dv3_focus_badges","type":"repeater",
+        "button_label":"Thêm badge",
+        "sub_fields":[
+          {"key":"field_dv3_badge_label","label":"Nhãn badge","name":"badge_label","type":"text"}
+        ]
+      },
+      {"key":"field_dv3_focus_note","label":"Focus – Ghi chú cuối","name":"dv3_focus_note","type":"textarea","rows":2,"default_value":"Mục tiêu không phải học thêm kiến thức. Mục tiêu là mô hình của bạn vận hành tốt hơn sau từng tháng."},
+
+      {
+        "key":"field_dv3_values","label":"3 Giá trị (M-M-F)","name":"dv3_values","type":"repeater",
+        "button_label":"Thêm giá trị",
+        "sub_fields":[
+          {"key":"field_dv3_value_number","label":"Số/Chữ lớn","name":"value_number","type":"text"},
+          {"key":"field_dv3_value_title","label":"Tiêu đề","name":"value_title","type":"text"},
+          {"key":"field_dv3_value_description","label":"Mô tả","name":"value_description","type":"textarea","rows":3}
+        ]
+      },
+
+      {
+        "key":"field_dv3_deliverables","label":"Deliverables – Bạn sẽ nhận được","name":"dv3_deliverables","type":"repeater",
+        "button_label":"Thêm deliverable",
+        "sub_fields":[
+          {"key":"field_dv3_deliverable_title","label":"Tiêu đề (in đậm)","name":"deliverable_title","type":"text"},
+          {"key":"field_dv3_deliverable_description","label":"Mô tả tiếp theo","name":"deliverable_description","type":"textarea","rows":2}
+        ]
+      },
+      {"key":"field_dv3_deliverables_note","label":"Deliverables – Ghi chú cuối","name":"dv3_deliverables_note","type":"text"},
+
+      {
+        "key":"field_dv3_compare_rows","label":"Comparison Table","name":"dv3_compare_rows","type":"repeater",
+        "button_label":"Thêm dòng",
+        "sub_fields":[
+          {"key":"field_dv3_row_label","label":"Nhãn","name":"row_label","type":"text"},
+          {"key":"field_dv3_row_btf","label":"B2F","name":"row_btf","type":"textarea","rows":2},
+          {"key":"field_dv3_row_bm","label":"Business Mastery","name":"row_bm","type":"textarea","rows":2}
+        ]
+      },
+
+      {
+        "key":"field_dv3_plans","label":"Pricing Plans","name":"dv3_plans","type":"repeater",
+        "button_label":"Thêm gói",
+        "instructions":"Tối đa 3 gói. Gói 'featured' sẽ được highlight",
+        "sub_fields":[
+          {"key":"field_dv3_plan_duration","label":"Thời lượng (VD: 6 tháng)","name":"plan_duration","type":"text"},
+          {"key":"field_dv3_plan_subtitle","label":"Subtitle","name":"plan_subtitle","type":"text"},
+          {"key":"field_dv3_plan_price","label":"Giá (VD: 35,000,000)","name":"plan_price","type":"text"},
+          {"key":"field_dv3_plan_featured","label":"Đây là gói nổi bật?","name":"plan_featured","type":"true_false","default_value":0}
+        ]
+      },
+      {"key":"field_dv3_capacity_note","label":"Pricing – Ghi chú số lượng","name":"dv3_capacity_note","type":"text","default_value":"* Đặc biệt: Chỉ nhận tối đa 5 học viên mỗi năm để đảm bảo chất lượng đồng hành sâu sát."}
+    ],
+    "location":[ [{"param":"page_template","operator":"==","value":"page-business-mastery.php"}] ],
+    "active": true
+  }
+]
