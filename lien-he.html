@@ -3,207 +3,107 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Liên hệ với Coach Loan Vũ để đặt lịch tư vấn miễn phí và bắt đầu hành trình thay đổi của bạn." />
-  <title>Liên hệ – Coach Loan Vũ</title>
+  <meta name="description" content="Liên hệ với Coach Edina Trâm để đặt lịch tư vấn miễn phí và bắt đầu hành trình thay đổi của bạn." />
+  <title>Liên hệ – Coach Edina Trâm</title>
   <link rel="stylesheet" href="css/style.css" />
-  <style>
-    .contact-page-hero {
-      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
-      padding-block: var(--space-16);
-      text-align: center;
-    }
-
-    .contact-page-hero h1 { color: var(--color-accent); }
-    .contact-page-hero p  { color: rgba(255,255,255,0.85); font-size: var(--text-lg); }
-
-    .contact-layout {
-      display: grid;
-      grid-template-columns: 1fr 1.4fr;
-      gap: var(--space-12);
-      align-items: start;
-      padding-block: var(--space-20);
-    }
-
-    /* Info column */
-    .contact-info-card {
-      background: var(--color-white);
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-lg);
-      padding: var(--space-8);
-      box-shadow: var(--shadow-sm);
-    }
-
-    .contact-info-card h2 {
-      font-size: var(--text-2xl);
-      margin-bottom: var(--space-4);
-    }
-
-    .info-list { margin-top: var(--space-6); }
-
-    .info-item {
-      display: flex;
-      gap: var(--space-4);
-      align-items: flex-start;
-      padding: var(--space-4) 0;
-      border-bottom: 1px solid var(--color-border);
-    }
-
-    .info-item:last-child { border-bottom: none; }
-
-    .info-icon {
-      width: 44px;
-      height: 44px;
-      background: rgba(141,27,10,0.08);
-      border-radius: var(--radius-md);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-      color: var(--color-primary);
-    }
-
-    .info-label {
-      font-weight: 600;
-      color: var(--color-fg);
-      margin-bottom: var(--space-1);
-      font-size: var(--text-sm);
-    }
-
-    .info-value {
-      color: var(--color-fg-muted);
-      font-size: var(--text-sm);
-      margin-bottom: 0;
-    }
-
-    /* Form */
-    .contact-form-card {
-      background: var(--color-white);
-      border: 1px solid var(--color-border);
-      border-radius: var(--radius-lg);
-      padding: var(--space-8);
-      box-shadow: var(--shadow-sm);
-    }
-
-    .contact-form-card h2 {
-      font-size: var(--text-2xl);
-      margin-bottom: var(--space-2);
-    }
-
-    .form-lead { font-size: var(--text-sm); color: var(--color-fg-muted); margin-bottom: var(--space-6); }
-
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: var(--space-4);
-    }
-
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: var(--space-2);
-      margin-bottom: var(--space-4);
-    }
-
-    label {
-      font-size: var(--text-sm);
-      font-weight: 600;
-      color: var(--color-fg);
-    }
-
-    label .required { color: var(--color-primary); margin-left: 2px; }
-
-    input, textarea, select {
-      width: 100%;
-      padding: var(--space-3) var(--space-4);
-      font-family: var(--font-body);
-      font-size: var(--text-base);
-      color: var(--color-fg);
-      background: var(--color-bg);
-      border: 1.5px solid var(--color-border);
-      border-radius: var(--radius-md);
-      transition: border-color var(--transition), box-shadow var(--transition);
-      outline: none;
-    }
-
-    input:focus, textarea:focus, select:focus {
-      border-color: var(--color-primary);
-      box-shadow: 0 0 0 3px rgba(141,27,10,0.08);
-    }
-
-    input::placeholder, textarea::placeholder { color: var(--color-fg-muted); opacity: 0.6; }
-
-    textarea { resize: vertical; min-height: 130px; }
-
-    .form-submit { margin-top: var(--space-2); }
-    .form-submit .btn { width: 100%; justify-content: center; padding-block: var(--space-4); font-size: var(--text-lg); }
-
-    .form-note {
-      text-align: center;
-      font-size: var(--text-xs);
-      color: var(--color-fg-muted);
-      margin-top: var(--space-3);
-    }
-
-    @media (max-width: 768px) {
-      .contact-layout { grid-template-columns: 1fr; }
-      .form-row       { grid-template-columns: 1fr; }
-    }
-  </style>
 </head>
 <body>
 
-  <site-header></site-header>
+  <!-- ═══ Header ═══ -->
+  <header class="site-header">
+    <div class="container nav">
+      <a href="index.html" class="nav-logo">Edina <span>Trâm</span></a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="nav-links">
+        <a href="index.html">Trang chủ</a>
+        <a href="index.html#services">Dịch vụ</a>
+        <a href="dich-vu-1.html">Passion to Profit</a>
+        <a href="dich-vu-2.html">Business to Freedom</a>
+        <a href="dich-vu-3.html">Business Mastery</a>
+        <span class="nav-cta">
+          <a href="lien-he.html" class="btn btn--accent">Đặt lịch Tư vấn</a>
+        </span>
+      </nav>
+    </div>
+  </header>
 
   <main>
-    <section class="contact-page-hero">
+    <!-- ═══ Decorative Glow Blobs ═══ -->
+    <div class="glow-blob glow-blob--gold glow-blob--1" aria-hidden="true"></div>
+    <div class="glow-blob glow-blob--emerald glow-blob--2" aria-hidden="true"></div>
+
+    <!-- ═══ Contact Hero ═══ -->
+    <section class="contact-hero" data-reveal>
       <div class="container">
-        <span class="badge" style="background:rgba(255,189,89,0.2); color: var(--color-accent);">Liên hệ</span>
-        <h1 style="margin-top: 1rem;">Hãy kết nối cùng tôi</h1>
+        <span class="badge badge--dark">Liên hệ</span>
+        <h1>Hãy kết nối cùng tôi</h1>
         <p>Buổi tư vấn đầu tiên hoàn toàn miễn phí — không có cam kết.</p>
       </div>
     </section>
 
-    <section>
+    <!-- ═══ Contact Layout ═══ -->
+    <section data-reveal>
       <div class="container">
         <div class="contact-layout">
 
-          <!-- Info -->
-          <div class="contact-info-card">
+          <!-- ─── Info Card ─── -->
+          <div class="contact-info-card" data-reveal>
             <span class="badge">Thông tin</span>
-            <h2 style="margin-top: 1rem;">Tôi muốn lắng nghe bạn</h2>
-            <div class="divider"></div>
-            <p style="margin-top: 1rem;">Đừng ngần ngại liên hệ qua bất kỳ kênh nào bạn thấy tiện nhất. Tôi sẽ phản hồi trong vòng 24 giờ.</p>
+            <h2>Tôi muốn lắng nghe bạn</h2>
+            <div class="divider divider--left"></div>
+            <p>Đừng ngần ngại liên hệ qua bất kỳ kênh nào bạn thấy tiện nhất. Tôi sẽ phản hồi trong vòng 24 giờ.</p>
+
             <div class="info-list">
+              <!-- Email -->
               <div class="info-item">
                 <div class="info-icon" aria-hidden="true">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                    <polyline points="22,6 12,13 2,6"/>
+                  </svg>
                 </div>
                 <div>
                   <p class="info-label">Email</p>
-                  <p class="info-value"><a href="mailto:loanvu@email.com" style="color: var(--color-primary);">loanvu@email.com</a></p>
+                  <p class="info-value"><a href="mailto:coachtram@gmail.com">coachtram@gmail.com</a></p>
                 </div>
               </div>
+
+              <!-- Phone -->
               <div class="info-item">
                 <div class="info-icon" aria-hidden="true">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.61 4.35 2 2 0 0 1 3.59 2.18h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.61 4.35 2 2 0 0 1 3.59 2.18h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                  </svg>
                 </div>
                 <div>
                   <p class="info-label">Số điện thoại</p>
-                  <p class="info-value"><a href="tel:0901234567" style="color: var(--color-primary);">0901 234 567</a></p>
+                  <p class="info-value"><a href="tel:0901234567">0901 234 567</a></p>
                 </div>
               </div>
+
+              <!-- Facebook -->
               <div class="info-item">
                 <div class="info-icon" aria-hidden="true">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 2H3v16h5v4l4-4h5l4-4V2zm-11 11v-2m4 2v-2m0-4V7m-4 4V7"/></svg>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+                    <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+                  </svg>
                 </div>
                 <div>
                   <p class="info-label">Facebook</p>
-                  <p class="info-value"><a href="#" style="color: var(--color-primary);">/CoachLoanVu</a></p>
+                  <p class="info-value"><a href="https://www.facebook.com/coachtram" target="_blank" rel="noopener">/coachtram</a></p>
                 </div>
               </div>
+
+              <!-- Working hours -->
               <div class="info-item">
                 <div class="info-icon" aria-hidden="true">
-                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"/>
+                    <polyline points="12 6 12 12 16 14"/>
+                  </svg>
                 </div>
                 <div>
                   <p class="info-label">Giờ làm việc</p>
@@ -213,11 +113,12 @@
             </div>
           </div>
 
-          <!-- Form -->
-          <div class="contact-form-card">
+          <!-- ─── Form Card ─── -->
+          <div class="contact-form-card" data-reveal>
             <span class="badge">Gửi tin nhắn</span>
-            <h2 style="margin-top: 1rem;">Đặt lịch tư vấn miễn phí</h2>
+            <h2>Đặt lịch tư vấn miễn phí</h2>
             <p class="form-lead">Điền thông tin bên dưới và tôi sẽ liên hệ lại với bạn sớm nhất có thể.</p>
+
             <form action="#" method="POST" novalidate id="contact-form">
               <div class="form-row">
                 <div class="form-group">
@@ -229,26 +130,30 @@
                   <input type="email" id="email" name="email" placeholder="example@email.com" autocomplete="email" required />
                 </div>
               </div>
+
               <div class="form-group">
                 <label for="phone">Số điện thoại</label>
                 <input type="tel" id="phone" name="phone" placeholder="0901 234 567" autocomplete="tel" />
               </div>
+
               <div class="form-group">
                 <label for="service">Dịch vụ quan tâm</label>
                 <select id="service" name="service">
                   <option value="">-- Chọn dịch vụ --</option>
-                  <option value="dv1">Dịch vụ 1</option>
-                  <option value="dv2">Dịch vụ 2</option>
-                  <option value="dv3">Dịch vụ 3</option>
+                  <option value="passion-to-profit">Passion to Profit</option>
+                  <option value="business-to-freedom">Business to Freedom</option>
+                  <option value="business-mastery">Business Mastery</option>
                   <option value="other">Khác / Chưa chắc</option>
                 </select>
               </div>
+
               <div class="form-group">
                 <label for="message">Lời nhắn <span class="required" aria-hidden="true">*</span></label>
                 <textarea id="message" name="message" placeholder="Chia sẻ với tôi về mục tiêu hoặc vấn đề bạn muốn giải quyết..." required></textarea>
               </div>
+
               <div class="form-submit">
-                <button type="submit" class="btn btn-primary">Gửi tin nhắn</button>
+                <button type="submit" class="btn btn--primary btn--lg">Gửi tin nhắn</button>
               </div>
               <p class="form-note">Tôi sẽ phản hồi trong vòng 24 giờ. Thông tin của bạn được bảo mật tuyệt đối.</p>
             </form>
@@ -259,9 +164,54 @@
     </section>
   </main>
 
-  <site-footer></site-footer>
+  <!-- ═══ Footer ═══ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <div class="footer-logo">Edina <span>Trâm</span></div>
+          <p class="footer-tagline">Dẫn lối bình an, khai mở nội lực. Đồng hành cùng bạn trên hành trình kiến tạo cuộc sống chất lượng.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Về Edina</h4>
+          <div class="footer-links">
+            <a href="#">Câu chuyện của tôi</a>
+            <a href="#">Giá trị & Triết lý</a>
+            <a href="#">Chứng chỉ & Đào tạo</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Dịch vụ</h4>
+          <div class="footer-links">
+            <a href="dich-vu-1.html">Passion to Profit</a>
+            <a href="dich-vu-2.html">Business to Freedom</a>
+            <a href="dich-vu-3.html">Business Mastery</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Kết nối</h4>
+          <div class="footer-links">
+            <a href="lien-he.html">Liên hệ</a>
+            <a href="mailto:coachtram@gmail.com">coachtram@gmail.com</a>
+            <a href="tel:0901234567">0901 234 567</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 Edina Trâm. All rights reserved.</span>
+        <div class="footer-social">
+          <a href="#" aria-label="Facebook"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path></svg></a>
+          <a href="#" aria-label="Instagram"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+          <a href="#" aria-label="YouTube"><svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78 0 003.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg></a>
+        </div>
+      </div>
+    </div>
+  </footer>
 
-  <script src="js/components.js"></script>
-    <script src="js/main.js"></script>
+  <!-- ═══ Scroll-to-Top ═══ -->
+  <button class="scroll-top-btn" aria-label="Cuộn lên đầu trang">↑</button>
+
+  <!-- ═══ Scripts ═══ -->
+  <script src="js/main.js" defer></script>
 </body>
 </html>
