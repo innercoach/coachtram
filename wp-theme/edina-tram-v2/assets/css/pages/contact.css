@@ -1,0 +1,215 @@
+/* ═══════════════════════════════════════════════════════════
+   CONTACT PAGE — Edina Trâm V2
+   ═══════════════════════════════════════════════════════════ */
+
+.contact-hero {
+  background: linear-gradient(135deg, var(--royal-emerald) 0%, var(--emerald-noir) 100%);
+  padding: calc(var(--header-height) + var(--space-16)) 0 var(--space-16);
+  text-align: center;
+}
+
+.contact-hero h1 {
+  color: var(--royal-gold);
+  margin-bottom: var(--space-4);
+}
+
+.contact-hero p {
+  color: rgba(255,255,255,0.85);
+  font-size: var(--text-lg);
+  margin-inline: auto;
+}
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: var(--space-10);
+  align-items: start;
+  padding-block: var(--space-20);
+}
+
+/* ─── Info Card ─── */
+.contact-info-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+  transition:
+    transform var(--duration-medium) var(--ease-out-expo),
+    box-shadow var(--duration-medium) var(--ease-out-expo);
+}
+
+.contact-info-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.contact-info-card h2 {
+  font-size: var(--text-2xl);
+  margin-bottom: var(--space-4);
+}
+
+.info-list {
+  margin-top: var(--space-6);
+}
+
+.info-item {
+  display: flex;
+  gap: var(--space-4);
+  align-items: flex-start;
+  padding: var(--space-4) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.info-item:last-child {
+  border-bottom: none;
+}
+
+.info-icon {
+  width: 44px;
+  height: 44px;
+  background: rgba(11, 138, 102, 0.06);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: var(--color-primary);
+  transition: background var(--duration-fast) var(--ease-in-out),
+              color var(--duration-fast) var(--ease-in-out);
+}
+
+.info-item:hover .info-icon {
+  background: rgba(200, 162, 68, 0.1);
+  color: var(--royal-gold);
+}
+
+.info-label {
+  font-weight: 600;
+  color: var(--color-fg);
+  margin-bottom: var(--space-1);
+  font-size: var(--text-sm);
+}
+
+.info-value {
+  color: var(--color-fg-muted);
+  font-size: var(--text-sm);
+  margin-bottom: 0;
+}
+
+.info-value a {
+  color: var(--color-primary);
+  font-weight: 500;
+}
+
+.info-value a:hover {
+  color: var(--royal-gold);
+}
+
+/* ─── Form Card ─── */
+.contact-form-card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+  transition:
+    transform var(--duration-medium) var(--ease-out-expo),
+    box-shadow var(--duration-medium) var(--ease-out-expo);
+}
+
+.contact-form-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.contact-form-card h2 {
+  font-size: var(--text-2xl);
+  margin-bottom: var(--space-2);
+}
+
+.form-lead {
+  font-size: var(--text-sm);
+  color: var(--color-fg-muted);
+  margin-bottom: var(--space-6);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-4);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+
+.form-group label {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-fg);
+}
+
+.form-group label .required {
+  color: var(--color-primary);
+  margin-left: 2px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: var(--space-3) var(--space-4);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-fg);
+  background: var(--color-bg);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  transition:
+    border-color var(--duration-fast) var(--ease-in-out),
+    box-shadow var(--duration-fast) var(--ease-in-out);
+  outline: none;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(11, 138, 102, 0.08);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: var(--color-fg-muted);
+  opacity: 0.5;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 130px;
+}
+
+.form-submit {
+  margin-top: var(--space-2);
+}
+
+.form-submit .btn {
+  width: 100%;
+  justify-content: center;
+  padding-block: var(--space-4);
+  font-size: var(--text-lg);
+}
+
+.form-note {
+  text-align: center;
+  font-size: var(--text-xs);
+  color: var(--color-fg-muted);
+  margin-top: var(--space-3);
+}
+
+@media (max-width: 768px) {
+  .contact-layout { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+}

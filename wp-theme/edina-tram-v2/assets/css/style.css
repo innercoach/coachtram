@@ -1,0 +1,10 @@
+/* ═══════════════════════════════════════════════════════════
+   STYLE.CSS — Edina Trâm V2 Import Hub
+   ═══════════════════════════════════════════════════════════ */
+
+@import url('design-system.css');
+@import url('components.css');
+@import url('animations.css');
+@import url('pages/home.css');
+@import url('pages/service.css');
+@import url('pages/contact.css');
