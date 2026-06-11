@@ -15,7 +15,7 @@ $pid = get_the_ID();
 <style>
 /* ── Dark theme ── */
 html, body { overflow-x: hidden; max-width: 100%; }
-body { background: #1a1a1a; color: #fff; }
+body { background: #1a1a1a; color: #fff; padding-bottom: 70px; }
 :root {
     --p2p-gold: #F5A623;
     --p2p-red:  #E63946;
@@ -23,6 +23,8 @@ body { background: #1a1a1a; color: #fff; }
     --p2p-dark2:#140a0a;
     --p2p-card: rgba(255,255,255,0.05);
     --p2p-border: rgba(255,255,255,0.08);
+    --space-5: 1.25rem;
+    --space-10: 2.5rem;
 }
 h1, h2, h3 { color: var(--p2p-gold); }
 p { color: rgba(255,255,255,0.82); }
@@ -46,7 +48,8 @@ p { color: rgba(255,255,255,0.82); }
 .sticky-cta .btn { background:var(--p2p-gold); color:#1a1a1a; padding:var(--space-2) var(--space-6); font-size:var(--text-sm); white-space:nowrap; flex-shrink:0; }
 
 /* Hero */
-.hero-p2p { min-height:calc(100vh - 72px); display:grid; grid-template-columns:1fr 1fr; align-items:center; gap:var(--space-8); padding-block:var(--space-12); background: radial-gradient(ellipse at 15% 55%, rgba(139,26,26,0.75) 0%, transparent 55%), radial-gradient(ellipse at 85% 20%, rgba(60,10,10,0.4) 0%, transparent 50%), #111111; }
+.hero-p2p { min-height:calc(100vh - 72px); display:flex; align-items:center; padding-block:var(--space-12); background: radial-gradient(ellipse at 15% 55%, rgba(139,26,26,0.75) 0%, transparent 55%), radial-gradient(ellipse at 85% 20%, rgba(60,10,10,0.4) 0%, transparent 50%), #111111; }
+.hero-p2p-container { display:grid; grid-template-columns:1fr 1fr; align-items:center; gap:var(--space-8); }
 .hero-p2p-img { position:relative; display:flex; justify-content:center; }
 .hero-p2p-img::after { content:''; position:absolute; bottom:0; left:0; right:0; height:35%; background:linear-gradient(to top, #111111 0%, transparent 100%); pointer-events:none; border-radius:0 0 var(--radius-lg) var(--radius-lg); }
 .hero-p2p-img img { width:min(420px,100%); height:auto; border-radius:var(--radius-lg); object-fit:cover; object-position:top; }
@@ -55,7 +58,6 @@ p { color: rgba(255,255,255,0.82); }
 .hero-p2p-title span { color:var(--p2p-red); }
 .hero-tagline { font-size:var(--text-xl); font-style:italic; color:var(--p2p-gold); margin:var(--space-4) 0; }
 .meta-row { display:flex; flex-wrap:wrap; gap:var(--space-4); margin:var(--space-6) 0; }
-.meta-item { display:flex; align-items:center; gap:var(--space-2); font-size:var(--text-lg); font-weight:600; color:#fff; }
 .price-badge { display:inline-block; background:var(--p2p-gold); color:#1a1a1a; font-family:var(--font-heading); font-size:var(--text-2xl); font-weight:700; padding:var(--space-2) var(--space-6); border-radius:var(--radius-full); margin-bottom:var(--space-4); }
 .btn-p2p-cta { background:var(--p2p-red); color:#fff; font-size:var(--text-lg); padding:var(--space-4) var(--space-10); box-shadow:0 4px 15px rgba(230,57,70,0.3); transition:all 0.25s ease; }
 .btn-p2p-cta:hover { background:#c52d3a; transform:translateY(-2px); }
@@ -83,10 +85,10 @@ p { color: rgba(255,255,255,0.82); }
 
 /* Testimonials */
 .testi-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:var(--space-6); margin-bottom:var(--space-10); }
-.testi-card { background:var(--p2p-card); border:1px solid var(--p2p-border); border-radius:var(--radius-lg); overflow:hidden; display:flex; flex-direction:column; }
-.testi-img-wrap { width:100%; aspect-ratio:4/5; overflow:hidden; }
+.testi-card { background:var(--p2p-card); border:1px solid var(--p2p-border); border-radius:var(--radius-lg); overflow:hidden; display:flex; flex-direction:column; padding:var(--space-6); gap:var(--space-4); transition:all 0.35s ease; }
+.testi-img-wrap { width:100%; aspect-ratio:4/5; overflow:hidden; border-radius:var(--radius-md); }
 .testi-img { width:100%; height:100%; object-fit:cover; object-position:top center; display:block; }
-.testi-body { padding:20px 24px 24px; flex:1; }
+.testi-body { padding:0; flex:1; display:flex; flex-direction:column; gap:var(--space-2); }
 .testi-name { font-family:var(--font-heading); font-size:var(--text-lg); color:var(--p2p-red); margin-bottom:0; }
 .testi-location { font-size:var(--text-xs); color:rgba(255,255,255,0.5); margin-bottom:var(--space-3); }
 .testi-quote { font-size:var(--text-sm); font-style:italic; color:rgba(255,255,255,0.8); margin:0; }
@@ -115,7 +117,7 @@ p { color: rgba(255,255,255,0.82); }
 .faq-a p { font-size:var(--text-sm); margin:0; color:rgba(255,255,255,0.8); }
 
 /* CTA Final */
-.cta-section { position:relative; text-align:center; padding-block:var(--space-24); padding-inline:var(--space-6); overflow:hidden; margin-bottom:68px; }
+.cta-section { position:relative; text-align:center; padding-block:var(--space-24); padding-inline:var(--space-6); overflow:hidden; }
 .cta-quote { font-size:clamp(var(--text-lg),2.5vw,var(--text-2xl)); font-weight:700; max-width:760px; margin:0 auto var(--space-8); line-height:1.6; color:#fff; }
 .btn-cta-final { display:block; width:fit-content; max-width:calc(100% - 2rem); margin-inline:auto; text-align:center; line-height:1.4; background:var(--p2p-red); color:#fff; font-size:var(--text-xl); padding:var(--space-5) var(--space-8); border-radius:var(--radius-md); }
 .btn-cta-final:hover { background:#aa0000; transform:translateY(-3px); box-shadow:0 12px 32px rgba(204,0,0,0.5); }
@@ -123,7 +125,8 @@ p { color: rgba(255,255,255,0.82); }
 
 /* Responsive */
 @media(max-width:768px) {
-    .hero-p2p { grid-template-columns:1fr; text-align:center; padding-top:var(--space-8); }
+    .hero-p2p { padding-top:var(--space-8); }
+    .hero-p2p-container { grid-template-columns:1fr; text-align:center; }
     .hero-p2p-img { order:-1; }
     .hero-p2p-img img { width:200px; height:200px; border-radius:50%; }
     .meta-row { justify-content:center; }
@@ -177,12 +180,13 @@ $cta_final    = clv_field('dv1_cta_final_label', $pid, 'Đăng ký ngay hôm nay
 
     <!-- S1: HERO -->
     <section class="hero-p2p" aria-label="Giới thiệu khoá học">
-        <div class="hero-p2p-img">
-            <?php clv_img_f('dv1_hero_image', $pid, 'dv1/hero-coach.png', 'Coach Vũ Kiều Loan – F&B Coach', '', 'loading="eager" style="width:min(420px,100%);height:auto;border-radius:var(--radius-lg);object-fit:cover;object-position:top"'); ?>
-            <div class="coach-label"><?php echo esc_html($coach_label); ?></div>
-        </div>
+        <div class="container hero-p2p-container">
+            <div class="hero-p2p-img">
+                <?php clv_img_f('dv1_hero_image', $pid, 'dv1/hero-coach.png', 'Coach Vũ Kiều Loan – F&B Coach', '', 'loading="eager" style="width:min(420px,100%);height:auto;border-radius:var(--radius-lg);object-fit:cover;object-position:top"'); ?>
+                <div class="coach-label"><?php echo esc_html($coach_label); ?></div>
+            </div>
 
-        <div style="padding-inline:var(--space-4);">
+            <div style="padding-inline:var(--space-4);">
             <span class="badge" style="margin-bottom:var(--space-4);display:inline-block;">
                 <?php echo esc_html($badge); ?>
             </span>
@@ -224,6 +228,7 @@ $cta_final    = clv_field('dv1_cta_final_label', $pid, 'Đăng ký ngay hôm nay
                 </a>
             </div>
             <p class="scholarship-note"><?php echo wp_kses_post($schol_note); ?></p>
+            </div>
         </div>
     </section>
 
@@ -432,13 +437,13 @@ $cta_final    = clv_field('dv1_cta_final_label', $pid, 'Đăng ký ngay hôm nay
                     <!-- Social links from global options -->
                     <div style="margin-top:var(--space-6);display:flex;gap:var(--space-3);flex-wrap:wrap;">
                         <?php
-                        $social_style = 'font-size:var(--text-sm);padding:8px 16px;background:rgba(255,255,255,0.08);color:#fff;border:1px solid rgba(255,255,255,0.15);border-radius:var(--radius-md);text-decoration:none;';
+                        $social_style = 'display:inline-flex;align-items:center;gap:8px;font-size:var(--text-sm);padding:8px 16px;background:rgba(255,255,255,0.08);color:#fff;border:1px solid rgba(255,255,255,0.15);border-radius:var(--radius-md);text-decoration:none;';
                         $fb = clv_option('global_social_facebook');
                         $ig = clv_option('global_social_instagram');
                         $em = clv_option('global_social_email');
-                        if ($fb): ?><a href="<?php echo esc_url($fb); ?>" target="_blank" rel="noopener" style="<?php echo $social_style; ?>">📘 Facebook</a><?php endif; ?>
-                        <?php if ($ig): ?><a href="<?php echo esc_url($ig); ?>" target="_blank" rel="noopener" style="<?php echo $social_style; ?>">📸 Instagram</a><?php endif; ?>
-                        <?php if ($em): ?><a href="mailto:<?php echo sanitize_email($em); ?>" style="<?php echo $social_style; ?>">✉️ <?php echo esc_html($em); ?></a><?php endif; ?>
+                        if ($fb): ?><a href="<?php echo esc_url($fb); ?>" target="_blank" rel="noopener" style="<?php echo $social_style; ?>"><span>📘</span> Facebook</a><?php endif; ?>
+                        <?php if ($ig): ?><a href="<?php echo esc_url($ig); ?>" target="_blank" rel="noopener" style="<?php echo $social_style; ?>"><span>📸</span> Instagram</a><?php endif; ?>
+                        <?php if ($em): ?><a href="mailto:<?php echo sanitize_email($em); ?>" style="<?php echo $social_style; ?>"><span>✉️</span> <?php echo esc_html($em); ?></a><?php endif; ?>
                     </div>
                 </div>
             </div>
@@ -485,7 +490,13 @@ $cta_final    = clv_field('dv1_cta_final_label', $pid, 'Đăng ký ngay hôm nay
             <a href="<?php echo $lien_he_url; ?>" class="btn btn-cta-final">
                 <?php echo esc_html($cta_final); ?>
             </a>
-            <p class="slots-note">📅 <?php echo esc_html($date_text); ?> &nbsp;|&nbsp; 🕐 <?php echo esc_html($time_text); ?> &nbsp;|&nbsp; 💲 <?php echo esc_html($price_text); ?></p>
+            <p class="slots-note" style="display:flex;align-items:center;justify-content:center;gap:var(--space-4);flex-wrap:wrap;">
+                <span style="display:inline-flex;align-items:center;gap:6px;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--p2p-gold)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> <?php echo esc_html($date_text); ?></span>
+                <span style="opacity:0.3;">|</span>
+                <span style="display:inline-flex;align-items:center;gap:6px;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--p2p-gold)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> <?php echo esc_html($time_text); ?></span>
+                <span style="opacity:0.3;">|</span>
+                <span style="display:inline-flex;align-items:center;gap:6px;"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--p2p-gold)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg> <?php echo esc_html($price_text); ?></span>
+            </p>
         </div>
     </section>
 

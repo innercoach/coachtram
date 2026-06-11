@@ -55,7 +55,7 @@ p      { color: #CBD5E1; }
 .hero-info-item span:first-child { display:block; font-size:var(--text-sm); color:#94A3B8; text-transform:uppercase; letter-spacing:1px; }
 .hero-info-item span:last-child { font-weight:700; color:#fff; }
 .hero-img-wrap { text-align:center; position:relative; }
-.hero-img-wrap::after { content:''; position:absolute; bottom:0; left:0; right:0; height:35%; background:linear-gradient(to top,#0a1828 0%,transparent 100%); pointer-events:none; }
+.hero .hero-img-wrap::after { content:''; position:absolute; bottom:0; left:0; right:0; height:35%; background:linear-gradient(to top,#0a1828 0%,transparent 100%); pointer-events:none; }
 .hero-img { border-radius:var(--radius-lg); max-height:600px; object-fit:contain; }
 
 /* Pain / Target grids */
@@ -64,7 +64,13 @@ p      { color: #CBD5E1; }
 .timeline { display:flex; flex-direction:column; gap:var(--space-4); }
 .timeline-item { display:flex; gap:var(--space-4); background:var(--b2f-card); padding:var(--space-4); border-radius:var(--radius-md); border-left:3px solid var(--b2f-gold); transition:all 0.35s var(--b2f-easing); }
 .timeline-item:hover { border-left-color:var(--b2f-orange); box-shadow:0 8px 25px rgba(0,0,0,0.25),0 0 15px var(--b2f-glow); transform:translateX(4px); }
-.timeline-week { font-weight:700; color:var(--b2f-gold); min-width:80px; text-transform:uppercase; font-size:var(--text-sm); }
+.timeline-week { font-weight:700; color:var(--b2f-gold); min-width:90px; text-transform:uppercase; font-size:1.5rem; line-height:1.2; font-family:var(--font-heading); }
+
+.timeline-item h4 { font-family:var(--font-body) !important; font-size:1.25rem !important; font-weight:700 !important; color:#ffffff !important; margin-bottom:var(--space-1) !important; margin-top:0 !important; }
+
+.instructor-name { font-size: 2.2rem !important; font-weight: 700 !important; color: #ffffff !important; margin-bottom: var(--space-2) !important; font-family: var(--font-heading); }
+
+.instructor-title { font-size: 1.15rem !important; color: #F5C842 !important; display: block; font-weight: 600 !important; margin-top: 6px; font-family: var(--font-body); letter-spacing: 0.05em; }
 
 /* Testi */
 .testi-img-wrap { width:100%; aspect-ratio:4/5; overflow:hidden; border-radius:var(--radius-md); margin-bottom:var(--space-4); }
@@ -432,8 +438,8 @@ $cta_label    = clv_field('dv2_cta_label', $pid, 'ĐĂNG KÍ NGAY');
                     <h2>Ai là người đồng hành cùng bạn?</h2>
                     <div class="b2f-divider" style="margin-left:0;"></div>
                 </div>
-                <h3 style="color:#fff;margin-bottom:var(--space-4);">Vũ Kiều Loan
-                    <span style="font-size:var(--text-base);color:var(--b2f-gold);display:block;font-weight:normal;margin-top:4px;">F&amp;B Startup Coach, ICF PCC</span>
+                <h3 class="instructor-name">Vũ Kiều Loan
+                    <span class="instructor-title">F&amp;B Startup Coach, ICF PCC</span>
                 </h3>
                 <?php
                 $default_inst_points = [
@@ -464,8 +470,8 @@ $cta_label    = clv_field('dv2_cta_label', $pid, 'ĐĂNG KÍ NGAY');
                     foreach ($inst_socials as $inst_s):
                     ?>
                     <a href="<?php echo esc_url($inst_s['url']); ?>" target="_blank" rel="noopener"
-                       style="font-size:var(--text-sm);padding:8px 16px;background:rgba(255,255,255,0.08);color:#fff;border:1px solid rgba(255,255,255,0.15);border-radius:8px;text-decoration:none;">
-                        <?php echo $inst_s['icon']; ?> <?php echo esc_html($inst_s['label']); ?>
+                       style="display:inline-flex;align-items:center;gap:8px;font-size:var(--text-sm);padding:8px 16px;background:rgba(255,255,255,0.08);color:#fff;border:1px solid rgba(255,255,255,0.15);border-radius:8px;text-decoration:none;">
+                        <span><?php echo $inst_s['icon']; ?></span> <?php echo esc_html($inst_s['label']); ?>
                     </a>
                     <?php endforeach; ?>
                 </div>
