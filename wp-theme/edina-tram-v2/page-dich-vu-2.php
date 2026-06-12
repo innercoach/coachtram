@@ -213,7 +213,7 @@ $contact_email = edt_option('contact_email', 'coachtram@gmail.com');
     <!-- ═══ S1: HERO ═══ -->
     <section class="srv-hero" aria-label="Giới thiệu khoá học">
       <div class="container srv-hero-grid">
-        <div class="srv-hero-content">
+        <div class="srv-hero-content" data-reveal>
           <span class="badge" style="margin-bottom: var(--space-4); display: inline-block;"><?php echo esc_html($hero_badge); ?></span>
           <h1><?php echo wp_kses_post($hero_title); ?></h1>
           <p class="srv-hero-tagline"><?php echo esc_html($hero_tagline); ?></p>
@@ -259,7 +259,7 @@ $contact_email = edt_option('contact_email', 'coachtram@gmail.com');
 
           <a href="<?php echo esc_url($hero_cta_url); ?>" class="btn btn--primary btn--lg"><?php echo esc_html($hero_cta_label); ?></a>
         </div>
-        <div class="srv-hero-img">
+        <div class="srv-hero-img" data-reveal="right">
           <?php if ($hero_image) : ?>
             <img src="<?php echo esc_url($hero_image); ?>" alt="<?php echo esc_attr($coach_name . ' – Business to Freedom'); ?>" loading="eager">
           <?php else : ?>
@@ -273,7 +273,7 @@ $contact_email = edt_option('contact_email', 'coachtram@gmail.com');
     <!-- ═══ S2: PAIN POINTS ═══ -->
     <section class="srv-section--alt" aria-label="Nỗi đau của chủ quán">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header" data-reveal>
           <span class="badge"><?php echo esc_html($pain_badge); ?></span>
           <h2 style="margin-top: var(--space-4);"><?php echo esc_html($pain_title); ?></h2>
           <div class="divider"></div>
@@ -294,7 +294,7 @@ $contact_email = edt_option('contact_email', 'coachtram@gmail.com');
     <!-- ═══ S3: TARGET AUDIENCE ═══ -->
     <section class="srv-section" aria-label="Đối tượng tham gia">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header" data-reveal>
           <span class="badge"><?php echo esc_html($target_badge); ?></span>
           <h2 style="margin-top: var(--space-4);"><?php echo esc_html($target_title); ?></h2>
           <div class="divider"></div>
@@ -315,7 +315,7 @@ $contact_email = edt_option('contact_email', 'coachtram@gmail.com');
     <!-- ═══ S4: BENEFITS – MMF ═══ -->
     <section class="srv-section--alt" aria-label="3 trụ cột giá trị">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header" data-reveal>
           <span class="badge badge--gold"><?php echo esc_html($mmf_badge); ?></span>
           <h2 style="margin-top: var(--space-4);"><?php echo esc_html($mmf_title); ?></h2>
           <div class="divider"></div>
@@ -337,13 +337,13 @@ $contact_email = edt_option('contact_email', 'coachtram@gmail.com');
     <!-- ═══ S5: DIFFERENTIATORS ═══ -->
     <section class="srv-section" aria-label="Khác biệt của chương trình">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header" data-reveal>
           <span class="badge"><?php echo esc_html($diff_badge); ?></span>
           <h2 style="margin-top: var(--space-4);"><?php echo esc_html($diff_title); ?></h2>
           <div class="divider"></div>
         </div>
-        <div class="method-layout">
-          <div class="method-col method-col--negative">
+        <div class="method-layout" data-reveal-stagger>
+          <div class="method-col method-col--negative" data-reveal>
             <h3><?php echo esc_html($diff_neg_title); ?></h3>
             <ul class="method-list">
               <?php foreach ($diff_negs as $neg) : ?>
@@ -354,7 +354,7 @@ $contact_email = edt_option('contact_email', 'coachtram@gmail.com');
               <?php endforeach; ?>
             </ul>
           </div>
-          <div class="method-col method-col--positive">
+          <div class="method-col method-col--positive" data-reveal>
             <h3><?php echo esc_html($diff_pos_title); ?></h3>
             <ul class="method-list">
               <?php foreach ($diff_poss as $pos) : ?>
@@ -373,7 +373,7 @@ $contact_email = edt_option('contact_email', 'coachtram@gmail.com');
     <!-- ═══ S6: 10-WEEK CURRICULUM ═══ -->
     <section class="srv-section--alt" aria-label="Lộ trình 10 tuần">
       <div class="container container--narrow">
-        <div class="section-header">
+        <div class="section-header" data-reveal>
           <span class="badge badge--gold"><?php echo esc_html($cur_badge); ?></span>
           <h2 style="margin-top: var(--space-4);"><?php echo esc_html($cur_title); ?></h2>
           <div class="divider"></div>
@@ -400,7 +400,7 @@ $contact_email = edt_option('contact_email', 'coachtram@gmail.com');
     <!-- ═══ S7: TESTIMONIALS ═══ -->
     <section class="srv-section" aria-label="Học viên chia sẻ">
       <div class="container">
-        <div class="section-header">
+        <div class="section-header" data-reveal>
           <span class="badge"><?php echo esc_html($testi_badge); ?></span>
           <h2 style="margin-top: var(--space-4);"><?php echo esc_html($testi_title); ?></h2>
           <div class="divider"></div>
@@ -467,7 +467,7 @@ $contact_email = edt_option('contact_email', 'coachtram@gmail.com');
     <!-- ═══ S9: FAQ ═══ -->
     <section class="srv-section--alt" aria-label="Câu hỏi thường gặp">
       <div class="container container--narrow">
-        <div class="section-header">
+        <div class="section-header" data-reveal>
           <span class="badge"><?php echo esc_html($faq_badge); ?></span>
           <h2 style="margin-top: var(--space-4);"><?php echo esc_html($faq_title); ?></h2>
           <div class="divider"></div>
@@ -479,7 +479,7 @@ $contact_email = edt_option('contact_email', 'coachtram@gmail.com');
 
     <!-- ═══ S10: CTA FINAL ═══ -->
     <section class="srv-cta-final" aria-label="Đăng ký ngay">
-      <div class="container">
+      <div class="container" data-reveal>
         <h2><?php echo wp_kses_post($cta_title); ?></h2>
         <p style="max-width: 560px;"><?php echo esc_html($cta_desc); ?></p>
         <a href="<?php echo esc_url($cta_url); ?>" class="btn btn--accent btn--lg" target="_blank" rel="noopener"><?php echo esc_html($cta_label); ?></a>
