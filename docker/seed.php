@@ -39,16 +39,30 @@ function seed_page( $title, $slug, $template = '' ) {
 }
 
 function seed_post( $post_type, $title, $content = '', $meta = [], $terms = [] ) {
-    $id = wp_insert_post( [
-        'post_type'    => $post_type,
-        'post_title'   => $title,
-        'post_content' => $content,
-        'post_status'  => 'publish',
-    ], true );
-    if ( is_wp_error( $id ) ) {
-        WP_CLI::warning( "  ✗  Không tạo được $post_type: $title" );
-        return null;
+    // Idempotent: tìm post đã tồn tại theo post_type + title
+    $found = get_posts( [
+        'post_type'   => $post_type,
+        'post_status' => 'publish',
+        'title'       => $title,
+        'numberposts' => 1,
+        'fields'      => 'ids',
+    ] );
+
+    if ( $found ) {
+        $id = $found[0];
+    } else {
+        $id = wp_insert_post( [
+            'post_type'    => $post_type,
+            'post_title'   => $title,
+            'post_content' => $content,
+            'post_status'  => 'publish',
+        ], true );
+        if ( is_wp_error( $id ) ) {
+            WP_CLI::warning( "  ✗  Không tạo được $post_type: $title" );
+            return null;
+        }
     }
+
     foreach ( $meta as $k => $v ) {
         update_post_meta( $id, $k, $v );
     }
@@ -65,6 +79,84 @@ function seed_meta( $post_id, array $meta ) {
     foreach ( $meta as $k => $v ) {
         update_post_meta( $post_id, $k, $v );
     }
+}
+
+/**
+ * Tạo avatar placeholder 200×200 cho testimonial, set làm featured image.
+ * Idempotent: bỏ qua nếu post đã có thumbnail.
+ */
+function seed_testimonial_avatar( $post_id, $name, $idx ) {
+    if ( get_post_meta( $post_id, '_thumbnail_id', true ) ) return;
+
+    require_once ABSPATH . 'wp-admin/includes/media.php';
+    require_once ABSPATH . 'wp-admin/includes/file.php';
+    require_once ABSPATH . 'wp-admin/includes/image.php';
+
+    // 6 màu nền xoay vòng (brand-adjacent)
+    $palettes = [
+        [ 12,  59,  46 ], // emerald đậm
+        [ 18,  74,  58 ], // emerald sáng
+        [ 45,  74,  10 ], // olive
+        [ 59,  42,  12 ], // amber-nâu
+        [ 26,  37,  74 ], // navy
+        [ 59,  12,  42 ], // plum
+    ];
+    $c = $palettes[ ( $idx - 1 ) % count( $palettes ) ];
+
+    $w  = 200;
+    $h  = 200;
+    $im = imagecreatetruecolor( $w, $h );
+
+    $bg    = imagecolorallocate( $im, $c[0], $c[1], $c[2] );
+    $gold  = imagecolorallocate( $im, 200, 162, 68  );
+    $white = imagecolorallocate( $im, 240, 235, 220 );
+
+    imagefill( $im, 0, 0, $bg );
+    imageellipse( $im, $w / 2, $h / 2, $w - 20, $h - 20, $gold );
+
+    // Số thứ tự căn giữa
+    $num = str_pad( $idx, 2, '0', STR_PAD_LEFT );
+    $fw  = imagefontwidth( 5 );
+    $fh  = imagefontheight( 5 );
+    imagestring( $im, 5,
+        (int)( ( $w - strlen($num) * $fw ) / 2 ),
+        (int)( ( $h - $fh ) / 2 ),
+        $num, $gold
+    );
+
+    // Tên nhỏ phía dưới
+    $short = mb_substr( $name, 0, 12 );
+    $sw    = imagefontwidth(2);
+    imagestring( $im, 2,
+        (int)( ( $w - strlen($short) * $sw ) / 2 ),
+        (int)( $h / 2 ) + $fh + 6,
+        $short, $white
+    );
+
+    $tmp = sys_get_temp_dir() . '/edt_av_' . $post_id . '.jpg';
+    imagejpeg( $im, $tmp, 85 );
+    imagedestroy( $im );
+
+    if ( ! file_exists( $tmp ) ) return;
+
+    $file = [
+        'name'     => 'avatar-' . str_pad( $idx, 2, '0', STR_PAD_LEFT ) . '.jpg',
+        'type'     => 'image/jpeg',
+        'tmp_name' => $tmp,
+        'error'    => 0,
+        'size'     => filesize( $tmp ),
+    ];
+
+    $att_id = media_handle_sideload( $file, $post_id, $name );
+    @unlink( $tmp );
+
+    if ( is_wp_error( $att_id ) ) {
+        WP_CLI::warning( "  ✗  Avatar #{$idx}: " . $att_id->get_error_message() );
+        return;
+    }
+
+    update_post_meta( $att_id, '_wp_attachment_image_alt', $name );
+    set_post_thumbnail( $post_id, $att_id );
 }
 
 /**
@@ -778,7 +870,24 @@ foreach ( $testimonials as $t ) {
     );
     if ( $id ) $testi_count++;
 }
-WP_CLI::log( "  ✓  $testi_count testimonials đã tạo" );
+WP_CLI::log( "  ✓  $testi_count testimonials OK" );
+
+// Set avatar cho tất cả testimonials (kể cả đã tạo từ lần chạy trước)
+WP_CLI::log( '9b. Testimonial avatars...' );
+$all_testi = get_posts( [
+    'post_type'      => 'edina_testimonial',
+    'post_status'    => 'publish',
+    'posts_per_page' => -1,
+    'orderby'        => 'ID',
+    'order'          => 'ASC',
+    'fields'         => 'ids',
+] );
+$av_count = 0;
+foreach ( $all_testi as $idx => $tid ) {
+    seed_testimonial_avatar( $tid, get_the_title( $tid ), $idx + 1 );
+    $av_count++;
+}
+WP_CLI::log( "  ✓  {$av_count} testimonials có avatar" );
 
 
 /* ============================================================
