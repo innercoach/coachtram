@@ -42,6 +42,10 @@ assets/                 ← Ảnh dùng chung (static site backup)
 - **Google Fonts**: Cormorant Garamond + Be Vietnam Pro
 - **ACF / Custom Metaboxes** cho quản lý nội dung qua admin
 
+## Deploy
+
+Xem [`DEPLOY.md`](DEPLOY.md) — hướng dẫn triển khai theme lên server thật (import SQL snapshot hoặc cài mới thủ công), checklist sau deploy, và tối ưu production.
+
 ## Design System
 
 Xem [`brand/design.md`](brand/design.md) — tài liệu đầy đủ về màu sắc, typography, spacing, components và animation.
