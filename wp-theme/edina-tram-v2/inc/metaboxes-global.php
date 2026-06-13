@@ -26,20 +26,26 @@ function edt_render_settings_page() {
     // Save
     if (isset($_POST['edt_settings_nonce']) && wp_verify_nonce($_POST['edt_settings_nonce'], 'edt_save_settings')) {
         $text_fields = [
-            'logo_text', 'header_cta_label', 'header_cta_url',
+            'logo_text', 'header_cta_label',
             'footer_tagline', 'footer_copyright',
             'contact_email', 'contact_phone',
-            'social_facebook', 'social_instagram', 'social_youtube', 'social_website',
             'coach_name', 'coach_title',
         ];
         foreach ($text_fields as $f) {
             if (isset($_POST['edt_' . $f])) {
-                update_option('edt_' . $f, sanitize_text_field($_POST['edt_' . $f]));
+                update_option('edt_' . $f, sanitize_text_field(wp_unslash($_POST['edt_' . $f])));
+            }
+        }
+        // URL fields — must use esc_url_raw to block javascript: and data: protocols
+        $url_fields = ['header_cta_url', 'social_facebook', 'social_instagram', 'social_youtube', 'social_website'];
+        foreach ($url_fields as $f) {
+            if (isset($_POST['edt_' . $f])) {
+                update_option('edt_' . $f, esc_url_raw(wp_unslash($_POST['edt_' . $f])));
             }
         }
         // Rich text
         if (isset($_POST['edt_coach_bio'])) {
-            update_option('edt_coach_bio', wp_kses_post($_POST['edt_coach_bio']));
+            update_option('edt_coach_bio', wp_kses_post(wp_unslash($_POST['edt_coach_bio'])));
         }
         // Image
         if (isset($_POST['edt_logo_image'])) {

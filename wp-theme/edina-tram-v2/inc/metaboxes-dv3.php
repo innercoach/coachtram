@@ -267,7 +267,7 @@ function edt_dv3_render($post) {
 /* ============================================================
    SAVE POST META
    ============================================================ */
-add_action('save_post', function ($post_id) {
+add_action('save_post_page', function ($post_id) {
 
     // Nonce check
     if (!isset($_POST['edt_dv3_nonce']) || !wp_verify_nonce($_POST['edt_dv3_nonce'], 'edt_save_dv3')) return;
@@ -276,7 +276,11 @@ add_action('save_post', function ($post_id) {
     if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return;
 
     // Capability check
-    if (!current_user_can('edit_post', $post_id)) return;
+    if (!current_user_can('edit_page', $post_id)) return;
+
+    // Only save for dich-vu-3
+    $post = get_post($post_id);
+    if (!$post || $post->post_name !== 'dich-vu-3') return;
 
     // ── Text fields ──
     $text_fields = [

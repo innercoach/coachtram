@@ -244,14 +244,17 @@ function edt_dv2_render($post) {
 /* ============================================================
    SAVE META
    ============================================================ */
-add_action('save_post', function ($post_id) {
+add_action('save_post_page', function ($post_id) {
 
     // Nonce check
     if (!isset($_POST['edt_dv2_nonce']) || !wp_verify_nonce($_POST['edt_dv2_nonce'], 'edt_save_dv2')) return;
     // Autosave
     if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return;
     // Capability
-    if (!current_user_can('edit_post', $post_id)) return;
+    if (!current_user_can('edit_page', $post_id)) return;
+    // Only save for dich-vu-2
+    $post = get_post($post_id);
+    if (!$post || $post->post_name !== 'dich-vu-2') return;
 
     /* ─── Text fields (sanitize_text_field) ─── */
     $text_fields = [
@@ -299,7 +302,7 @@ add_action('save_post', function ($post_id) {
 
     foreach ($text_fields as $key) {
         if (isset($_POST[$key])) {
-            update_post_meta($post_id, $key, sanitize_text_field($_POST[$key]));
+            update_post_meta($post_id, $key, sanitize_text_field(wp_unslash($_POST[$key])));
         }
     }
 
@@ -336,7 +339,7 @@ add_action('save_post', function ($post_id) {
 
     foreach ($rich_fields as $key) {
         if (isset($_POST[$key])) {
-            update_post_meta($post_id, $key, wp_kses_post($_POST[$key]));
+            update_post_meta($post_id, $key, wp_kses_post(wp_unslash($_POST[$key])));
         }
     }
 
