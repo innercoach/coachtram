@@ -137,3 +137,30 @@ Bộ 3 chương trình thành hệ TINA: **Awareness → Awakening → Alignment
 - [ ] **Mục 10** — Phễu eBook quản trị được (title/mô tả/ảnh/CTA/PDF) — hiện trang chủ đã có khối eBook placeholder
 - [ ] **Mục 11** — Polish UI/UX (gradient, glass, pattern chìm, bóng mềm) toàn site
 - [ ] **Mục 13** — Rà soát giả định triển khai (Substack chỉ link ra ngoài, v.v.)
+
+---
+
+## FEEDBACK 2 — Nhận diện High-end + Biểu đồ + Phễu Awakening (HTML preview)
+
+### ✅ F2.2. Hệ màu metallic gold (high-end) — DONE (`98f3e78`)
+- [x] Token nhũ vàng kim loại bắt sáng (--gold-metallic/-line/-soft/-sheen/-ink)
+- [x] Bỏ tông sand xỉn ở viền (--color-border → gold-tint)
+- [x] btn--accent gradient kim loại; badge--gold gradient; divider champagne
+- [x] Emerald giữ vai trò chính + nhũ vàng nâng cấp (theo chốt)
+- [ ] *(tiếp)* Lan toả hiệu ứng metallic/light-catching sâu hơn nếu cần
+
+### ✅ F2.1. Biểu đồ tam giác SVG — DONE (`b3bd15a`)
+- [x] Dựng lại bằng SVG (thay PNG) — metallic gold, nền emerald mystical
+- [x] ™ (Trademark) + T.I.N.A (có dấu chấm) + slogan "Transformation Into New Awareness"
+- [x] 3 ô giải thích ở 3 đỉnh: Clarity / Confidence / Connection (giữ 3C theo chốt)
+
+### ✅ F2.3. Trang Awakening (dv2) dạng phễu — DONE (`4a5f580`)
+- [x] Giá 29.000.000 VNĐ (số lẻ — neo giá tâm lý)
+- [x] 1 CTA duy nhất "Đặt lịch phiên khám phá" → Calendly (placeholder)
+- [x] Bỏ mọi lựa chọn mua/gói nhỏ
+- [x] Neo giá phiên khám phá 1.000.000đ → MIỄN PHÍ
+- [x] FAQ: signature đầu, "trị liệu tâm lý" cuối
+
+> Ghi chú khi port WP (Giai đoạn B): áp lại token metallic gold, biểu đồ SVG
+> (làm partial dùng chung), giá 29tr + Calendly cho `page-dich-vu-2.php`,
+> và bổ sung field admin cho biểu đồ/Calendly nếu cần.
