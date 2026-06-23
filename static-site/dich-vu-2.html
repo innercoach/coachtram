@@ -305,6 +305,28 @@
       line-height: 1.7;
     }
 
+    /* Funnel offer (single path) */
+    .offer-single { max-width: 640px; margin-inline: auto; text-align: center; }
+    .offer-price {
+      font-family: var(--font-heading);
+      font-size: clamp(var(--text-3xl), 5vw, var(--text-5xl));
+      font-weight: 600; color: var(--page-accent);
+      margin: var(--space-2) 0 var(--space-3); line-height: 1;
+    }
+    .offer-price small { display:block; font-family: var(--font-body); font-size: var(--text-xs); letter-spacing:.1em; text-transform:uppercase; color: var(--color-fg-muted); margin-bottom: var(--space-2); }
+    .offer-anchor {
+      display:flex; flex-direction:column; gap:4px; align-items:center;
+      margin: var(--space-6) auto var(--space-5); padding: var(--space-5) var(--space-6);
+      border-radius: var(--radius-lg); max-width: 460px;
+      background: linear-gradient(135deg, rgba(200,162,68,0.12), rgba(246,225,162,0.05));
+      border: 1px solid rgba(200,162,68,0.35);
+    }
+    .offer-anchor-label { font-size: var(--text-sm); color: var(--color-fg-muted); }
+    .offer-anchor-price { font-family: var(--font-heading); font-size: var(--text-2xl); }
+    .offer-anchor-price s { color: var(--color-fg-subtle); margin-right:10px; font-size: var(--text-lg); }
+    .offer-anchor-price strong { color: var(--page-accent); text-transform:uppercase; letter-spacing:.05em; }
+    .offer-note { font-size: var(--text-sm); color: var(--color-fg-muted); margin-top: var(--space-5); }
+
     .value-num {
       color: rgba(var(--page-accent-rgb), 0.12);
       z-index: 0;
@@ -359,7 +381,7 @@
       <span class="sticky-cta-title">TINA Awakening - 90 ngày chuyển hoá</span>
       <span class="sticky-cta-meta">Coaching & Mentoring 1:1 · 12 module</span>
     </div>
-    <a href="lien-he.html?program=awakening" class="btn btn--accent">Đặt Lịch Kết Nối</a>
+    <a href="https://calendly.com/edinatram/phien-kham-pha" target="_blank" rel="noopener" class="btn btn--accent">Đặt lịch phiên khám phá</a>
   </div>
 
   <!-- ═══ HEADER ═══ -->
@@ -413,7 +435,7 @@
             </div>
           </div>
 
-          <a href="lien-he.html?program=awakening" class="btn btn--primary btn--lg">Bắt đầu phiên kết nối</a>
+          <a href="https://calendly.com/edinatram/phien-kham-pha" target="_blank" rel="noopener" class="btn btn--primary btn--lg">Đặt lịch phiên khám phá</a>
         </div>
         <div class="srv-hero-img" data-reveal="right">
           <img src="hero_trang_tina_awakening.jpg" alt="Edina Trâm - TINA Awakening" loading="eager" fetchpriority="high">
@@ -780,21 +802,23 @@
     <section class="srv-section" aria-label="Bắt đầu hành trình 90 ngày">
       <div class="container">
         <div class="section-header">
-          <span class="badge">Bắt đầu như thế nào?</span>
-          <h2 style="margin-top: var(--space-4);">Bạn đã sẵn sàng bắt đầu 90 ngày của mình chưa?</h2>
+          <span class="badge">Bước tiếp theo</span>
+          <h2 style="margin-top: var(--space-4);">Bắt đầu bằng một phiên khám phá</h2>
           <div class="divider"></div>
-          <p>Tôi dành riêng hai cách để bạn bước những bước đầu tiên mà chưa cần cam kết toàn bộ ngay.</p>
+          <p>Đây không phải một khoá học để mua theo gói. Chỉ có một con đường duy nhất để bắt đầu: một phiên khám phá đủ sâu để cùng xem hành trình này có thật sự dành cho bạn.</p>
         </div>
-        <div class="offer-grid" data-reveal-stagger>
-          <div class="offer-card" data-reveal>
-            <div class="offer-label">Lựa chọn 1 · Miễn phí</div>
-            <h3>Một phiên trải nghiệm 1:1</h3>
-            <p>Một buổi trò chuyện kết nối cùng tôi, hoàn toàn miễn phí, để bạn cảm nhận hành trình này có thật sự dành cho mình hay không.</p>
-          </div>
-          <div class="offer-card offer-card--featured" data-reveal>
-            <div class="offer-label">Lựa chọn 2 · Ưu đãi</div>
-            <h3>Ba phiên khám phá đầu tiên</h3>
-            <p>Ba phiên 1:1 đầu tiên với mức ưu đãi 3.000.000đ. Tặng kèm một e-book trị giá 500.000đ để bạn bắt đầu ngay.</p>
+        <div class="offer-single" data-reveal>
+          <div class="offer-card offer-card--featured">
+            <div class="offer-label">Chương trình · TINA Awakening</div>
+            <h3>90 ngày chuyển hoá 1:1 · 12 module</h3>
+            <div class="offer-price"><small>Học phí trọn hành trình</small>29.000.000 VNĐ</div>
+            <p>Một hành trình may đo riêng cho từng người. Bạn không mua một khoá học — bạn bắt đầu một sự chuyển hoá.</p>
+            <div class="offer-anchor">
+              <span class="offer-anchor-label">Phiên khám phá 1:1 với Edina Trâm</span>
+              <span class="offer-anchor-price"><s>1.000.000đ</s> <strong>Miễn phí</strong></span>
+            </div>
+            <a href="https://calendly.com/edinatram/phien-kham-pha" target="_blank" rel="noopener" class="btn btn--accent btn--lg">Đặt lịch phiên khám phá</a>
+            <p class="offer-note">Phiên khám phá là một buổi trò chuyện giá trị, không phải buổi bán hàng. Số lượng có hạn mỗi tuần để đảm bảo chiều sâu cho từng người.</p>
           </div>
         </div>
       </div>
@@ -809,17 +833,18 @@
           <div class="divider"></div>
         </div>
         <div class="faq-list">
+          <!-- Signature question — điểm chạm tâm lý quan trọng nhất -->
           <div class="faq-item" data-reveal>
             <button class="faq-q" aria-expanded="false">
-              <span>TINA Awakening có phải trị liệu tâm lý không?</span>
+              <span>Tôi chưa biết vấn đề của mình là gì thì sao?</span>
             </button>
-            <div class="faq-a"><div><div class="faq-a-inner">Đây là hành trình Coaching & Mentoring 1:1 kết hợp nền tảng tâm lý học, khai vấn, tâm linh và đời sống thực tế. Chương trình không thay thế điều trị y khoa hay trị liệu lâm sàng khi bạn đang cần hỗ trợ chuyên môn y tế.</div></div></div>
+            <div class="faq-a"><div><div class="faq-a-inner">Đó chính là lý do nên bắt đầu. Rất nhiều người đến với TINA Awakening trong trạng thái "biết là có gì đó chưa ổn" nhưng chưa gọi được thành tên. Phiên khám phá và những module đầu tiên được thiết kế để giúp bạn định vị hiện trạng, làm rõ điều mình thật sự muốn và nhìn thấy những vòng lặp đang âm thầm vận hành bên trong.</div></div></div>
           </div>
           <div class="faq-item" data-reveal>
             <button class="faq-q" aria-expanded="false">
-              <span>Tôi chưa biết vấn đề của mình là gì, có tham gia được không?</span>
+              <span>Tôi có cần chuẩn bị gì trước phiên khám phá không?</span>
             </button>
-            <div class="faq-a"><div><div class="faq-a-inner">Có. Những module đầu tiên được thiết kế để giúp bạn định vị hiện trạng, làm rõ điều mình thật sự muốn và nhìn thấy những vòng lặp đang vận hành bên trong.</div></div></div>
+            <div class="faq-a"><div><div class="faq-a-inner">Bạn chỉ cần mang theo sự thành thật với chính mình: điều đang khiến bạn bế tắc, điều bạn khao khát thay đổi, và mức độ sẵn sàng nhìn sâu vào bên trong.</div></div></div>
           </div>
           <div class="faq-item" data-reveal>
             <button class="faq-q" aria-expanded="false">
@@ -829,15 +854,15 @@
           </div>
           <div class="faq-item" data-reveal>
             <button class="faq-q" aria-expanded="false">
-              <span>Tôi có cần chuẩn bị gì trước phiên trải nghiệm không?</span>
+              <span>Sau 90 ngày có thể đi tiếp không?</span>
             </button>
-            <div class="faq-a"><div><div class="faq-a-inner">Bạn chỉ cần mang theo sự thành thật với chính mình: điều đang khiến bạn bế tắc, điều bạn khao khát thay đổi, và mức độ sẵn sàng nhìn sâu vào bên trong.</div></div></div>
+            <div class="faq-a"><div><div class="faq-a-inner">Có. 90 Ngày Chuyển Hoá là chặng khai sáng đầu tiên. Khi đã thấy rõ tầm nhìn 5-10 năm, nhiều người chọn đi tiếp vào TINA Alignment để lên kế hoạch và hiện thực hoá tầm nhìn ấy.</div></div></div>
           </div>
           <div class="faq-item" data-reveal>
             <button class="faq-q" aria-expanded="false">
-              <span>Sau 90 ngày có thể đi tiếp không?</span>
+              <span>TINA Awakening có phải trị liệu tâm lý không?</span>
             </button>
-            <div class="faq-a"><div><div class="faq-a-inner">Có. 90 Ngày Chuyển Hoá là chặng khai sáng đầu tiên. Khi đã thấy rõ tầm nhìn 5-10 năm, nhiều người chọn đi tiếp vào lộ trình chuyên sâu hơn để lên kế hoạch và hiện thực hoá tầm nhìn ấy.</div></div></div>
+            <div class="faq-a"><div><div class="faq-a-inner">Đây là hành trình Coaching & Mentoring 1:1 kết hợp nền tảng tâm lý học, khai vấn, tâm linh và đời sống thực tế. Chương trình không thay thế điều trị y khoa hay trị liệu lâm sàng khi bạn đang cần hỗ trợ chuyên môn y tế.</div></div></div>
           </div>
         </div>
       </div>
@@ -848,7 +873,7 @@
       <div class="container">
         <h2>Hãy đặt lịch ngay hôm nay</h2>
         <p style="max-width: 660px;">Đừng bỏ lỡ cơ hội thay đổi cuộc đời mình. Một cuộc trò chuyện đủ thành thật có thể là điểm khởi đầu cho một hướng đi hoàn toàn mới.</p>
-        <a href="lien-he.html?program=awakening" class="btn btn--accent btn--lg">Đặt lịch kết nối với Edina Trâm</a>
+        <a href="https://calendly.com/edinatram/phien-kham-pha" target="_blank" rel="noopener" class="btn btn--accent btn--lg">Đặt lịch phiên khám phá</a>
         <div class="contact-line">
           <span>Website: edinatram.vn</span>
           <span>WhatsApp/Zalo: (+84) 88-9590-888</span>
