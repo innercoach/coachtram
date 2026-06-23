@@ -39,3 +39,6 @@ static-site/css/tailwind.css
 .env
 .env.*
 !.env.example
+
+# Visual brainstorming companion (local session files)
+.superpowers/
