@@ -155,7 +155,6 @@
 }
 
 .srv-section--dark {
-  background: linear-gradient(170deg, var(--emerald-noir) 0%, var(--deep-forest-ink) 100%);
   color: #fff;
 }
 
@@ -496,7 +495,6 @@
 /* ─── CTA Final Section ─── */
 .srv-cta-final {
   text-align: center;
-  background: linear-gradient(170deg, var(--emerald-noir) 0%, var(--deep-forest-ink) 100%);
   padding-block: var(--space-24);
   position: relative;
   overflow: hidden;
@@ -860,4 +858,24 @@
 .timeline-item p {
   font-size: var(--text-sm);
   line-height: 1.7;
+}
+
+/* ── Bridge: apply Emerald Veil to dark service sections ── */
+.srv-section--dark:not(.bg-sacred-pattern):not(.bg-silk-orbit) {
+  background:
+    radial-gradient(ellipse 800px 400px at 12% 15%, rgba(241, 216, 154, 0.20), transparent 60%),
+    radial-gradient(ellipse 620px 380px at 88% 88%, rgba(11, 138, 102, 0.35), transparent 58%),
+    linear-gradient(138deg, #012E24 0%, #014F3D 46%, #0B1F19 100%);
+}
+.srv-section--dark:not(.bg-sacred-pattern):not(.bg-silk-orbit)::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    115deg,
+    transparent 0% 41%,
+    rgba(255, 255, 255, 0.04) 41% 44%,
+    transparent 44% 100%
+  );
 }

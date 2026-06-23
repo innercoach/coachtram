@@ -296,9 +296,24 @@
 
 /* ─── Book Section ─── */
 .book-section {
-  background: linear-gradient(170deg, var(--emerald-noir) 0%, var(--deep-forest-ink) 100%);
   position: relative;
   overflow: hidden;
+  background:
+    radial-gradient(ellipse 800px 400px at 12% 15%, rgba(241, 216, 154, 0.20), transparent 60%),
+    radial-gradient(ellipse 620px 380px at 88% 88%, rgba(11, 138, 102, 0.35), transparent 58%),
+    linear-gradient(138deg, #012E24 0%, #014F3D 46%, #0B1F19 100%);
+}
+.book-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    115deg,
+    transparent 0% 41%,
+    rgba(255, 255, 255, 0.04) 41% 44%,
+    transparent 44% 100%
+  );
 }
 
 .book-grid {
@@ -402,7 +417,6 @@
 /* ─── CTA Final Section ─── */
 .cta-final {
   text-align: center;
-  background: linear-gradient(170deg, var(--emerald-noir) 0%, var(--deep-forest-ink) 100%);
   padding-block: var(--space-32);
   position: relative;
   overflow: hidden;
