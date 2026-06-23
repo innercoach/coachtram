@@ -129,6 +129,16 @@
     .tina-callout--emerald::before { color: var(--champagne-glow); opacity: 0.35; }
     .tina-callout--emerald p { color: #ffffff; }
 
+    /* Strong declaration — filled champagne gold (warm alternative to emerald) */
+    .tina-callout--gold {
+      background:
+        radial-gradient(120% 140% at 50% 0%, rgba(255, 255, 255, 0.55), transparent 62%),
+        linear-gradient(155deg, #ecd28d, #c8a244);
+      border-color: rgba(0, 55, 42, 0.28);
+    }
+    .tina-callout--gold::before { color: #00372a; opacity: 0.22; }
+    .tina-callout--gold p { color: #0b1f19; }
+
     /* Lead line above the 3-tầng list */
     .method-lead {
       font-family: var(--font-heading);
@@ -504,7 +514,7 @@
         <div class="tina-callout" data-reveal>
           <p>Khủng hoảng quay lại vì tiềm thức — nền tảng sống bên trong bạn — chưa được tái cấu trúc.</p>
         </div>
-        <div class="tina-callout tina-callout--emerald" data-reveal>
+        <div class="tina-callout tina-callout--gold" data-reveal>
           <p>Tôi không chỉ giúp bạn ổn hơn. Tôi giúp bạn thoát khỏi vòng lặp khiến bạn cứ quay lại bế tắc cũ.</p>
         </div>
       </div>
