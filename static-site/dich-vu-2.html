@@ -72,10 +72,71 @@
     .tina-quote p {
       color: var(--color-fg);
       font-family: var(--font-heading);
-      font-size: var(--text-xl);
+      font-size: clamp(var(--text-xl), 2.4vw, var(--text-2xl));
+      font-weight: 500;
       font-style: italic;
       line-height: 1.55;
       margin: 0;
+    }
+
+    /* ── Premium câu-chốt callout (editorial declaration) ── */
+    .tina-callout {
+      position: relative;
+      max-width: 880px;
+      margin: var(--space-8) auto 0;
+      padding: var(--space-8) var(--space-8) calc(var(--space-8) + 4px);
+      text-align: center;
+      background:
+        radial-gradient(120% 140% at 50% 0%, rgba(200, 162, 68, 0.12), transparent 60%),
+        linear-gradient(180deg, #fbf8f1, #ffffff);
+      border: 1px solid rgba(200, 162, 68, 0.40);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+    }
+
+    .tina-callout::before {
+      content: "\201C";
+      position: absolute;
+      top: -0.18em;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: var(--font-heading);
+      font-size: 5rem;
+      line-height: 1;
+      color: var(--royal-gold);
+      opacity: 0.28;
+      pointer-events: none;
+    }
+
+    .tina-callout p {
+      position: relative;
+      margin: 0;
+      font-family: var(--font-heading);
+      font-size: clamp(var(--text-2xl), 3.2vw, var(--text-3xl));
+      font-weight: 600;
+      line-height: 1.45;
+      color: var(--color-fg);
+    }
+
+    /* Strongest declaration — emerald surface */
+    .tina-callout--emerald {
+      background:
+        radial-gradient(120% 140% at 50% 0%, rgba(241, 216, 154, 0.18), transparent 60%),
+        linear-gradient(155deg, #06513c, #00372a);
+      border-color: rgba(200, 162, 68, 0.5);
+    }
+    .tina-callout--emerald::before { color: var(--champagne-glow); opacity: 0.35; }
+    .tina-callout--emerald p { color: #ffffff; }
+
+    /* Lead line above the 3-tầng list */
+    .method-lead {
+      font-family: var(--font-heading);
+      font-size: var(--text-lg);
+      font-weight: 600;
+      font-style: italic;
+      color: var(--page-accent);
+      margin-bottom: var(--space-4);
     }
 
     .tina-copy {
@@ -406,6 +467,9 @@
         <div class="tina-quote" style="max-width: 860px; margin-inline: auto;">
           <p>Tôi không giỏi hơn bạn. Tôi chỉ vấp ngã trước bạn.</p>
         </div>
+        <div class="tina-callout tina-callout--emerald" data-reveal>
+          <p>Tôi không chỉ truyền đạt lý thuyết chuyển hoá. Tôi đã đi qua đúng con đường mà bạn đang đi.</p>
+        </div>
       </div>
     </section>
 
@@ -416,19 +480,20 @@
           <span class="badge badge--gold">Gốc rễ chuyển hoá</span>
           <h2 style="margin-top: var(--space-4);">Khủng hoảng quay lại không phải vì bạn yếu</h2>
           <div class="divider"></div>
-          <p>Phần lớn giải pháp chỉ chữa phần ngọn: coaching ngắn hạn, trị liệu tách rời đời sống thật, chữa lành dừng ở cảm xúc. Nỗi đau quay lại vì nền tảng sống bên trong bạn chưa được tái cấu trúc.</p>
+          <p>Phần lớn giải pháp chỉ chữa phần ngọn: coaching ngắn hạn, trị liệu tách rời đời sống thật, chữa lành dừng ở cảm xúc.</p>
         </div>
         <div class="method-layout">
           <div class="method-col method-col--negative" data-reveal>
             <h3>Khi chỉ xử lý phần ngọn</h3>
             <ul class="method-list">
               <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#b32d2e" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg><span>Bạn thấy nhẹ đi một thời gian, rồi mọi thứ lặng lẽ trở về như cũ.</span></li>
-              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#b32d2e" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg><span>Bạn tự hỏi phải chăng mình chưa đủ cố gắng, chưa đủ kỷ luật, chưa đủ tốt.</span></li>
+              <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#b32d2e" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg><span>Bạn cảm thấy mình chưa đủ cố gắng, chưa đủ kỷ luật, chưa đủ tốt.</span></li>
               <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#b32d2e" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg><span>Bạn học thêm rất nhiều nhưng vẫn không thoát khỏi vòng lặp cũ.</span></li>
             </ul>
           </div>
           <div class="method-col method-col--positive" data-reveal>
             <h3>TINA làm việc ở tầng sâu hơn</h3>
+            <p class="method-lead">Chuyển hoá chỉ bền vững khi ba tầng cùng thay đổi.</p>
             <ul class="method-list">
               <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--page-accent)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg><span>Nhận thức được khai mở để bạn thật sự thấy rõ mình đang sống từ đâu.</span></li>
               <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--page-accent)" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg><span>Hành vi được làm mới bằng công cụ thực hành, không chỉ bằng cảm hứng.</span></li>
@@ -436,25 +501,11 @@
             </ul>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- ═══ S5: TRUE TRANSFORMATION ═══ -->
-    <section class="srv-section" aria-label="Sáu dấu hiệu chuyển hoá thật sự">
-      <div class="container">
-        <div class="section-header">
-          <span class="badge">Chuyển hoá thật sự</span>
-          <h2 style="margin-top: var(--space-4);">90 ngày này không phải một khoảnh khắc "à há"</h2>
-          <div class="divider"></div>
-          <p>Một chuyển hoá thật cần thời gian để ngấm, để sống, để trở thành chính con người bạn. TINA được thiết kế quanh sáu dấu hiệu chuyển hoá này.</p>
+        <div class="tina-callout" data-reveal>
+          <p>Khủng hoảng quay lại vì tiềm thức — nền tảng sống bên trong bạn — chưa được tái cấu trúc.</p>
         </div>
-        <div class="tina-sign-grid" data-reveal-stagger>
-          <div class="tina-sign-card" data-reveal><h3>01 · Là một quá trình</h3><p>Nó không xảy ra trong một buổi học truyền cảm hứng, mà cần thời gian để lắng xuống và trở thành nền tảng sống mới.</p></div>
-          <div class="tina-sign-card" data-reveal><h3>02 · Đến từ tự nhận thức</h3><p>Không ai thay đổi bạn từ bên ngoài. Vai trò của người đồng hành là giúp bạn nhìn rõ để chuyển hoá từ bên trong.</p></div>
-          <div class="tina-sign-card" data-reveal><h3>03 · Diễn ra âm thầm</h3><p>Những đổi thay quan trọng nhất thường không ồn ào, mà xảy ra ở nơi sâu kín chỉ bạn là người đầu tiên nhận ra.</p></div>
-          <div class="tina-sign-card" data-reveal><h3>04 · Được kích hoạt an toàn</h3><p>Chuyển hoá thường bắt đầu từ một cú chạm đủ sâu. Chương trình tạo ra những điểm chạm ấy trong một không gian nâng đỡ.</p></div>
-          <div class="tina-sign-card" data-reveal><h3>05 · Đòi hỏi dám tổn thương</h3><p>Bạn cần dám thành thật với chính mình về những điều khó chấp nhận nhất. Đó là cái giá, và cũng là cánh cửa.</p></div>
-          <div class="tina-sign-card" data-reveal><h3>06 · Là tấm vé một chiều</h3><p>Khi nền tảng tư duy đã khác, bạn không thể quay lại phiên bản cũ theo cách cũ nữa.</p></div>
+        <div class="tina-callout tina-callout--emerald" data-reveal>
+          <p>Tôi không chỉ giúp bạn ổn hơn. Tôi giúp bạn thoát khỏi vòng lặp khiến bạn cứ quay lại bế tắc cũ.</p>
         </div>
       </div>
     </section>
@@ -486,6 +537,25 @@
         </div>
         <div class="tina-quote" style="max-width: 860px; margin-inline: auto;">
           <p>Chương trình này chưa dành cho bạn nếu bạn đang tìm một con đường tắt, một lời trấn an nhanh, hoặc mong người khác thay đổi cuộc đời giùm mình.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ S6b: WHAT MAKES IT DIFFERENT ═══ -->
+    <section class="srv-section" aria-label="Điều gì khiến 90 ngày với TINA Awakening trở nên khác biệt">
+      <div class="container">
+        <div class="section-header">
+          <span class="badge badge--gold">Vì sao chọn TINA Awakening</span>
+          <h2 style="margin-top: var(--space-4);">Điều gì khiến 90 ngày với TINA Awakening trở nên khác biệt?</h2>
+          <div class="divider"></div>
+          <p>Không phải một khoá học đại trà, mà là một hành trình được may đo cho riêng bạn — bởi một người đồng hành hội tụ cả bốn thế giới và đã đi qua chính con đường ấy.</p>
+        </div>
+        <div class="tina-sign-grid" data-reveal-stagger>
+          <div class="tina-sign-card" data-reveal><h3>Hành trình 1:1, may đo riêng cho bạn</h3><p>Không phải một khoá học đại trà. Mỗi buổi xoay quanh đúng câu chuyện, đúng nỗi đau, đúng nhịp của riêng bạn.</p></div>
+          <div class="tina-sign-card" data-reveal><h3>Bốn thế giới trong một người đồng hành</h3><p>Tâm lý học, Khai vấn, Tâm linh và Tài chính kết hợp nhuần nhuyễn — để bạn được chữa lành mà vẫn vững vàng giữa đời thật.</p></div>
+          <div class="tina-sign-card" data-reveal><h3>Một không gian an toàn, kiên nhẫn và không phán xét</h3><p>Nơi bạn được phép mong manh, được phép thật, để buông những gì đã mang theo quá lâu.</p></div>
+          <div class="tina-sign-card" data-reveal><h3>Không chỉ thấu hiểu, mà có công cụ</h3><p>Bạn rời mỗi buổi với một bộ công cụ thực hành để tự ra quyết định, tự làm dịu mình và tự đứng vững khi sóng gió quay lại.</p></div>
+          <div class="tina-sign-card" data-reveal><h3>Người đồng hành đã đi qua chính con đường ấy</h3><p>Tôi không nói với bạn từ trên bục giảng, mà từ chính những vết sẹo đã lành của đời mình.</p></div>
         </div>
       </div>
     </section>
