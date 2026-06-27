@@ -6,6 +6,21 @@
    decorative pseudo-element layers.
    ═══════════════════════════════════════════════════════════ */
 
+/* ── Shared Emerald Veil tokens — used by the utility class and
+   bridge selectors in design-system/home/service CSS.          */
+:root {
+  --ev-gradient:
+    radial-gradient(ellipse 800px 400px at 12% 15%, rgba(241, 216, 154, 0.20), transparent 60%),
+    radial-gradient(ellipse 620px 380px at 88% 88%, rgba(11, 138, 102, 0.35), transparent 58%),
+    linear-gradient(138deg, #012E24 0%, #014F3D 46%, #0B1F19 100%);
+  --ev-veil: linear-gradient(
+    115deg,
+    transparent 0% 41%,
+    rgba(255, 255, 255, 0.04) 41% 44%,
+    transparent 44% 100%
+  );
+}
+
 /* ── Shared containment ─────────────────────────────────────
    Pseudo-element patterns use negative insets and rotation, so
    the host must clip them. Direct children (usually `.container`)
@@ -30,10 +45,7 @@
    Champagne glow top-left, emerald pulse bottom-right,
    diagonal light veil at low opacity.                        */
 .bg-emerald-veil {
-  background:
-    radial-gradient(ellipse 800px 400px at 12% 15%, rgba(241, 216, 154, 0.20), transparent 60%),
-    radial-gradient(ellipse 620px 380px at 88% 88%, rgba(11, 138, 102, 0.35), transparent 58%),
-    linear-gradient(138deg, #012E24 0%, #014F3D 46%, #0B1F19 100%);
+  background: var(--ev-gradient);
 }
 
 /* Subtle diagonal veil overlay via pseudo-element */
@@ -42,12 +54,7 @@
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: linear-gradient(
-    115deg,
-    transparent 0% 41%,
-    rgba(255, 255, 255, 0.04) 41% 44%,
-    transparent 44% 100%
-  );
+  background: var(--ev-veil);
 }
 
 /* ── 2. Sacred Paper — signature geometric pattern ──────────
@@ -82,9 +89,17 @@
   background: radial-gradient(ellipse at 50% 50%, transparent 38%, rgba(0, 0, 0, 0.16) 100%);
 }
 
-/* Sacred Paper sits on a dark base — content rendered directly on the
-   pattern needs light text. Cards (.method-col) keep their own light
-   surface + dark text, so we target only section headers and callouts. */
+/* Sacred Paper sits on a dark base — set a base light color so any
+   text added directly to the section is legible. Cards (.method-col)
+   pin their own dark color explicitly in service.css.                */
+.bg-sacred-pattern {
+  color: #fff;
+}
+
+.bg-sacred-pattern p {
+  color: rgba(255, 255, 255, 0.85);
+}
+
 .bg-sacred-pattern .section-header h2,
 .bg-sacred-pattern .section-header h3 {
   color: #fff;

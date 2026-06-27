@@ -97,9 +97,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const program = params.get('program');
     const aliases = {
       first_connection: 'first-connection',
-      firstconnection: 'first-connection',
-      connect_3: 'awareness',
-      'connect-3': 'awareness'
+      firstconnection: 'first-connection'
     };
     const value = aliases[program] || program;
 
