@@ -110,8 +110,9 @@
 .srv-hero-img img {
   max-height: 600px;
   width: auto;
-  mask-image: linear-gradient(to bottom, black 82%, transparent 100%);
-  -webkit-mask-image: linear-gradient(to bottom, black 82%, transparent 100%);
+  border-radius: var(--radius-lg);
+  border: 3px solid var(--pale-gold-sand);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.18), 0 6px 16px rgba(1, 79, 61, 0.10);
 }
 
 .srv-hero-img::before {

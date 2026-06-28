@@ -370,6 +370,125 @@
         padding: var(--space-5);
       }
     }
+    /* ── Signature triangle section — two-column layout ── */
+    .tina-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-10, 3rem);
+      align-items: center;
+      margin-top: var(--space-8, 2rem);
+    }
+
+    .triangle-visual {
+      text-align: center;
+    }
+
+    .triangle-visual svg {
+      max-width: 560px;
+      width: 100%;
+      height: auto;
+      margin-inline: auto;
+      filter: drop-shadow(0 18px 40px rgba(1, 79, 61, 0.16));
+    }
+
+    .tina-cards {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-5, 1.25rem);
+    }
+
+    .tina-card {
+      position: relative;
+      overflow: hidden;
+      background: var(--color-surface, #fff);
+      border: 1px solid var(--color-border-light, #ece6d8);
+      border-radius: var(--radius-lg, 1.25rem);
+      padding: var(--space-7, 1.75rem) var(--space-8, 2rem);
+      text-align: left;
+      box-shadow: var(--shadow-sm, 0 2px 10px rgba(1, 79, 61, 0.05));
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .tina-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 28px rgba(1, 79, 61, 0.1);
+    }
+
+    .tina-card::after {
+      content: 'C';
+      position: absolute;
+      top: 50%;
+      right: var(--space-6, 1.5rem);
+      transform: translateY(-50%);
+      font-family: var(--font-heading, 'Cormorant Garamond', Georgia, serif);
+      font-size: 5rem;
+      font-weight: 700;
+      line-height: 1;
+      color: var(--color-primary, #005B45);
+      opacity: 0.06;
+      pointer-events: none;
+    }
+
+    .tina-card h3 {
+      font-family: var(--font-body, 'Be Vietnam Pro', sans-serif);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--color-primary, #005B45);
+      margin: 0 0 var(--space-2, 0.5rem);
+      letter-spacing: 0.01em;
+    }
+
+    .tina-card h3 span {
+      font-weight: 400;
+      color: var(--color-fg, #0b1f19);
+    }
+
+    .tina-card p {
+      font-size: 0.9rem;
+      line-height: 1.7;
+      color: var(--color-fg-muted, #4A5B54);
+      margin: 0;
+      position: relative;
+    }
+
+    @media (max-width: 960px) {
+      .tina-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .triangle-visual svg {
+        max-width: 480px;
+      }
+    }
+    /* ── Outcome section — 2/3 content + 1/3 image ── */
+    .outcome-layout {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: var(--space-8, 2rem);
+      align-items: start;
+      margin-top: var(--space-8, 2rem);
+    }
+
+    .outcome-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: var(--radius-lg, 1.25rem);
+      border: 3px solid var(--pale-gold-sand, #F5ECD7);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    @media (max-width: 860px) {
+      .outcome-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .outcome-img {
+        order: -1;
+        max-width: 400px;
+        margin-inline: auto;
+      }
+    }
   </style>
 </head>
 <body>
@@ -398,9 +517,7 @@
         <a href="dich-vu-1.html">TINA Awareness</a>
         <a href="dich-vu-2.html" class="active">TINA Awakening</a>
         <a href="dich-vu-3.html">TINA Alignment</a>
-        <span class="nav-cta">
-          <a href="lien-he.html?program=awakening" class="btn btn--accent">Đặt lịch Tư vấn</a>
-        </span>
+
       </nav>
     </div>
   </header>
@@ -435,7 +552,7 @@
             </div>
           </div>
 
-          <a href="https://calendly.com/edinatram/phien-kham-pha" target="_blank" rel="noopener" class="btn btn--primary btn--lg">Đặt lịch phiên khám phá</a>
+          <a href="https://calendly.com/edinatram/phien-kham-pha" target="_blank" rel="noopener" class="btn btn--accent btn--lg">Đặt lịch phiên khám phá</a>
         </div>
         <div class="srv-hero-img" data-reveal="right">
           <img src="hero_trang_tina_awakening.jpg" alt="Edina Trâm - TINA Awakening" loading="eager" fetchpriority="high">
@@ -531,11 +648,8 @@
             </ul>
           </div>
         </div>
-        <div class="tina-callout" data-reveal>
-          <p>Khủng hoảng quay lại vì tiềm thức — nền tảng sống bên trong bạn — chưa được tái cấu trúc.</p>
-        </div>
         <div class="tina-callout tina-callout--gold" data-reveal>
-          <p>Tôi không chỉ giúp bạn ổn hơn. Tôi giúp bạn thoát khỏi vòng lặp khiến bạn cứ quay lại bế tắc cũ.</p>
+          <p>Khủng hoảng quay lại vì tiềm thức — nền tảng sống bên trong bạn — chưa được tái cấu trúc. Tôi không chỉ giúp bạn ổn hơn. Tôi giúp bạn thoát khỏi vòng lặp khiến bạn cứ quay lại bế tắc cũ.</p>
         </div>
       </div>
     </section>
@@ -591,29 +705,98 @@
     </section>
 
     <!-- ═══ S7: BENEFITS / 3C ═══ -->
-    <section class="srv-section" aria-label="Tam giác chuyển hoá 3C">
+    <section class="section section--alt bg-sacred-pattern" aria-label="Tam giác chuyển hoá 3C">
       <div class="container">
         <div class="section-header">
-          <span class="badge">Tam giác chuyển hoá 3C</span>
-          <h2 style="margin-top: var(--space-4);">Ba trụ cột chữa lành ba nỗi đau cốt lõi</h2>
+          <span class="badge badge--gold">Tam giác chuyển hoá 3C</span>
+          <h2 style="margin-top: var(--space-4);">Clarity · Confidence · Connection</h2>
           <div class="divider"></div>
-          <p>Toàn bộ hành trình được xây trên Clarity, Confidence và Connection - mỗi trụ cột nâng đỡ một tầng chuyển hoá của bạn.</p>
+          <p>Transformation · Into · New · Awareness</p>
         </div>
-        <div class="value-grid" data-reveal-stagger>
-          <div class="value-card" data-reveal>
-            <div class="value-num">C</div>
-            <h3 style="color: var(--page-accent);">CLARITY - Sự thông suốt</h3>
-            <p>Một lộ trình rõ ràng giúp chữa lành nỗi đau mất phương hướng, để bạn biết mình đang ở đâu và thật sự muốn đi đâu.</p>
+        <div class="tina-layout" data-reveal>
+          <!-- Left column: Triangle visual -->
+          <div class="triangle-visual">
+            <svg viewBox="0 0 680 640" role="img"
+              aria-label="Biểu đồ tam giác chuyển hoá T.I.N.A — Clarity, Confidence, Connection"
+              xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="goldMetal" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#8A6A28" />
+                  <stop offset="24%" stop-color="#C8A244" />
+                  <stop offset="50%" stop-color="#F6E1A2" />
+                  <stop offset="63%" stop-color="#DCB95C" />
+                  <stop offset="80%" stop-color="#C8A244" />
+                  <stop offset="100%" stop-color="#8A6A28" />
+                </linearGradient>
+                <radialGradient id="emeraldGlow" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="#0B8A66" stop-opacity="0.20" />
+                  <stop offset="55%" stop-color="#005B45" stop-opacity="0.06" />
+                  <stop offset="100%" stop-color="#005B45" stop-opacity="0" />
+                </radialGradient>
+              </defs>
+
+              <!-- Mystical glow + rings -->
+              <circle cx="340" cy="360" r="232" fill="url(#emeraldGlow)" />
+              <circle cx="340" cy="360" r="250" fill="none" stroke="#C8A244" stroke-opacity="0.22" stroke-width="1" />
+              <circle cx="340" cy="360" r="250" fill="none" stroke="#C8A244" stroke-opacity="0.30" stroke-width="1"
+                stroke-dasharray="2 12" />
+
+              <!-- Triangle -->
+              <path d="M340 190 L510 452 L170 452 Z" fill="#005B45" fill-opacity="0.05" stroke="url(#goldMetal)"
+                stroke-width="2.5" stroke-linejoin="round" />
+
+              <!-- Vertex nodes -->
+              <circle cx="340" cy="190" r="6" fill="url(#goldMetal)" />
+              <circle cx="170" cy="452" r="6" fill="url(#goldMetal)" />
+              <circle cx="510" cy="452" r="6" fill="url(#goldMetal)" />
+
+              <!-- Center wordmark -->
+              <text x="340" y="345" text-anchor="middle" font-family="'Cormorant Garamond', Georgia, serif" font-size="48"
+                font-weight="600" letter-spacing="4" fill="url(#goldMetal)">T.I.N.A<tspan font-size="16" dy="-20"
+                  letter-spacing="0" fill="#C8A244">™</tspan></text>
+              <text x="340" y="380" text-anchor="middle" font-family="'Be Vietnam Pro', sans-serif" font-size="11.5"
+                letter-spacing="2" fill="#F1D89A" fill-opacity="0.78">TRANSFORMATION INTO NEW AWARENESS</text>
+
+              <!-- Vertex label: Clarity (top) -->
+              <text x="340" y="60" text-anchor="middle" font-family="'Be Vietnam Pro', sans-serif" font-size="14"
+                font-weight="700" letter-spacing="2.5" fill="#E2C36C">CLARITY</text>
+              <text x="340" y="84" text-anchor="middle" font-family="'Cormorant Garamond', Georgia, serif" font-size="19"
+                font-style="italic" fill="#F1D89A">Sự thông suốt</text>
+              <text x="340" y="106" text-anchor="middle" font-family="'Be Vietnam Pro', sans-serif" font-size="12"
+                fill="rgba(255,255,255,0.74)">Thấy rõ hướng đi của chính mình</text>
+
+              <!-- Vertex label: Confidence (bottom-left) -->
+              <text x="170" y="502" text-anchor="middle" font-family="'Be Vietnam Pro', sans-serif" font-size="14"
+                font-weight="700" letter-spacing="2.5" fill="#E2C36C">CONFIDENCE</text>
+              <text x="170" y="526" text-anchor="middle" font-family="'Cormorant Garamond', Georgia, serif" font-size="19"
+                font-style="italic" fill="#F1D89A">Tự tin làm chủ</text>
+              <text x="170" y="548" text-anchor="middle" font-family="'Be Vietnam Pro', sans-serif" font-size="12"
+                fill="rgba(255,255,255,0.74)">Vững vàng từ bên trong</text>
+
+              <!-- Vertex label: Connection (bottom-right) -->
+              <text x="510" y="502" text-anchor="middle" font-family="'Be Vietnam Pro', sans-serif" font-size="14"
+                font-weight="700" letter-spacing="2.5" fill="#E2C36C">CONNECTION</text>
+              <text x="510" y="526" text-anchor="middle" font-family="'Cormorant Garamond', Georgia, serif" font-size="19"
+                font-style="italic" fill="#F1D89A">Khơi dậy kết nối</text>
+              <text x="510" y="548" text-anchor="middle" font-family="'Be Vietnam Pro', sans-serif" font-size="12"
+                fill="rgba(255,255,255,0.74)">Kết nối lại với chính mình</text>
+            </svg>
           </div>
-          <div class="value-card" data-reveal>
-            <div class="value-num">C</div>
-            <h3 style="color: var(--page-accent);">CONFIDENCE - Tự tin làm chủ</h3>
-            <p>Phục hồi năng lực ra quyết định và sự vững vàng nội tâm, chữa lành sự mất mát niềm tin vào chính mình.</p>
-          </div>
-          <div class="value-card" data-reveal>
-            <div class="value-num">C</div>
-            <h3 style="color: var(--page-accent);">CONNECTION - Khơi dậy kết nối</h3>
-            <p>Kết nối lại với bản thân và người thân, chữa lành sự thiếu hoà hợp trong những mối quan hệ quan trọng.</p>
+
+          <!-- Right column: 3C description cards -->
+          <div class="tina-cards">
+            <div class="tina-card">
+              <h3>CLARITY – <span>Sự thông suốt</span></h3>
+              <p>Một lộ trình rõ ràng giúp chữa lành nỗi đau mất phương hướng, để bạn biết mình đang ở đâu và thật sự muốn đi đâu.</p>
+            </div>
+            <div class="tina-card">
+              <h3>CONFIDENCE – <span>Tự tin làm chủ</span></h3>
+              <p>Phục hồi năng lực ra quyết định và sự vững vàng nội tâm, chữa lành sự mất mát niềm tin vào chính mình.</p>
+            </div>
+            <div class="tina-card">
+              <h3>CONNECTION – <span>Khơi dậy kết nối</span></h3>
+              <p>Kết nối lại với bản thân và người thân, chữa lành sự thiếu hoà hợp trong những mối quan hệ quan trọng.</p>
+            </div>
           </div>
         </div>
       </div>
@@ -693,31 +876,40 @@
           <h2 style="margin-top: var(--space-4);">Bạn mang theo một nền tảng sống mới</h2>
           <div class="divider"></div>
         </div>
-        <div class="deliv-grid" data-reveal-stagger>
-          <div class="deliv-card" data-reveal>
-            <h3>Bình an không còn dễ vỡ</h3>
-            <p>Một sự bình an đến từ bên trong, không còn phải vay mượn từ bên ngoài.</p>
-          </div>
-          <div class="deliv-card" data-reveal>
-            <h3>Con đường sống rõ ràng</h3>
-            <p>Bạn biết mình muốn đi đâu, về đâu, và không còn loay hoay trong cảm giác mơ hồ.</p>
-          </div>
-          <div class="deliv-card" data-reveal>
-            <h3>Bộ công cụ tự đứng vững</h3>
-            <p>Bạn có công cụ để tự ra quyết định, tự làm dịu mình và tự đứng vững khi sóng gió quay lại.</p>
-          </div>
-        </div>
-        <div class="method-layout" style="margin-top: var(--space-8);">
-          <div class="method-col method-col--positive" data-reveal>
-            <h3>Cam kết của tôi</h3>
-            <p>Tôi tin vào giá trị của hành trình này, nên tôi muốn bạn bắt đầu mà không phải gánh rủi ro một mình.</p>
-            <div class="tina-quote" style="margin-bottom: 0;">
-              <p>Trong 30 ngày đầu tiên, nếu bạn thấy hành trình này không phù hợp, tôi sẽ hoàn lại toàn bộ học phí - không cần lý do.</p>
+        <div class="outcome-layout">
+          <!-- Left 2/3: content -->
+          <div>
+            <div class="deliv-grid" data-reveal-stagger>
+              <div class="deliv-card" data-reveal>
+                <h3>Bình an không còn dễ vỡ</h3>
+                <p>Một sự bình an đến từ bên trong, không còn phải vay mượn từ bên ngoài.</p>
+              </div>
+              <div class="deliv-card" data-reveal>
+                <h3>Con đường sống rõ ràng</h3>
+                <p>Bạn biết mình muốn đi đâu, về đâu, và không còn loay hoay trong cảm giác mơ hồ.</p>
+              </div>
+              <div class="deliv-card" data-reveal>
+                <h3>Bộ công cụ tự đứng vững</h3>
+                <p>Bạn có công cụ để tự ra quyết định, tự làm dịu mình và tự đứng vững khi sóng gió quay lại.</p>
+              </div>
+            </div>
+            <div class="method-layout" style="margin-top: var(--space-8);">
+              <div class="method-col method-col--positive" data-reveal>
+                <h3>Cam kết của tôi</h3>
+                <p>Tôi tin vào giá trị của hành trình này, nên tôi muốn bạn bắt đầu mà không phải gánh rủi ro một mình.</p>
+                <div class="tina-quote" style="margin-bottom: 0;">
+                  <p>Trong 30 ngày đầu tiên, nếu bạn thấy hành trình này không phù hợp, tôi sẽ hoàn lại toàn bộ học phí - không cần lý do.</p>
+                </div>
+              </div>
+              <div class="method-col" data-reveal>
+                <h3>Điều tôi cần ở bạn</h3>
+                <p>Hãy thật sự hiện diện. Hãy có mặt và làm việc với chính mình trong những buổi đồng hành. Phần còn lại, hãy để chúng tôi lo.</p>
+              </div>
             </div>
           </div>
-          <div class="method-col" data-reveal>
-            <h3>Điều tôi cần ở bạn</h3>
-            <p>Hãy thật sự hiện diện. Hãy có mặt và làm việc với chính mình trong những buổi đồng hành. Phần còn lại, hãy để chúng tôi lo.</p>
+          <!-- Right 1/3: image -->
+          <div class="outcome-img" data-reveal="right">
+            <img src="tina_awakening_success_sau_90_ngay.jpg" alt="Kết quả sau 90 ngày TINA Awakening" loading="lazy">
           </div>
         </div>
       </div>
