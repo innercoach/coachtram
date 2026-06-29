@@ -299,9 +299,11 @@
 .book-section {
   position: relative;
   overflow: hidden;
+}
+.book-section:not([class*="bg-tram"]) {
   background: var(--ev-gradient);
 }
-.book-section::after {
+.book-section:not([class*="bg-tram"])::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -417,10 +419,10 @@
 
 /* Bridge: bare .cta-final (no Silk Orbit) still gets a dark default,
    so the white CTA text never lands on a transparent background. */
-.cta-final:not(.bg-silk-orbit):not(.bg-emerald-veil) {
+.cta-final:not(.bg-silk-orbit):not(.bg-emerald-veil):not([class*="bg-tram"]) {
   background: var(--ev-gradient);
 }
-.cta-final:not(.bg-silk-orbit):not(.bg-emerald-veil)::after {
+.cta-final:not(.bg-silk-orbit):not(.bg-emerald-veil):not([class*="bg-tram"])::after {
   content: "";
   position: absolute;
   inset: 0;

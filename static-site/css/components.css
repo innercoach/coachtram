@@ -686,22 +686,37 @@
   margin-right: 2px;
 }
 
+/* Speaker header: square rounded avatar before name + title */
+.testi-head {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.testi-avatar-wrap {
+  flex: none;
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-alt);
+}
+
+.testi-avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
 @media (max-width: 1024px) {
   .testi-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 @media (max-width: 600px) {
   .testi-grid { grid-template-columns: 1fr; }
-  .testi-img-wrap {
-    width: 80px;
-    height: 80px;
-    border-radius: var(--radius-full);
-    aspect-ratio: 1;
-  }
-  .testi-card {
-    flex-direction: row;
-    align-items: flex-start;
-  }
 }
 
 

@@ -253,7 +253,7 @@ ul, ol {
   position: relative;
 }
 
-.section--alt {
+.section--alt:not([class*="bg-tram"]) {
   background: var(--color-bg-alt);
 }
 
@@ -327,10 +327,10 @@ ul, ol {
 }
 
 /* ── Bridge: apply Emerald Veil to all generic dark sections ── */
-.section--dark:not(.bg-sacred-pattern):not(.bg-silk-orbit) {
+.section--dark:not(.bg-sacred-pattern):not(.bg-silk-orbit):not([class*="bg-tram"]) {
   background: var(--ev-gradient);
 }
-.section--dark:not(.bg-sacred-pattern):not(.bg-silk-orbit)::after {
+.section--dark:not(.bg-sacred-pattern):not(.bg-silk-orbit):not([class*="bg-tram"])::after {
   content: "";
   position: absolute;
   inset: 0;

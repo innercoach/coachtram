@@ -863,10 +863,10 @@
 }
 
 /* ── Bridge: apply Emerald Veil to dark service sections ── */
-.srv-section--dark:not(.bg-sacred-pattern):not(.bg-silk-orbit) {
+.srv-section--dark:not(.bg-sacred-pattern):not(.bg-silk-orbit):not([class*="bg-tram"]) {
   background: var(--ev-gradient);
 }
-.srv-section--dark:not(.bg-sacred-pattern):not(.bg-silk-orbit)::after {
+.srv-section--dark:not(.bg-sacred-pattern):not(.bg-silk-orbit):not([class*="bg-tram"])::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -878,10 +878,10 @@
    The flat background was removed so .bg-silk-orbit can render, but
    pages that don't opt into Silk Orbit (dich-vu-1/3, cau-chuyen) would
    otherwise be transparent with white text. Give them a dark default. */
-.srv-cta-final:not(.bg-silk-orbit):not(.bg-emerald-veil) {
+.srv-cta-final:not(.bg-silk-orbit):not(.bg-emerald-veil):not([class*="bg-tram"]) {
   background: var(--ev-gradient);
 }
-.srv-cta-final:not(.bg-silk-orbit):not(.bg-emerald-veil)::after {
+.srv-cta-final:not(.bg-silk-orbit):not(.bg-emerald-veil):not([class*="bg-tram"])::after {
   content: "";
   position: absolute;
   inset: 0;

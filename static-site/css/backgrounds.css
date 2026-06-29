@@ -177,3 +177,66 @@
     opacity: 0;
   }
 }
+
+/* ═══════════════════════════════════════════════════════════
+   IMAGE BACKGROUNDS — tram-bg photo set (emerald + gold)
+   Self-contained: each utility lays its own dark readability
+   veil over the photo so the existing white section text stays
+   legible. Declared last in this file so the longhand
+   background-image overrides any earlier `background:` shorthand
+   set by .bg-sacred-pattern / .bg-silk-orbit on the same element.
+   Page-level defaults (home/service/.book-section) opt out via
+   :not([class*="bg-tram"]) guards in their own stylesheets.
+   ═══════════════════════════════════════════════════════════ */
+.bg-tram-1,
+.bg-tram-2,
+.bg-tram-3,
+.bg-tram-4 {
+  position: relative;
+  overflow: hidden;
+  background-color: #0B1F19;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.bg-tram-1 > *,
+.bg-tram-2 > *,
+.bg-tram-3 > *,
+.bg-tram-4 > * {
+  position: relative;
+  z-index: 1;
+}
+
+.bg-tram-1 {
+  background-image:
+    linear-gradient(rgba(1, 31, 25, 0.55), rgba(1, 31, 25, 0.68)),
+    url('../assets/images/tram-bg-1.jpeg');
+}
+
+.bg-tram-2 {
+  background-image:
+    linear-gradient(rgba(1, 31, 25, 0.55), rgba(1, 31, 25, 0.68)),
+    url('../assets/images/tram-bg-2.jpeg');
+}
+
+.bg-tram-3 {
+  background-image:
+    linear-gradient(rgba(1, 31, 25, 0.58), rgba(1, 31, 25, 0.72)),
+    url('../assets/images/tram-bg-3.jpeg');
+}
+
+.bg-tram-4 {
+  background-image:
+    linear-gradient(rgba(1, 31, 25, 0.50), rgba(1, 31, 25, 0.62)),
+    url('../assets/images/tram-bg-4.jpeg');
+}
+
+/* Suppress the legacy gradient/pattern pseudo-decorations whenever a
+   photo background is layered on the same section, for any bg-tram pairing. */
+.bg-sacred-pattern[class*="bg-tram"]::before,
+.bg-sacred-pattern[class*="bg-tram"]::after,
+.bg-silk-orbit[class*="bg-tram"]::before,
+.bg-silk-orbit[class*="bg-tram"]::after {
+  display: none;
+}
