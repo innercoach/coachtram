@@ -1,0 +1,162 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 3,
+  "settings": {
+    "appearanceTools": true,
+    "color": {
+      "palette": [
+        { "name": "Pearl Ivory",    "slug": "pearl-ivory",    "color": "#FBF8F0" },
+        { "name": "Emerald Mist",   "slug": "emerald-mist",   "color": "#ECF5F0" },
+        { "name": "Royal Emerald",  "slug": "royal-emerald",  "color": "#005B45" },
+        { "name": "Fresh Emerald",  "slug": "fresh-emerald",  "color": "#0B8A66" },
+        { "name": "Emerald Depth",  "slug": "emerald-depth",  "color": "#014F3D" },
+        { "name": "Emerald Noir",   "slug": "emerald-noir",   "color": "#012E24" },
+        { "name": "Royal Gold",     "slug": "royal-gold",     "color": "#C8A244" },
+        { "name": "Champagne Glow", "slug": "champagne-glow", "color": "#F1D89A" },
+        { "name": "Deep Forest Ink","slug": "deep-forest-ink","color": "#0B1F19" },
+        { "name": "Pale Gold Sand", "slug": "pale-gold-sand", "color": "#DED3B8" },
+        { "name": "White",          "slug": "white",          "color": "#FFFFFF" }
+      ],
+      "custom": false,
+      "customGradient": false,
+      "defaultPalette": false,
+      "defaultGradients": false,
+      "duotone": []
+    },
+    "typography": {
+      "fontFamilies": [
+        {
+          "name": "Cormorant Garamond",
+          "slug": "heading",
+          "fontFamily": "'Cormorant Garamond', Georgia, 'Times New Roman', serif"
+        },
+        {
+          "name": "Be Vietnam Pro",
+          "slug": "body",
+          "fontFamily": "'Be Vietnam Pro', system-ui, -apple-system, sans-serif"
+        }
+      ],
+      "fontSizes": [
+        { "name": "XS — 12px",  "slug": "xs",   "size": "0.75rem"  },
+        { "name": "SM — 14px",  "slug": "sm",   "size": "0.875rem" },
+        { "name": "Base — 16px","slug": "base", "size": "1rem"     },
+        { "name": "LG — 18px",  "slug": "lg",   "size": "1.125rem" },
+        { "name": "XL — 20px",  "slug": "xl",   "size": "1.25rem"  },
+        { "name": "2XL — 24px", "slug": "2xl",  "size": "1.5rem"   },
+        { "name": "3XL — 28px", "slug": "3xl",  "size": "1.75rem"  },
+        { "name": "4XL — 40px", "slug": "4xl",  "size": "2.5rem"   },
+        { "name": "5XL — 48px", "slug": "5xl",  "size": "3rem"     },
+        { "name": "6XL — 64px", "slug": "6xl",  "size": "4rem"     }
+      ],
+      "customFontSize": true,
+      "defaultFontSizes": false,
+      "lineHeight": true,
+      "dropCap": false
+    },
+    "spacing": {
+      "spacingSizes": [
+        { "name": "1 — 4px",  "slug": "1",  "size": "0.25rem" },
+        { "name": "2 — 8px",  "slug": "2",  "size": "0.5rem"  },
+        { "name": "3 — 12px", "slug": "3",  "size": "0.75rem" },
+        { "name": "4 — 16px", "slug": "4",  "size": "1rem"    },
+        { "name": "6 — 24px", "slug": "6",  "size": "1.5rem"  },
+        { "name": "8 — 32px", "slug": "8",  "size": "2rem"    },
+        { "name": "12 — 48px","slug": "12", "size": "3rem"    },
+        { "name": "16 — 64px","slug": "16", "size": "4rem"    },
+        { "name": "20 — 80px","slug": "20", "size": "5rem"    },
+        { "name": "24 — 96px","slug": "24", "size": "6rem"    }
+      ],
+      "defaultSpacingSizes": false,
+      "customSpacingSize": true,
+      "padding": true,
+      "margin": true,
+      "blockGap": true
+    },
+    "border": {
+      "radiusSizes": [
+        { "name": "Small",      "slug": "sm",   "size": "0.375rem" },
+        { "name": "Medium",     "slug": "md",   "size": "0.75rem"  },
+        { "name": "Large",      "slug": "lg",   "size": "1.25rem"  },
+        { "name": "Extra Large","slug": "xl",   "size": "2rem"     },
+        { "name": "Full",       "slug": "full", "size": "9999px"   }
+      ],
+      "color": true,
+      "radius": true,
+      "style": true,
+      "width": true
+    },
+    "layout": {
+      "contentSize": "1200px",
+      "wideSize": "1400px"
+    }
+  },
+  "styles": {
+    "color": {
+      "background": "#FBF8F0",
+      "text": "#0B1F19"
+    },
+    "typography": {
+      "fontFamily": "'Be Vietnam Pro', system-ui, -apple-system, sans-serif",
+      "fontSize": "1rem",
+      "lineHeight": "1.7"
+    },
+    "elements": {
+      "h1": {
+        "color": { "text": "#005B45" },
+        "typography": {
+          "fontFamily": "'Cormorant Garamond', Georgia, 'Times New Roman', serif",
+          "fontWeight": "400",
+          "lineHeight": "1.2",
+          "letterSpacing": "-0.01em"
+        }
+      },
+      "h2": {
+        "color": { "text": "#005B45" },
+        "typography": {
+          "fontFamily": "'Cormorant Garamond', Georgia, 'Times New Roman', serif",
+          "fontWeight": "500",
+          "lineHeight": "1.2"
+        }
+      },
+      "h3": {
+        "color": { "text": "#005B45" },
+        "typography": {
+          "fontFamily": "'Cormorant Garamond', Georgia, 'Times New Roman', serif",
+          "fontWeight": "600",
+          "lineHeight": "1.2"
+        }
+      },
+      "h4": {
+        "color": { "text": "#005B45" },
+        "typography": {
+          "fontFamily": "'Cormorant Garamond', Georgia, 'Times New Roman', serif",
+          "lineHeight": "1.2"
+        }
+      },
+      "link": {
+        "color": { "text": "inherit" },
+        ":hover": {
+          "color": { "text": "#C8A244" }
+        }
+      },
+      "button": {
+        "color": {
+          "background": "#005B45",
+          "text": "#FFFFFF"
+        },
+        "border": {
+          "radius": "9999px"
+        },
+        "typography": {
+          "fontFamily": "'Be Vietnam Pro', system-ui, -apple-system, sans-serif",
+          "fontSize": "0.875rem",
+          "fontWeight": "600",
+          "letterSpacing": "0.08em"
+        },
+        ":hover": {
+          "color": { "background": "#0B8A66" }
+        }
+      }
+    }
+  }
+}

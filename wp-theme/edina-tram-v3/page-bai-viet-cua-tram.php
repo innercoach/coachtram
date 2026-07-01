@@ -1,0 +1,131 @@
+<?php
+/**
+ * Template: Bài viết của Trâm
+ * Port từ static-site/bai-viet-cua-tram.html — nội dung theo bản HTML đã chốt.
+ * Chrome (header/footer/nav/glow-blobs) do get_header()/get_footer() lo.
+ */
+if (!defined('ABSPATH')) exit;
+get_header();
+?>
+  <style>
+    .library-hero { min-height: 72dvh; display:flex; align-items:center; padding-top: var(--header-height); background: radial-gradient(ellipse at 20% 50%, rgba(11,138,102,.08), transparent 56%), radial-gradient(ellipse at 80% 20%, rgba(200,162,68,.06), transparent 50%), var(--color-bg); }
+    .library-hero h1 { font-size: clamp(var(--text-4xl), 6vw, var(--text-7xl)); line-height:1.05; margin-bottom: var(--space-5); }
+    .library-hero h1 em { color: var(--royal-gold); }
+    .topic-nav { display:flex; flex-wrap:wrap; justify-content:center; gap: var(--space-3); margin-top: var(--space-8); }
+    .topic-nav a { border:1px solid var(--color-border); border-radius: var(--radius-full); padding: var(--space-2) var(--space-5); color: var(--color-fg-muted); background: rgba(255,255,255,.58); }
+    .topic-section + .topic-section { margin-top: var(--space-20); }
+    .article-grid { display:grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-6); margin-top: var(--space-8); }
+    .article-card { display:flex; flex-direction:column; min-height: 100%; background: var(--color-surface); border:1px solid var(--color-border-light); border-radius: var(--radius-lg); padding: var(--space-7, 1.75rem); box-shadow: var(--shadow-sm); transition: transform var(--duration-medium) var(--ease-out-expo), box-shadow var(--duration-medium) var(--ease-out-expo); }
+    .article-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-lg); }
+    .article-topic { color: var(--royal-gold); font-size: var(--text-xs); font-weight:700; text-transform:uppercase; letter-spacing:.1em; margin-bottom: var(--space-3); }
+    .article-card h3 { font-family: var(--font-body); font-size: var(--text-lg); color: var(--color-fg); margin-bottom: var(--space-3); }
+    .article-card p { font-size: var(--text-sm); line-height:1.7; margin-bottom: var(--space-6); }
+    .article-card .btn { margin-top:auto; align-self:flex-start; }
+    @media (max-width: 960px) { .article-grid { grid-template-columns: 1fr; } }
+  </style>
+    <section class="library-hero">
+      <div class="container">
+        <div class="section-header" data-reveal>
+          <span class="badge badge--gold">Thư viện bài viết</span>
+          <h1>Bài viết<br>của <em>Trâm</em></h1>
+          <p>Không gian quy hoạch lại những bài viết lẻ tẻ Trâm từng chia sẻ trên Facebook thành các nhóm chủ đề dễ đọc, dễ quay lại, và sau này dẫn sang Substack.</p>
+          <div class="topic-nav">
+            <a href="#chua-lanh">Chữa lành</a>
+            <a href="#thau-hieu">Thấu hiểu bản thân</a>
+            <a href="#chuyen-hoa">Chuyển hoá tâm thức</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div id="chua-lanh" class="topic-section">
+          <div class="section-header" data-reveal>
+            <span class="badge">Chữa lành</span>
+            <h2>Những bài viết để dịu lại và nhìn sâu</h2>
+            <div class="divider"></div>
+          </div>
+          <div class="article-grid" data-reveal-stagger>
+            <article class="article-card" data-reveal>
+              <div class="article-topic">Chữa lành</div>
+              <h3>Khi nỗi đau quay lại, có thể bạn chưa chạm đến gốc</h3>
+              <p>Một bài viết mở ra góc nhìn về vì sao những cảm xúc cũ cứ quay lại dù ta đã cố gắng rất nhiều.</p>
+              <a href="https://edinatram.substack.com" target="_blank" rel="noopener" class="btn btn--outline btn--sm">Đọc trên Substack</a>
+            </article>
+            <article class="article-card" data-reveal>
+              <div class="article-topic">Chữa lành</div>
+              <h3>Không phải lúc nào mạnh mẽ cũng là tiếp tục chịu đựng</h3>
+              <p>Gợi ý cách nhận ra khi nào mình cần mềm lại, dừng lại và chăm sóc phần bên trong đang mỏi mệt.</p>
+              <a href="https://edinatram.substack.com" target="_blank" rel="noopener" class="btn btn--outline btn--sm">Đọc trên Substack</a>
+            </article>
+            <article class="article-card" data-reveal>
+              <div class="article-topic">Chữa lành</div>
+              <h3>Lòng trắc ẩn với chính mình không phải là nuông chiều</h3>
+              <p>Một ghi chú về cách yêu thương bản thân mà vẫn trung thực, tỉnh táo và có trách nhiệm.</p>
+              <a href="https://edinatram.substack.com" target="_blank" rel="noopener" class="btn btn--outline btn--sm">Đọc trên Substack</a>
+            </article>
+          </div>
+        </div>
+
+        <div id="thau-hieu" class="topic-section">
+          <div class="section-header" data-reveal>
+            <span class="badge badge--gold">Thấu hiểu bản thân</span>
+            <h2>Những bài viết giúp bạn gọi tên chính mình</h2>
+            <div class="divider"></div>
+          </div>
+          <div class="article-grid" data-reveal-stagger>
+            <article class="article-card" data-reveal>
+              <div class="article-topic">Thấu hiểu bản thân</div>
+              <h3>Giá trị cốt lõi: điều bạn không nên đánh đổi</h3>
+              <p>Một bài viết giúp phân biệt mong muốn nhất thời với những giá trị sâu hơn đang dẫn đường cho đời sống.</p>
+              <a href="https://edinatram.substack.com" target="_blank" rel="noopener" class="btn btn--outline btn--sm">Đọc trên Substack</a>
+            </article>
+            <article class="article-card" data-reveal>
+              <div class="article-topic">Thấu hiểu bản thân</div>
+              <h3>Vì sao ta hay mất phương hướng dù đã rất cố gắng?</h3>
+              <p>Nhìn lại mối liên hệ giữa kỳ vọng của người khác, nỗi sợ thất bại và cảm giác không còn biết mình muốn gì.</p>
+              <a href="https://edinatram.substack.com" target="_blank" rel="noopener" class="btn btn--outline btn--sm">Đọc trên Substack</a>
+            </article>
+            <article class="article-card" data-reveal>
+              <div class="article-topic">Thấu hiểu bản thân</div>
+              <h3>Bản đồ tính cách không định nghĩa bạn, nó giúp bạn nhìn rõ</h3>
+              <p>Gợi ý cách dùng các công cụ soi chiếu như một chiếc gương, không phải chiếc hộp đóng khung bản thân.</p>
+              <a href="https://edinatram.substack.com" target="_blank" rel="noopener" class="btn btn--outline btn--sm">Đọc trên Substack</a>
+            </article>
+          </div>
+        </div>
+
+        <div id="chuyen-hoa" class="topic-section">
+          <div class="section-header" data-reveal>
+            <span class="badge">Chuyển hoá tâm thức</span>
+            <h2>Những bài viết về thức tỉnh và sống khác đi</h2>
+            <div class="divider"></div>
+          </div>
+          <div class="article-grid" data-reveal-stagger>
+            <article class="article-card" data-reveal>
+              <div class="article-topic">Chuyển hoá tâm thức</div>
+              <h3>Chuyển hoá thật là một tấm vé một chiều</h3>
+              <p>Khi nền tảng tư duy đã khác, bạn không còn quay lại phiên bản cũ theo cùng một cách nữa.</p>
+              <a href="https://edinatram.substack.com" target="_blank" rel="noopener" class="btn btn--outline btn--sm">Đọc trên Substack</a>
+            </article>
+            <article class="article-card" data-reveal>
+              <div class="article-topic">Chuyển hoá tâm thức</div>
+              <h3>Sống Đời và Đạo song hành</h3>
+              <p>Một góc nhìn về cách cân bằng đời sống thực tế, tài chính, quan hệ và hành trình tinh thần.</p>
+              <a href="https://edinatram.substack.com" target="_blank" rel="noopener" class="btn btn--outline btn--sm">Đọc trên Substack</a>
+            </article>
+            <article class="article-card" data-reveal>
+              <div class="article-topic">Chuyển hoá tâm thức</div>
+              <h3>Bi - Trí - Dũng trong những quyết định khó</h3>
+              <p>Gợi mở cách ra quyết định không chỉ bằng lý trí, mà bằng lòng trắc ẩn, trí tuệ và sự can đảm.</p>
+              <a href="https://edinatram.substack.com" target="_blank" rel="noopener" class="btn btn--outline btn--sm">Đọc trên Substack</a>
+            </article>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  
+
+<?php get_footer();

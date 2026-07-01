@@ -1,0 +1,197 @@
+<?php
+/**
+ * Template: TINA Alignment
+ * Port từ static-site/dich-vu-3.html — nội dung theo bản HTML đã chốt.
+ * Chrome (header/footer/nav/glow-blobs) do get_header()/get_footer() lo.
+ */
+if (!defined('ABSPATH')) exit;
+get_header();
+?>
+  <style>
+    :root { --page-accent: #014F3D; --page-accent-rgb: 1, 79, 61; }
+    body { padding-bottom: 80px; }
+    .alignment-flow { display:grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-5); margin-top: var(--space-8); }
+    .flow-card { background: var(--color-surface); border: 1px solid var(--color-border-light); border-radius: var(--radius-lg); padding: var(--space-7, 1.75rem); box-shadow: var(--shadow-sm); position:relative; overflow:hidden; }
+    .flow-card::before { content:""; position:absolute; inset:0 0 auto; height:3px; background: linear-gradient(90deg, var(--page-accent), var(--royal-gold)); }
+    .flow-card h3 { font-family: var(--font-body); font-size: var(--text-lg); color: var(--color-fg); margin-bottom: var(--space-2); }
+    .flow-card p { font-size: var(--text-sm); line-height:1.75; }
+    .alignment-panel { display:grid; grid-template-columns: 1fr 1fr; gap: var(--space-6); margin-top: var(--space-8); }
+    .panel-card { background: linear-gradient(155deg, #fff, rgba(236,245,240,.7)); border:1px solid var(--color-border-light); border-radius: var(--radius-lg); padding: var(--space-8); }
+    .panel-card h3 { font-family: var(--font-body); font-size: var(--text-lg); color: var(--page-accent); margin-bottom: var(--space-4); }
+    .panel-card li { display:flex; gap: var(--space-2); color: var(--color-fg-muted); line-height:1.65; margin-bottom: var(--space-3); }
+    .panel-card li::before { content:""; width:7px; height:7px; border-radius:50%; background: var(--royal-gold); flex:0 0 auto; margin-top:.7em; }
+    .alignment-callout { max-width: 900px; margin: var(--space-8) auto 0; padding: var(--space-8); text-align:center; border-radius: var(--radius-lg); border: 1px solid rgba(200,162,68,.5); background: radial-gradient(120% 140% at 50% 0%, rgba(241,216,154,.18), transparent 60%), linear-gradient(155deg, #06513c, #00372a); box-shadow: var(--shadow-lg); }
+    .alignment-callout p { margin:0; color:#fff; font-family: var(--font-heading); font-size: clamp(1.5rem, 3vw, 1.9rem); font-weight:600; line-height:1.45; }
+    .timeline { max-width: 920px; margin: var(--space-8) auto 0; display:grid; gap: var(--space-4); }
+    .timeline-item { display:grid; grid-template-columns: 150px 1fr; gap: var(--space-5); background: var(--color-surface); border:1px solid var(--color-border-light); border-radius: var(--radius-lg); padding: var(--space-6); }
+    .timeline-label { color: var(--royal-gold); font-weight:700; text-transform:uppercase; letter-spacing:.08em; font-size: var(--text-xs); }
+    @media (max-width: 860px) { .alignment-flow, .alignment-panel { grid-template-columns: 1fr; } .timeline-item { grid-template-columns: 1fr; } }
+  </style>
+    <section class="srv-hero">
+      <div class="container srv-hero-grid">
+        <div class="srv-hero-content" data-reveal>
+          <span class="badge badge--gold">ĐỒNG HÀNH DÀI HẠN</span>
+          <h1>TINA<br><span>Alignment</span></h1>
+          <p class="srv-hero-tagline">Lên kế hoạch và hiện thực hoá tầm nhìn 5-10 năm</p>
+          <p class="srv-hero-desc">Khi Awakening giúp bạn nhìn thấy tầm nhìn và mục tiêu hành động, Alignment là không gian đồng hành dài hơi để biến điều đã thấy thành lựa chọn, hệ thống và đời sống thật.</p>
+          <div class="srv-hero-meta">
+            <span class="meta-item">6 tháng - 1 năm</span>
+            <span class="meta-item">May đo theo mục tiêu cá nhân</span>
+          </div>
+          <a href="<?php echo esc_url(home_url('/lien-he/?program=alignment')); ?>" class="btn btn--accent btn--lg">Đặt lịch trao đổi Alignment</a>
+        </div>
+        <div class="srv-hero-img" data-reveal="right">
+          <img src="<?php echo edt_asset('images/profile.jpg'); ?>" alt="Edina Trâm - TINA Alignment" loading="eager" fetchpriority="high">
+        </div>
+      </div>
+    </section>
+
+    <section class="srv-section--alt">
+      <div class="container">
+        <div class="section-header" data-reveal>
+          <span class="badge">Từ nhận thức đến đời sống</span>
+          <h2>Sau khi đã thấy rõ, bạn cần một nhịp đi bền</h2>
+          <div class="divider"></div>
+          <p>Module 10 của TINA Awakening mở ra tầm nhìn 5-10 năm và mục tiêu 90 ngày đầu tiên. TINA Alignment giúp bạn ở lại với tầm nhìn ấy đủ lâu để hành động, điều chỉnh và sống đúng với nó.</p>
+        </div>
+        <div class="alignment-flow" data-reveal-stagger>
+          <div class="flow-card" data-reveal>
+            <h3>Rõ mục tiêu hành động</h3>
+            <p>Chuyển tầm nhìn lớn thành mục tiêu theo quý, tháng và tuần, đủ cụ thể để bạn biết việc nào cần làm trước.</p>
+          </div>
+          <div class="flow-card" data-reveal>
+            <h3>Giữ nhịp thực thi</h3>
+            <p>Có không gian phản tư và accountability để bạn không trượt về những thói quen cũ khi đời sống thật bắt đầu thử thách.</p>
+          </div>
+          <div class="flow-card" data-reveal>
+            <h3>Điều chỉnh theo thực tế</h3>
+            <p>Không ép mình vào một kế hoạch cứng. Mỗi giai đoạn được rà lại để tầm nhìn vẫn sống động, chân thật và khả thi.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="srv-section">
+      <div class="container">
+        <div class="section-header" data-reveal>
+          <span class="badge badge--gold">Lộ trình đồng hành</span>
+          <h2>Ba nhịp chính của TINA Alignment</h2>
+          <div class="divider"></div>
+        </div>
+        <div class="timeline" data-reveal-stagger>
+          <div class="timeline-item" data-reveal>
+            <div class="timeline-label">Giai đoạn 1</div>
+            <div>
+              <h3>Thiết kế bản đồ hành động</h3>
+              <p>Làm rõ ưu tiên, nguồn lực, giới hạn và các mốc hành động đầu tiên dựa trên tầm nhìn đã mở ra trong Awakening.</p>
+            </div>
+          </div>
+          <div class="timeline-item" data-reveal>
+            <div class="timeline-label">Giai đoạn 2</div>
+            <div>
+              <h3>Thực thi có soi chiếu</h3>
+              <p>Đi qua từng mục tiêu với sự quan sát sâu: điều gì đang tiến triển, điều gì đang kháng cự, mô thức nào cũ đang quay lại.</p>
+            </div>
+          </div>
+          <div class="timeline-item" data-reveal>
+            <div class="timeline-label">Giai đoạn 3</div>
+            <div>
+              <h3>Neo giữ con người mới</h3>
+              <p>Biến những lựa chọn mới thành cấu trúc sống mới: nhịp làm việc, quan hệ, tài chính, sức khoẻ và đời sống tinh thần.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="srv-section--alt">
+      <div class="container">
+        <div class="section-header" data-reveal>
+          <span class="badge">Ai phù hợp?</span>
+          <h2>TINA Alignment dành cho bạn nếu...</h2>
+          <div class="divider"></div>
+        </div>
+        <div class="alignment-panel" data-reveal-stagger>
+          <div class="panel-card" data-reveal>
+            <h3>Dành cho bạn nếu</h3>
+            <ul>
+              <li>Bạn đã có tầm nhìn rõ hơn sau Awakening nhưng cần người đồng hành để thực thi.</li>
+              <li>Bạn muốn chuyển hoá nhận thức thành quyết định, hành động và hệ thống sống cụ thể.</li>
+              <li>Bạn biết mình dễ trượt về mô thức cũ khi đi một mình.</li>
+              <li>Bạn sẵn sàng cam kết với một lộ trình dài hạn, thực tế và sâu sắc.</li>
+            </ul>
+          </div>
+          <div class="panel-card" data-reveal>
+            <h3>Không dành cho bạn nếu</h3>
+            <ul>
+              <li>Bạn chưa muốn chịu trách nhiệm với mục tiêu mình đã chọn.</li>
+              <li>Bạn chỉ muốn thêm cảm hứng, nhưng không muốn thực thi đều đặn.</li>
+              <li>Bạn đang tìm một kế hoạch mẫu áp dụng giống nhau cho tất cả mọi người.</li>
+              <li>Bạn chưa sẵn sàng nhìn lại chính mình trong lúc hành động.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="alignment-callout" data-reveal>
+          <p>Alignment là nơi tầm nhìn không còn chỉ nằm trong một phiên khai vấn. Nó bắt đầu bước vào lịch, lựa chọn và đời sống hằng ngày của bạn.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ INSTRUCTOR ═══ -->
+    <?php edt_section('instructor', ['alt' => 'Edina Trâm - người đồng hành trong chương trình TINA Alignment']); ?>
+
+    <!-- ═══ FAQ ═══ -->
+    <section class="srv-section--alt" aria-label="Câu hỏi thường gặp">
+      <div class="container container--narrow">
+        <div class="section-header">
+          <span class="badge">FAQ</span>
+          <h2 style="margin-top: var(--space-4);">Câu hỏi thường gặp</h2>
+          <div class="divider"></div>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item" data-reveal>
+            <button class="faq-q" aria-expanded="false">
+              <span>TINA Alignment dành cho ai?</span>
+            </button>
+            <div class="faq-a"><div><div class="faq-a-inner">Alignment dành cho những người đã nhìn thấy tầm nhìn dài hạn của mình và thật sự muốn biến nó thành đời sống cụ thể. Đó thường là người đã đi qua một giai đoạn khai sáng như TINA Awakening, hoặc đã đủ rõ về hướng đi 5-10 năm, và giờ cần một người đồng hành bền bỉ để giữ mình đi đúng, không trượt về những mô thức cũ khi bắt tay vào thực thi.</div></div></div>
+          </div>
+          <div class="faq-item" data-reveal>
+            <button class="faq-q" aria-expanded="false">
+              <span>Alignment khác gì với TINA Awakening?</span>
+            </button>
+            <div class="faq-a"><div><div class="faq-a-inner">Awakening giúp bạn THẤY: làm rõ tầm nhìn, gọi tên điều mình thật sự muốn và nhìn ra những vòng lặp bên trong. Alignment là không gian dài hơn để biến điều đã thấy thành lựa chọn, hệ thống và đời sống thực — từ nhận thức đến đời sống. Nếu Awakening là chặng khai sáng, thì Alignment là chặng đồng hành để hiện thực hoá.</div></div></div>
+          </div>
+          <div class="faq-item" data-reveal>
+            <button class="faq-q" aria-expanded="false">
+              <span>Chương trình kéo dài bao lâu và gặp nhau với nhịp độ thế nào?</span>
+            </button>
+            <div class="faq-a"><div><div class="faq-a-inner">Alignment là hành trình đồng hành dài hạn, kéo dài từ 6 tháng đến 1 năm. Nhịp gặp được thiết kế đều đặn để vừa đủ chiều sâu cho mỗi phiên, vừa đủ khoảng cách để bạn thật sự sống và thử nghiệm những lựa chọn mới giữa các buổi. Lộ trình cụ thể sẽ được may đo theo tầm nhìn và nhịp sống của riêng bạn.</div></div></div>
+          </div>
+          <div class="faq-item" data-reveal>
+            <button class="faq-q" aria-expanded="false">
+              <span>Tôi cần cam kết những gì khi tham gia?</span>
+            </button>
+            <div class="faq-a"><div><div class="faq-a-inner">Điều quan trọng nhất không phải thời gian mà là sự sẵn sàng chịu trách nhiệm với tầm nhìn mình đã chọn. Bạn cần sự thành thật khi nhìn lại chính mình, sự kiên trì thực thi đều đặn giữa các phiên, và lòng tin để đi qua cả những đoạn không thoải mái. Alignment không hợp với người chỉ muốn thêm cảm hứng mà chưa muốn hành động.</div></div></div>
+          </div>
+          <div class="faq-item" data-reveal>
+            <button class="faq-q" aria-expanded="false">
+              <span>Hình thức đồng hành ra sao và tôi có thể kỳ vọng điều gì?</span>
+            </button>
+            <div class="faq-a"><div><div class="faq-a-inner">Đây là sự đồng hành 1:1 may đo riêng cho bạn, kết hợp khai vấn, tham vấn tâm lý, đời sống thực tế và chiều sâu tâm linh. Bạn không nhận một kế hoạch mẫu, mà cùng Trâm xây dựng những quyết định, hệ thống và thói quen phù hợp với chính mình. Kết quả không nằm ở một sự kiện duy nhất, mà ở việc tầm nhìn 5-10 năm dần bước vào lịch, lựa chọn và đời sống hằng ngày của bạn.</div></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ CTA FINAL ═══ -->
+    <section class="srv-cta-final bg-tram-3">
+      <div class="container" data-reveal>
+        <span class="badge badge--dark">TINA ALIGNMENT</span>
+        <h2>Bạn đã sẵn sàng sống đúng với tầm nhìn mình nhìn thấy?</h2>
+        <p>Đặt lịch trao đổi để cùng Trâm xem Alignment có phải là chặng đồng hành phù hợp tiếp theo của bạn không.</p>
+        <a href="<?php echo esc_url(home_url('/lien-he/?program=alignment')); ?>" class="btn btn--accent btn--lg">Đặt lịch TINA Alignment</a>
+      </div>
+    </section>
+  
+
+<?php get_footer();

@@ -1,0 +1,667 @@
+<?php
+/**
+ * Template: Trang chủ
+ * Port từ static-site/index.html — nội dung theo bản HTML đã chốt.
+ * Chrome (header/footer/nav/glow-blobs) do get_header()/get_footer() lo.
+ */
+if (!defined('ABSPATH')) exit;
+get_header();
+?>
+  <style>
+    /* ── Home — premium callout (editorial declaration) ── */
+    .home-callout {
+      position: relative;
+      max-width: 860px;
+      margin: var(--space-8, 2rem) auto 0;
+      padding: var(--space-8, 2rem);
+      text-align: center;
+      background:
+        radial-gradient(120% 140% at 50% 0%, rgba(241, 216, 154, 0.18), transparent 60%),
+        linear-gradient(155deg, #06513c, #00372a);
+      border: 1px solid rgba(200, 162, 68, 0.5);
+      border-radius: var(--radius-lg, 1.25rem);
+      box-shadow: var(--shadow-lg, 0 8px 40px rgba(1, 79, 61, 0.09));
+      overflow: hidden;
+    }
+
+    .home-callout::before {
+      content: "\201C";
+      position: absolute;
+      top: -0.18em;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: var(--font-heading);
+      font-size: 5rem;
+      line-height: 1;
+      color: var(--champagne-glow, #F1D89A);
+      opacity: 0.35;
+      pointer-events: none;
+    }
+
+    .home-callout p {
+      position: relative;
+      margin: 0;
+      font-family: var(--font-heading);
+      font-size: clamp(1.5rem, 3.2vw, 1.75rem);
+      font-weight: 600;
+      line-height: 1.45;
+      color: #fff;
+    }
+
+    /* ── Roots of transformation (3 layers) ── */
+    .roots-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-6, 1.5rem);
+      margin-top: var(--space-8, 2rem);
+    }
+
+    .roots-card {
+      background: var(--color-surface, #fff);
+      border: 1px solid var(--color-border-light, #ece6d8);
+      border-radius: var(--radius-lg, 1.25rem);
+      padding: var(--space-8, 2rem);
+      text-align: center;
+      box-shadow: var(--shadow-sm, 0 2px 10px rgba(1, 79, 61, 0.05));
+    }
+
+    .roots-num {
+      font-family: var(--font-heading);
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: var(--royal-gold, #C8A244);
+      line-height: 1;
+      margin-bottom: var(--space-3, 0.75rem);
+    }
+
+    .roots-card h3 {
+      color: var(--color-primary, #005B45);
+      margin-bottom: var(--space-2, 0.5rem);
+      font-size: 1.35rem;
+      font-weight: 700;
+    }
+
+    .roots-card p {
+      color: var(--color-fg-muted, #4A5B54);
+      font-size: 0.95rem;
+      line-height: 1.65;
+    }
+
+    /* ── 6 signs grid ── */
+    .signs-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--space-5, 1.25rem);
+      margin-top: var(--space-8, 2rem);
+    }
+
+    .sign-card {
+      background: var(--color-surface, #fff);
+      border: 1px solid var(--color-border-light, #ece6d8);
+      border-left: 3px solid var(--royal-gold, #C8A244);
+      border-radius: var(--radius-md, 0.85rem);
+      padding: var(--space-6, 1.5rem);
+      text-align: left;
+    }
+
+    .sign-no {
+      font-family: var(--font-body, 'Be Vietnam Pro', sans-serif);
+      color: var(--royal-gold, #C8A244);
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .sign-card h3 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--color-primary, #005B45);
+      margin: 0.4rem 0 0.6rem;
+    }
+
+    .sign-card p {
+      font-size: 0.9rem;
+      line-height: 1.65;
+      color: var(--color-fg-muted, #4A5B54);
+    }
+
+    /* ── Signature triangle section — two-column layout ── */
+    .tina-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-10, 3rem);
+      align-items: center;
+      margin-top: var(--space-8, 2rem);
+    }
+
+    .triangle-visual {
+      text-align: center;
+    }
+
+    .triangle-visual svg {
+      max-width: 560px;
+      width: 100%;
+      height: auto;
+      margin-inline: auto;
+      filter: drop-shadow(0 18px 40px rgba(1, 79, 61, 0.16));
+    }
+
+    /* ── 3C cards (right column) ── */
+    .tina-cards {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-5, 1.25rem);
+    }
+
+    .tina-card {
+      position: relative;
+      overflow: hidden;
+      background: var(--color-surface, #fff);
+      border: 1px solid var(--color-border-light, #ece6d8);
+      border-radius: var(--radius-lg, 1.25rem);
+      padding: var(--space-7, 1.75rem) var(--space-8, 2rem);
+      text-align: left;
+      box-shadow: var(--shadow-sm, 0 2px 10px rgba(1, 79, 61, 0.05));
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .tina-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 28px rgba(1, 79, 61, 0.1);
+    }
+
+    .tina-card::after {
+      content: 'C';
+      position: absolute;
+      top: 50%;
+      right: var(--space-6, 1.5rem);
+      transform: translateY(-50%);
+      font-family: var(--font-heading, 'Cormorant Garamond', Georgia, serif);
+      font-size: 5rem;
+      font-weight: 700;
+      line-height: 1;
+      color: var(--color-primary, #005B45);
+      opacity: 0.06;
+      pointer-events: none;
+    }
+
+    .tina-card h3 {
+      font-family: var(--font-body, 'Be Vietnam Pro', sans-serif);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--color-primary, #005B45);
+      margin: 0 0 var(--space-2, 0.5rem);
+      letter-spacing: 0.01em;
+    }
+
+    .tina-card h3 span {
+      font-weight: 400;
+      color: var(--color-fg, #0b1f19);
+    }
+
+    .tina-card p {
+      font-size: 0.9rem;
+      line-height: 1.7;
+      color: var(--color-fg-muted, #4A5B54);
+      margin: 0;
+      position: relative;
+    }
+
+    @media (max-width: 960px) {
+      .tina-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .triangle-visual svg {
+        max-width: 480px;
+      }
+    }
+
+    @media (max-width: 860px) {
+
+      .roots-grid,
+      .signs-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+    <!-- ═══ GLOW BLOBS ═══ -->
+
+
+    <!-- ═══════════════════════════════════════════════════════
+         1. HERO / BANNER
+         ═══════════════════════════════════════════════════════ -->
+    <section class="home-hero">
+      <div class="container">
+        <div class="home-hero-grid">
+
+          <!-- Content -->
+          <div class="home-hero-content" data-reveal>
+            <span class="badge badge--gold">EDINA TRÂM · HÀNH TRÌNH CHUYỂN HOÁ</span>
+            <h1>Cảm ơn bạn đã<br>có mặt <em>ở đây.</em></h1>
+            <p class="home-hero-desc">Tôi tin không có gì là ngẫu nhiên. Việc bạn dừng lại nơi này có thể là khởi đầu
+              cho một sự chuyển mình thật sự — rõ ràng hơn, vững vàng hơn, và kết nối sâu hơn với chính mình.</p>
+            <div class="home-hero-ctas">
+              <a href="#services" class="btn btn--primary btn--lg">Khám phá dịch vụ</a>
+              <a href="<?php echo esc_url(home_url('/lien-he/')); ?>" class="btn btn--outline btn--lg">Tư vấn 1:1 miễn phí</a>
+            </div>
+
+            <!-- Hero Values Strip -->
+            <div class="home-hero-values">
+              <div class="home-hero-value">
+                <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                  <path d="M12 21C12 21 4 14.5 4 9a4 4 0 018 0 4 4 0 018 0c0 5.5-8 12-8 12z" />
+                </svg>
+                <strong>Lắng Nghe Sâu Sắc</strong>
+                <span>Thấu hiểu từ bên trong</span>
+              </div>
+              <div class="home-hero-value">
+                <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M12 6v6l4 2" />
+                </svg>
+                <strong>Khai Mở Nội Lực</strong>
+                <span>Khơi dậy tiềm năng</span>
+              </div>
+              <div class="home-hero-value">
+                <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                  <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" />
+                  <circle cx="9" cy="7" r="4" />
+                  <path d="M23 21v-2a4 4 0 00-3-3.87" />
+                  <path d="M16 3.13a4 4 0 010 7.75" />
+                </svg>
+                <strong>Đồng Hành Tận Tâm</strong>
+                <span>Bước qua giới hạn</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero Image -->
+          <div class="home-hero-img" data-reveal="right">
+            <img src="<?php echo edt_asset('images/hero_trang_chu.png'); ?>" alt="Coach Edina Trâm" loading="eager" width="1088" height="1445">
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Scroll Indicator -->
+      <div class="scroll-indicator">Cuộn xuống</div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════
+         2. VÌ SAO HÀNH TRÌNH NÀY RA ĐỜI
+         ═══════════════════════════════════════════════════════ -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header" data-reveal>
+          <span class="badge">Vì sao hành trình này ra đời?</span>
+          <h2>Tôi đã đi qua đúng con đường bạn đang đi</h2>
+          <div class="divider"></div>
+          <p>Từ một người thành công theo mọi chuẩn mực, tôi đi qua hai lần phá sản, một cuộc hôn nhân đổ vỡ và những
+            năm dài suy sụp. Chính từ đáy sâu ấy, một sự thức tỉnh bắt đầu — và TINA ra đời để trở thành người đồng hành
+            mà tôi từng ao ước có được trong những ngày tăm tối nhất.</p>
+        </div>
+        <div class="home-callout" data-reveal>
+          <p>Tôi không chỉ truyền đạt lý thuyết. Tôi đã đi qua đúng con đường mà bạn đang đi.</p>
+        </div>
+        <div style="text-align:center; margin-top: var(--space-6, 1.5rem);" data-reveal>
+          <a href="<?php echo esc_url(home_url('/cau-chuyen-cua-toi/')); ?>" class="btn btn--outline">Câu chuyện của Trâm →</a>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════
+         3. GỐC RỄ CỦA SỰ CHUYỂN HOÁ
+         ═══════════════════════════════════════════════════════ -->
+    <section class="section section--alt bg-soft-depth">
+      <div class="container">
+        <div class="section-header" data-reveal>
+          <span class="badge badge--gold">Gốc rễ của sự chuyển hoá</span>
+          <h2>Vì sao khủng hoảng cứ quay lại?</h2>
+          <div class="divider"></div>
+          <p>Phần lớn giải pháp chỉ chữa phần ngọn nên nỗi đau cứ quay lại. Chuyển hoá chỉ bền vững khi ba tầng nền tảng
+            bên trong cùng được tái cấu trúc.</p>
+        </div>
+        <div class="roots-grid" data-reveal-stagger>
+          <div class="roots-card" data-reveal>
+            <div class="roots-num">01</div>
+            <h3>Nhận thức được khai mở</h3>
+            <p>Bạn thật sự thấy rõ mình đang sống từ đâu, thay vì lặp lại những mô thức cũ một cách vô thức.</p>
+          </div>
+          <div class="roots-card" data-reveal>
+            <div class="roots-num">02</div>
+            <h3>Hành vi được làm mới</h3>
+            <p>Thay đổi bằng công cụ thực hành cụ thể, không chỉ bằng cảm hứng nhất thời rồi đâu lại vào đấy.</p>
+          </div>
+          <div class="roots-card" data-reveal>
+            <div class="roots-num">03</div>
+            <h3>Nghiệp lực được hoá giải</h3>
+            <p>Nhân cách sống được soi chiếu để chuyển hoá bền vững, cân bằng cả Đời lẫn Đạo.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════
+         4. CHUYỂN HOÁ THỰC SỰ LÀ GÌ (6 dấu hiệu)
+         ═══════════════════════════════════════════════════════ -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header" data-reveal>
+          <span class="badge">Chuyển hoá thực sự</span>
+          <h2>Thế nào là một sự chuyển hoá thật sự?</h2>
+          <div class="divider"></div>
+          <p>Chuyển hoá không phải một khoảnh khắc “à há” rồi cuộc đời tự đổi. Một chuyển hoá thật mang sáu dấu hiệu.
+          </p>
+        </div>
+        <div class="signs-grid" data-reveal-stagger>
+          <div class="sign-card" data-reveal>
+            <span class="sign-no">01 · Process</span>
+            <h3>Là một quá trình</h3>
+            <p>Nó không xảy ra trong một buổi học truyền cảm hứng, mà cần thời gian để ngấm, để sống, để trở thành chính
+              con người bạn.</p>
+          </div>
+          <div class="sign-card" data-reveal>
+            <span class="sign-no">02 · Self-Actualization</span>
+            <h3>Đến từ sự tự nhận thức</h3>
+            <p>Không ai thay đổi bạn được từ bên ngoài. Mọi chuyển hoá thật đều nảy lên từ bên trong bạn — vai trò của
+              tôi là giúp bạn nhìn rõ.</p>
+          </div>
+          <div class="sign-card" data-reveal>
+            <span class="sign-no">03 · Hidden Progress</span>
+            <h3>Diễn ra âm thầm bên trong</h3>
+            <p>Nó không ồn ào, không phô trương. Những đổi thay quan trọng nhất thường xảy ra lặng lẽ, nơi không ai thấy
+              ngoài bạn.</p>
+          </div>
+          <div class="sign-card" data-reveal>
+            <span class="sign-no">04 · Significant Emotional Event</span>
+            <h3>Được kích hoạt bởi một biến cố giàu cảm xúc</h3>
+            <p>Nó thường bắt đầu từ một cú chạm đủ sâu để lay chuyển những gì bạn tưởng đã cố định. Chương trình tạo ra
+              những điểm chạm ấy một cách an toàn.</p>
+          </div>
+          <div class="sign-card" data-reveal>
+            <span class="sign-no">05 · Being Vulnerable</span>
+            <h3>Đòi hỏi dám tổn thương</h3>
+            <p>Bạn phải dám mong manh, dám thành thật với chính mình về những điều khó chấp nhận nhất. Đó là cái giá, và
+              cũng là cánh cửa.</p>
+          </div>
+          <div class="sign-card" data-reveal>
+            <span class="sign-no">06 · One-Way Ticket</span>
+            <h3>Là tấm vé một chiều</h3>
+            <p>Một khi đã thật sự chuyển hoá, bạn không thể quay lại phiên bản cũ — vì nền tảng tư duy của bạn đã khác.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════
+         5. SIGNATURE — TAM GIÁC CHUYỂN HOÁ 3C
+         ═══════════════════════════════════════════════════════ -->
+    <section class="section section--alt bg-sacred-pattern bg-tram-1">
+      <div class="container">
+        <div class="section-header" data-reveal>
+          <span class="badge badge--gold">Tam giác chuyển hoá 3C</span>
+          <h2>Clarity · Confidence · Connection</h2>
+          <div class="divider"></div>
+          <p>Transformation · Into · New · Awareness</p>
+        </div>
+        <div class="tina-layout" data-reveal>
+          <!-- Left column: Triangle visual -->
+          <div class="triangle-visual">
+            <svg viewBox="0 0 680 640" role="img"
+              aria-label="Biểu đồ tam giác chuyển hoá T.I.N.A — Clarity, Confidence, Connection"
+              xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <linearGradient id="goldMetal" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#8A6A28" />
+                  <stop offset="24%" stop-color="#C8A244" />
+                  <stop offset="50%" stop-color="#F6E1A2" />
+                  <stop offset="63%" stop-color="#DCB95C" />
+                  <stop offset="80%" stop-color="#C8A244" />
+                  <stop offset="100%" stop-color="#8A6A28" />
+                </linearGradient>
+                <radialGradient id="emeraldGlow" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="#0B8A66" stop-opacity="0.20" />
+                  <stop offset="55%" stop-color="#005B45" stop-opacity="0.06" />
+                  <stop offset="100%" stop-color="#005B45" stop-opacity="0" />
+                </radialGradient>
+              </defs>
+
+              <circle cx="340" cy="360" r="232" fill="url(#emeraldGlow)" />
+              <circle cx="340" cy="360" r="250" fill="none" stroke="#C8A244" stroke-opacity="0.22" stroke-width="1" />
+              <circle cx="340" cy="360" r="250" fill="none" stroke="#C8A244" stroke-opacity="0.30" stroke-width="1"
+                stroke-dasharray="2 12" />
+
+              <!-- Triangle (pulled inward to give T.I.N.A text more room) -->
+              <path d="M340 190 L510 452 L170 452 Z" fill="#005B45" fill-opacity="0.05" stroke="url(#goldMetal)"
+                stroke-width="2.5" stroke-linejoin="round" />
+
+              <!-- Vertex nodes -->
+              <circle cx="340" cy="190" r="6" fill="url(#goldMetal)" />
+              <circle cx="170" cy="452" r="6" fill="url(#goldMetal)" />
+              <circle cx="510" cy="452" r="6" fill="url(#goldMetal)" />
+
+              <!-- Center wordmark -->
+              <text x="340" y="345" text-anchor="middle" font-family="'Cormorant Garamond', Georgia, serif"
+                font-size="48" font-weight="600" letter-spacing="4" fill="url(#goldMetal)">T.I.N.A<tspan font-size="16"
+                  dy="-20" letter-spacing="0" fill="#C8A244">™</tspan></text>
+              <text x="340" y="380" text-anchor="middle" font-family="'Be Vietnam Pro', sans-serif" font-size="11.5"
+                letter-spacing="2" fill="#F1D89A" fill-opacity="0.78">TRANSFORMATION INTO NEW AWARENESS</text>
+
+              <!-- Vertex label: Clarity (top) -->
+              <text x="340" y="60" text-anchor="middle" font-family="'Be Vietnam Pro', sans-serif" font-size="14"
+                font-weight="700" letter-spacing="2.5" fill="#E2C36C">CLARITY</text>
+              <text x="340" y="84" text-anchor="middle" font-family="'Cormorant Garamond', Georgia, serif"
+                font-size="19" font-style="italic" fill="#F1D89A">Sự thông suốt</text>
+              <text x="340" y="106" text-anchor="middle" font-family="'Be Vietnam Pro', sans-serif" font-size="12"
+                fill="rgba(255,255,255,0.74)">Thấy rõ hướng đi của chính mình</text>
+
+              <!-- Vertex label: Confidence (bottom-left) -->
+              <text x="150" y="522" text-anchor="middle" font-family="'Be Vietnam Pro', sans-serif" font-size="14"
+                font-weight="700" letter-spacing="2.5" fill="#E2C36C">CONFIDENCE</text>
+              <text x="150" y="546" text-anchor="middle" font-family="'Cormorant Garamond', Georgia, serif"
+                font-size="19" font-style="italic" fill="#F1D89A">Tự tin làm chủ</text>
+              <text x="150" y="568" text-anchor="middle" font-family="'Be Vietnam Pro', sans-serif" font-size="12"
+                fill="rgba(255,255,255,0.74)">Vững vàng từ bên trong</text>
+
+              <!-- Vertex label: Connection (bottom-right) -->
+              <text x="530" y="522" text-anchor="middle" font-family="'Be Vietnam Pro', sans-serif" font-size="14"
+                font-weight="700" letter-spacing="2.5" fill="#E2C36C">CONNECTION</text>
+              <text x="530" y="546" text-anchor="middle" font-family="'Cormorant Garamond', Georgia, serif"
+                font-size="19" font-style="italic" fill="#F1D89A">Khơi dậy kết nối</text>
+              <text x="530" y="568" text-anchor="middle" font-family="'Be Vietnam Pro', sans-serif" font-size="12"
+                fill="rgba(255,255,255,0.74)">Kết nối lại với chính mình</text>
+            </svg>
+          </div>
+
+          <!-- Right column: 3C description cards -->
+          <div class="tina-cards">
+            <div class="tina-card">
+              <h3>CLARITY – <span>Sự thông suốt</span></h3>
+              <p>Một lộ trình rõ ràng giúp chữa lành nỗi đau mất phương hướng, để bạn biết mình đang ở đâu và thật sự
+                muốn đi đâu.</p>
+            </div>
+            <div class="tina-card">
+              <h3>CONFIDENCE – <span>Tự tin làm chủ</span></h3>
+              <p>Phục hồi năng lực ra quyết định và sự vững vàng nội tâm, chữa lành sự mất mát niềm tin vào chính mình.
+              </p>
+            </div>
+            <div class="tina-card">
+              <h3>CONNECTION – <span>Khơi dậy kết nối</span></h3>
+              <p>Kết nối lại với bản thân và người thân, chữa lành sự thiếu hoà hợp trong những mối quan hệ quan trọng.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════
+         6. HỆ SINH THÁI DỊCH VỤ
+         ═══════════════════════════════════════════════════════ -->
+    <section id="services" class="section">
+      <div class="container">
+
+        <div class="section-header" data-reveal>
+          <span class="badge">Hệ sinh thái dịch vụ</span>
+          <h2>Ba chương trình đồng hành</h2>
+          <div class="divider"></div>
+          <p>Mỗi chương trình phục vụ một giai đoạn trên hành trình chuyển hoá của bạn — từ bước kết nối đầu tiên, đến
+            hành trình chuyển hoá chuyên sâu và đồng hành hiện thực hoá tầm nhìn dài hạn.</p>
+        </div>
+
+        <div class="srv-grid" data-reveal-stagger>
+
+          <!-- TINA Awareness -->
+          <div class="srv-card srv-card--p2p">
+            <div class="srv-num">01</div>
+            <h3>TINA Awareness</h3>
+            <div class="srv-sub">Nhập môn · 3 buổi kết nối</div>
+            <p>Chương trình nhập môn giúp bạn bắt đầu kết nối và tìm hiểu chính mình qua 3 phiên đồng hành 1:1.</p>
+            <a href="<?php echo esc_url(home_url('/dich-vu-1/')); ?>" class="btn btn--primary btn--sm">Tìm hiểu thêm →</a>
+          </div>
+
+          <!-- TINA Awakening -->
+          <div class="srv-card srv-card--b2f">
+            <div class="srv-num">02</div>
+            <h3>TINA Awakening</h3>
+            <div class="srv-sub">90 ngày chuyển hoá 1:1</div>
+            <p>Hành trình chuyên sâu 12 module giúp bạn tìm lại sự rõ ràng, tự tin làm chủ và kết nối sâu với chính
+              mình.</p>
+            <a href="<?php echo esc_url(home_url('/dich-vu-2/')); ?>" class="btn btn--primary btn--sm">Tìm hiểu thêm →</a>
+          </div>
+
+          <!-- TINA Alignment -->
+          <div class="srv-card srv-card--bm">
+            <div class="srv-num">03</div>
+            <h3>TINA Alignment</h3>
+            <div class="srv-sub">Đồng hành 6 tháng – 1 năm</div>
+            <p>Đồng hành dài hơi để hiện thực hoá tầm nhìn 5–10 năm và những mục tiêu đã xác định từ Module 10 của TINA
+              Awakening.</p>
+            <a href="<?php echo esc_url(home_url('/dich-vu-3/')); ?>" class="btn btn--primary btn--sm">Tìm hiểu thêm →</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════
+         7. FREE EBOOK (lead magnet)
+         ═══════════════════════════════════════════════════════ -->
+    <section class="section book-section bg-tram-2">
+      <div class="container">
+        <div class="book-grid">
+
+          <!-- eBook Image -->
+          <div class="book-img" data-reveal="left">
+            <img src="<?php echo edt_asset('images/book-mockup.png'); ?>" alt="eBook Ánh Sáng Của Ước Mơ – Edina Trâm" loading="lazy" width="340"
+              height="420">
+          </div>
+
+          <!-- eBook Content -->
+          <div class="book-content" data-reveal="right">
+            <span class="badge badge--dark">eBook miễn phí</span>
+            <h2>Ánh Sáng Của Ước Mơ</h2>
+            <p>Món quà miễn phí dành cho bạn: những trang viết chia sẻ hành trình chuyển hoá cá nhân và các bài học trên
+              con đường tìm lại sự rõ ràng, bình an và mục đích sống. Tải về để bắt đầu hành trình của riêng mình.</p>
+            <div class="book-ctas">
+              <a href="<?php echo esc_url(home_url('/lien-he/')); ?>" class="btn btn--accent btn--lg">Tải eBook miễn phí</a>
+              <a href="#services" class="btn btn--outline-light btn--lg">Khám phá chương trình</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════
+         8. TESTIMONIALS — Câu chuyện chuyển hoá
+         ═══════════════════════════════════════════════════════ -->
+    <section class="section section--alt bg-soft-depth">
+      <div class="container">
+
+        <div class="section-header" data-reveal>
+          <span class="badge">Khách hàng nói gì</span>
+          <h2>Câu chuyện chuyển hóa</h2>
+          <div class="divider"></div>
+        </div>
+
+        <div class="testi-grid" data-reveal-stagger>
+
+          <div class="testi-card" data-reveal>
+            <div class="testi-head">
+              <div class="testi-avatar-wrap">
+                <img class="testi-avatar" src="<?php echo edt_asset('images/testi/hoang-huong.jpg'); ?>" alt="Chị Hoàng Hương" loading="lazy"
+                  width="64" height="64">
+              </div>
+              <div>
+                <p class="testi-name">Chị Hoàng Hương</p>
+                <p class="testi-role">1984 · Phó phòng Tín dụng khách hàng, Ngân hàng BIDV</p>
+              </div>
+            </div>
+            <p class="testi-quote">Tôi đã sống 40 năm, va chạm xã hội nhiều, nhưng hôm nay tôi mới thật sự sáng mắt
+              ra. Trâm giúp tôi hiểu tam giác Bi - Trí - Dũng và soi thẳng vào đời mình. Một tháng trước, lúc bế tắc
+              nhất, tôi đã cầu xin một quý nhân dẫn đường. Và Trâm đã xuất hiện.</p>
+          </div>
+
+          <div class="testi-card" data-reveal>
+            <div class="testi-head">
+              <div class="testi-avatar-wrap">
+                <img class="testi-avatar" src="<?php echo edt_asset('images/testi/minh-huong.jpg'); ?>" alt="Chị Minh Hương" loading="lazy"
+                  width="64" height="64">
+              </div>
+              <div>
+                <p class="testi-name">Chị Minh Hương</p>
+                <p class="testi-role">1984 · Boston, Massachusetts</p>
+              </div>
+            </div>
+            <p class="testi-quote">Phiên coach với Trâm là một trong những trải nghiệm sâu nhất tôi từng có. Trâm giúp
+              tôi chạm vào một ký ức tưởng đã quên từ lâu. Ở Trâm luôn có cảm giác an toàn, kiên nhẫn và không bao giờ
+              phán xét.</p>
+          </div>
+
+          <div class="testi-card" data-reveal>
+            <div class="testi-head">
+              <div class="testi-avatar-wrap">
+                <img class="testi-avatar" src="<?php echo edt_asset('images/testi/le-the-hao.jpg'); ?>" alt="Anh Lê Thế Hào" loading="lazy"
+                  width="64" height="64">
+              </div>
+              <div>
+                <p class="testi-name">Anh Lê Thế Hào</p>
+                <p class="testi-role">1993 · Dịch giả, TP. Hồ Chí Minh</p>
+              </div>
+            </div>
+            <p class="testi-quote">Hai điều giá trị nhất trong phiên: em nhìn rõ hơn đâu là phương tiện và đâu mới
+              thật sự là cứu cánh của đời mình; và bài học “còn thở là còn gỡ”. Em cảm nhận được một tình thương
+              thiêng liêng trong đó.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════
+         9. CTA FINAL
+         ═══════════════════════════════════════════════════════ -->
+    <section class="cta-final section--dark bg-silk-orbit bg-tram-3">
+      <div class="container" data-reveal>
+        <span class="badge badge--dark">Bắt đầu hành trình</span>
+        <h2>Bạn đã sẵn sàng cho phiên bản<br>tuyệt vời nhất?</h2>
+        <p>Đặt lịch tư vấn miễn phí để cùng tôi tìm ra chương trình phù hợp nhất cho hành trình chuyển hoá của bạn.</p>
+        <a href="<?php echo esc_url(home_url('/lien-he/')); ?>" class="btn btn--accent btn--lg">Đặt lịch Tư vấn miễn phí</a>
+      </div>
+    </section>
+
+  
+
+<?php get_footer();

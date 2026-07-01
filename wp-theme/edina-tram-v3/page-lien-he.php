@@ -1,0 +1,156 @@
+<?php
+/**
+ * Template: Liên hệ
+ * Port từ static-site/lien-he.html — nội dung theo bản HTML đã chốt.
+ * Chrome (header/footer/nav/glow-blobs) do get_header()/get_footer() lo.
+ */
+if (!defined('ABSPATH')) exit;
+get_header();
+?>
+    <!-- ═══ Contact Hero ═══ -->
+    <section class="contact-hero" data-reveal>
+      <div class="container">
+        <span class="badge badge--dark">Liên hệ</span>
+        <h1>Hãy kết nối cùng tôi</h1>
+        <p>Buổi tư vấn đầu tiên hoàn toàn miễn phí — không có cam kết.</p>
+      </div>
+    </section>
+
+    <!-- ═══ Contact Layout ═══ -->
+    <section data-reveal>
+      <div class="container">
+        <div class="contact-layout">
+
+          <!-- ─── Info Card ─── -->
+          <div class="contact-info-card" data-reveal>
+            <span class="badge">Thông tin</span>
+            <h2>Tôi muốn lắng nghe bạn</h2>
+            <div class="divider divider--left"></div>
+            <p>Đừng ngần ngại liên hệ qua bất kỳ kênh nào bạn thấy tiện nhất. Tôi sẽ phản hồi trong vòng 24 giờ.</p>
+
+            <div class="info-list">
+              <!-- Email -->
+              <div class="info-item">
+                <div class="info-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                    <polyline points="22,6 12,13 2,6"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="info-label">Email</p>
+                  <p class="info-value"><a href="mailto:lequynhtram@gmail.com">lequynhtram@gmail.com</a></p>
+                </div>
+              </div>
+
+              <!-- Phone -->
+              <div class="info-item">
+                <div class="info-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13 19.79 19.79 0 0 1 1.61 4.35 2 2 0 0 1 3.59 2.18h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="info-label">Số điện thoại</p>
+                  <p class="info-value"><a href="tel:+84889590888">(+84) 88-9590-888</a></p>
+                </div>
+              </div>
+
+              <!-- Facebook -->
+              <div class="info-item">
+                <div class="info-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/>
+                    <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="info-label">Facebook</p>
+                  <p class="info-value"><a href="https://www.facebook.com/edina.quynhtram" target="_blank" rel="noopener">/edina.quynhtram</a></p>
+                </div>
+              </div>
+
+              <!-- Website -->
+              <div class="info-item">
+                <div class="info-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"/>
+                    <line x1="2" y1="12" x2="22" y2="12"/>
+                    <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="info-label">Website</p>
+                  <p class="info-value"><a href="https://edinatram.vn" target="_blank" rel="noopener">edinatram.vn</a></p>
+                </div>
+              </div>
+
+              <!-- Working hours -->
+              <div class="info-item">
+                <div class="info-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"/>
+                    <polyline points="12 6 12 12 16 14"/>
+                  </svg>
+                </div>
+                <div>
+                  <p class="info-label">Giờ làm việc</p>
+                  <p class="info-value">Thứ 2 – Thứ 7, 8:00 – 21:00</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ─── Form Card ─── -->
+          <div class="contact-form-card" data-reveal>
+            <span class="badge">Gửi tin nhắn</span>
+            <h2>Đặt lịch tư vấn miễn phí</h2>
+            <p class="form-lead">Điền thông tin bên dưới và tôi sẽ liên hệ lại với bạn sớm nhất có thể.</p>
+
+            <form action="#" method="POST" novalidate id="contact-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name">Họ và tên <span class="required" aria-hidden="true">*</span></label>
+                  <input type="text" id="name" name="name" placeholder="Nguyễn Văn A" autocomplete="name" required />
+                </div>
+                <div class="form-group">
+                  <label for="email">Email <span class="required" aria-hidden="true">*</span></label>
+                  <input type="email" id="email" name="email" placeholder="example@email.com" autocomplete="email" required />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="phone">Số điện thoại</label>
+                <input type="tel" id="phone" name="phone" placeholder="(+84) 88-9590-888" autocomplete="tel" />
+              </div>
+
+              <div class="form-group">
+                <label for="service">Dịch vụ quan tâm</label>
+                <select id="service" name="service">
+                  <option value="">-- Chọn dịch vụ --</option>
+                  <option value="first-connection">Buổi kết nối đầu tiên (miễn phí)</option>
+                  <option value="awareness">TINA Awareness</option>
+                  <option value="awakening">TINA Awakening</option>
+                  <option value="alignment">TINA Alignment</option>
+                  <option value="other">Khác / Chưa chắc</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Lời nhắn <span class="required" aria-hidden="true">*</span></label>
+                <textarea id="message" name="message" placeholder="Chia sẻ với tôi về mục tiêu hoặc vấn đề bạn muốn giải quyết..." required></textarea>
+              </div>
+
+              <div class="form-submit">
+                <button type="submit" class="btn btn--primary btn--lg">Gửi tin nhắn</button>
+              </div>
+              <p class="form-note">Tôi sẽ phản hồi trong vòng 24 giờ. Thông tin của bạn được bảo mật tuyệt đối.</p>
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  
+
+<?php get_footer();
