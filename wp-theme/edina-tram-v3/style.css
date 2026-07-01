@@ -1,0 +1,17 @@
+/*
+Theme Name: Edina Trâm V3
+Theme URI: https://edinatram.vn
+Author: Edina Trâm
+Author URI: https://edinatram.vn
+Description: Theme v3 cho Coach Edina Trâm — port từ bản HTML đã chốt (hệ TINA: Awareness · Awakening · Alignment) với kiến trúc thư viện section tái sử dụng qua get_template_part.
+Version: 3.0.0
+Requires at least: 6.0
+Tested up to: 6.7
+Requires PHP: 7.4
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: edina-tram-v3
+Tags: one-page, custom-menu, featured-images, full-width-template, translation-ready
+*/
+
+/* Style thực tế nằm ở assets/css/* và được enqueue trong functions.php. */

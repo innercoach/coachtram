@@ -1,13 +1,12 @@
-<!DOCTYPE html>
-<html lang="vi">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Câu chuyện của tôi | Edina Trâm</title>
-  <meta name="description"
-    content="Câu chuyện của Edina Trâm: hành trình đi qua khủng hoảng, chuyển hoá và trở thành người đồng hành tại giao điểm Tâm lý học, Khai vấn, Tâm linh và Tài chính.">
-  <link rel="stylesheet" href="css/style.css">
+<?php
+/**
+ * Template: Câu chuyện của tôi
+ * Port từ static-site/cau-chuyen-cua-toi.html — nội dung theo bản HTML đã chốt.
+ * Chrome (header/footer/nav/glow-blobs) do get_header()/get_footer() lo.
+ */
+if (!defined('ABSPATH')) exit;
+get_header();
+?>
   <style>
     .story-hero {
       min-height: 92dvh;
@@ -205,23 +204,6 @@
       }
     }
   </style>
-</head>
-
-<body>
-  <site-header active="cau-chuyen-cua-toi.html"></site-header>
-  <noscript>
-    <div style="background:#06513c;color:#fff;text-align:center;padding:.6rem 1rem;font-size:.9rem;">
-      Trang hiển thị đầy đủ hơn khi bật JavaScript.
-      <a href="index.html" style="color:#F1D89A;">Trang chủ</a> ·
-      <a href="cau-chuyen-cua-toi.html" style="color:#F1D89A;">Câu chuyện</a> ·
-      <a href="dich-vu-2.html" style="color:#F1D89A;">TINA Awakening</a> ·
-      <a href="lien-he.html" style="color:#F1D89A;">Liên hệ</a>
-    </div>
-  </noscript>
-
-  <main>
-    <glow-blobs></glow-blobs>
-
     <section class="story-hero">
       <div class="container story-hero-grid">
         <div data-reveal>
@@ -233,7 +215,7 @@
             phải dừng lại, tan ra, nhìn sâu và học cách đứng dậy một lần nữa.</p>
         </div>
         <div class="story-portrait" data-reveal="right">
-          <img src="hero_trang_cau_chuyen.jpg" alt="Edina Trâm" loading="eager" width="1707" height="2560">
+          <img src="<?php echo edt_asset('images/hero_trang_cau_chuyen.jpg'); ?>" alt="Edina Trâm" loading="eager" width="1707" height="2560">
         </div>
       </div>
     </section>
@@ -278,7 +260,7 @@
       </div>
     </section>
 
-    <site-section name="instructor"></site-section>
+    <?php edt_section('instructor'); ?>
 
     <!-- ═══ KẾT NỐI ĐA KÊNH ═══ -->
     <section class="section">
@@ -345,12 +327,6 @@
         </div>
       </div>
     </section>
-  </main>
+  
 
-  <site-footer></site-footer>
-  <script src="js/components.js" defer></script>
-  <script src="js/sections.js" defer></script>
-  <script src="js/main.js" defer></script>
-</body>
-
-</html>
+<?php get_footer();

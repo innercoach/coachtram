@@ -1,11 +1,12 @@
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bài viết của Trâm | Thư viện Substack</title>
-  <meta name="description" content="Thư viện bài viết của Edina Trâm, quy hoạch lại các bài chia sẻ từ Facebook theo chủ đề và dẫn sang Substack.">
-  <link rel="stylesheet" href="css/style.css">
+<?php
+/**
+ * Template: Bài viết của Trâm
+ * Port từ static-site/bai-viet-cua-tram.html — nội dung theo bản HTML đã chốt.
+ * Chrome (header/footer/nav/glow-blobs) do get_header()/get_footer() lo.
+ */
+if (!defined('ABSPATH')) exit;
+get_header();
+?>
   <style>
     .library-hero { min-height: 72dvh; display:flex; align-items:center; padding-top: var(--header-height); background: radial-gradient(ellipse at 20% 50%, rgba(11,138,102,.08), transparent 56%), radial-gradient(ellipse at 80% 20%, rgba(200,162,68,.06), transparent 50%), var(--color-bg); }
     .library-hero h1 { font-size: clamp(var(--text-4xl), 6vw, var(--text-7xl)); line-height:1.05; margin-bottom: var(--space-5); }
@@ -22,20 +23,6 @@
     .article-card .btn { margin-top:auto; align-self:flex-start; }
     @media (max-width: 960px) { .article-grid { grid-template-columns: 1fr; } }
   </style>
-</head>
-<body>
-  <site-header active="bai-viet-cua-tram.html"></site-header>
-  <noscript>
-    <div style="background:#06513c;color:#fff;text-align:center;padding:.6rem 1rem;font-size:.9rem;">
-      Trang hiển thị đầy đủ hơn khi bật JavaScript.
-      <a href="index.html" style="color:#F1D89A;">Trang chủ</a> ·
-      <a href="cau-chuyen-cua-toi.html" style="color:#F1D89A;">Câu chuyện</a> ·
-      <a href="dich-vu-2.html" style="color:#F1D89A;">TINA Awakening</a> ·
-      <a href="lien-he.html" style="color:#F1D89A;">Liên hệ</a>
-    </div>
-  </noscript>
-
-  <main>
     <section class="library-hero">
       <div class="container">
         <div class="section-header" data-reveal>
@@ -139,11 +126,6 @@
 
       </div>
     </section>
-  </main>
+  
 
-  <site-footer></site-footer>
-  <script src="js/components.js" defer></script>
-  <script src="js/sections.js" defer></script>
-  <script src="js/main.js" defer></script>
-</body>
-</html>
+<?php get_footer();

@@ -1,11 +1,12 @@
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TINA Alignment - Đồng hành 6 tháng đến 1 năm | Edina Trâm</title>
-  <meta name="description" content="TINA Alignment là chương trình đồng hành dài hạn 6 tháng đến 1 năm giúp hiện thực hoá tầm nhìn 5-10 năm và các mục tiêu hành động sau Tina Awakening.">
-  <link rel="stylesheet" href="css/style.css">
+<?php
+/**
+ * Template: TINA Alignment
+ * Port từ static-site/dich-vu-3.html — nội dung theo bản HTML đã chốt.
+ * Chrome (header/footer/nav/glow-blobs) do get_header()/get_footer() lo.
+ */
+if (!defined('ABSPATH')) exit;
+get_header();
+?>
   <style>
     :root { --page-accent: #014F3D; --page-accent-rgb: 1, 79, 61; }
     body { padding-bottom: 80px; }
@@ -26,23 +27,6 @@
     .timeline-label { color: var(--royal-gold); font-weight:700; text-transform:uppercase; letter-spacing:.08em; font-size: var(--text-xs); }
     @media (max-width: 860px) { .alignment-flow, .alignment-panel { grid-template-columns: 1fr; } .timeline-item { grid-template-columns: 1fr; } }
   </style>
-</head>
-<body>
-
-  <site-header active="dich-vu-3.html"></site-header>
-  <noscript>
-    <div style="background:#06513c;color:#fff;text-align:center;padding:.6rem 1rem;font-size:.9rem;">
-      Trang hiển thị đầy đủ hơn khi bật JavaScript.
-      <a href="index.html" style="color:#F1D89A;">Trang chủ</a> ·
-      <a href="cau-chuyen-cua-toi.html" style="color:#F1D89A;">Câu chuyện</a> ·
-      <a href="dich-vu-2.html" style="color:#F1D89A;">TINA Awakening</a> ·
-      <a href="lien-he.html" style="color:#F1D89A;">Liên hệ</a>
-    </div>
-  </noscript>
-
-  <main>
-    <glow-blobs></glow-blobs>
-
     <section class="srv-hero">
       <div class="container srv-hero-grid">
         <div class="srv-hero-content" data-reveal>
@@ -54,10 +38,10 @@
             <span class="meta-item">6 tháng - 1 năm</span>
             <span class="meta-item">May đo theo mục tiêu cá nhân</span>
           </div>
-          <a href="lien-he.html?program=alignment" class="btn btn--accent btn--lg">Đặt lịch trao đổi Alignment</a>
+          <a href="<?php echo esc_url(home_url('/lien-he/?program=alignment')); ?>" class="btn btn--accent btn--lg">Đặt lịch trao đổi Alignment</a>
         </div>
         <div class="srv-hero-img" data-reveal="right">
-          <img src="profile.jpg" alt="Edina Trâm - TINA Alignment" loading="eager" fetchpriority="high">
+          <img src="<?php echo edt_asset('images/profile.jpg'); ?>" alt="Edina Trâm - TINA Alignment" loading="eager" fetchpriority="high">
         </div>
       </div>
     </section>
@@ -154,7 +138,7 @@
     </section>
 
     <!-- ═══ INSTRUCTOR ═══ -->
-    <site-section name="instructor" alt="Edina Trâm - người đồng hành trong chương trình TINA Alignment"></site-section>
+    <?php edt_section('instructor', ['alt' => 'Edina Trâm - người đồng hành trong chương trình TINA Alignment']); ?>
 
     <!-- ═══ FAQ ═══ -->
     <section class="srv-section--alt" aria-label="Câu hỏi thường gặp">
@@ -205,15 +189,9 @@
         <span class="badge badge--dark">TINA ALIGNMENT</span>
         <h2>Bạn đã sẵn sàng sống đúng với tầm nhìn mình nhìn thấy?</h2>
         <p>Đặt lịch trao đổi để cùng Trâm xem Alignment có phải là chặng đồng hành phù hợp tiếp theo của bạn không.</p>
-        <a href="lien-he.html?program=alignment" class="btn btn--accent btn--lg">Đặt lịch TINA Alignment</a>
+        <a href="<?php echo esc_url(home_url('/lien-he/?program=alignment')); ?>" class="btn btn--accent btn--lg">Đặt lịch TINA Alignment</a>
       </div>
     </section>
-  </main>
+  
 
-  <site-footer></site-footer>
-
-  <script src="js/components.js" defer></script>
-  <script src="js/sections.js" defer></script>
-  <script src="js/main.js" defer></script>
-</body>
-</html>
+<?php get_footer();

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <meta name="description" content="Thư viện section & component tái sử dụng của website Edina Trâm — tài liệu nội bộ.">
+  <title>Thư viện Section — Edina Trâm</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* ── Docs scaffolding (chỉ dùng cho trang thư viện) ── */
+    .lib-wrap { max-width: 1080px; margin-inline: auto; padding: var(--space-8, 2rem) var(--space-6, 1.5rem) var(--space-16, 5rem); }
+    .lib-hero { padding: var(--space-12, 4rem) 0 var(--space-8, 2rem); }
+    .lib-hero h1 { font-family: var(--font-heading); color: var(--color-primary, #005B45); font-size: clamp(2rem, 5vw, 2.75rem); margin: 0 0 var(--space-3, .75rem); }
+    .lib-hero p { color: var(--color-fg-muted, #4A5B54); max-width: 62ch; line-height: 1.7; }
+    .lib-toc { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: var(--space-6, 1.5rem); }
+    .lib-toc a { font-size: .85rem; padding: .35rem .8rem; border-radius: 999px; border: 1px solid var(--color-border-light, #ece6d8); color: var(--color-primary, #005B45); text-decoration: none; background: var(--color-surface, #fff); }
+    .lib-toc a:hover { border-color: var(--royal-gold, #C8A244); }
+
+    .lib-item { margin-top: var(--space-12, 4rem); scroll-margin-top: 90px; }
+    .lib-item > h2 { font-family: var(--font-heading); color: var(--color-primary, #005B45); font-size: 1.6rem; margin: 0 0 .35rem; }
+    .lib-item > .lib-desc { color: var(--color-fg-muted, #4A5B54); line-height: 1.7; margin: 0 0 var(--space-5, 1.25rem); max-width: 70ch; }
+    .lib-tag { display: inline-block; font-size: .7rem; letter-spacing: .08em; text-transform: uppercase; font-weight: 700; padding: .15rem .55rem; border-radius: 6px; margin-left: .5rem; vertical-align: middle; }
+    .lib-tag--wc { background: #eaf4ef; color: #06513c; }
+    .lib-tag--fetch { background: #fbf3dd; color: #8a6d1c; }
+    .lib-tag--css { background: #eef0f4; color: #3a4a63; }
+
+    .lib-preview { border: 1px solid var(--color-border-light, #ece6d8); border-radius: var(--radius-lg, 1.25rem); overflow: hidden; background: var(--color-surface, #fff); }
+    .lib-preview__label { font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: var(--color-fg-muted, #4A5B54); padding: .5rem .9rem; border-bottom: 1px dashed var(--color-border-light, #ece6d8); background: #faf8f2; }
+    .lib-preview__body { padding: var(--space-6, 1.5rem); }
+    .lib-preview__body--flush { padding: 0; }
+
+    .lib-code { margin: var(--space-4, 1rem) 0 0; background: #06231b; border-radius: var(--radius-md, .85rem); overflow: auto; }
+    .lib-code pre { margin: 0; padding: var(--space-5, 1.25rem); }
+    .lib-code code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .82rem; line-height: 1.6; color: #dCEadf; white-space: pre; }
+    .lib-code .tok-tag { color: #7fd1a8; }
+    .lib-code .tok-attr { color: #e6c876; }
+    .lib-code .tok-cmt { color: #6d8378; font-style: italic; }
+
+    .lib-params { width: 100%; border-collapse: collapse; margin-top: var(--space-4, 1rem); font-size: .88rem; }
+    .lib-params th, .lib-params td { text-align: left; padding: .5rem .7rem; border-bottom: 1px solid var(--color-border-light, #ece6d8); vertical-align: top; }
+    .lib-params th { color: var(--color-primary, #005B45); font-weight: 700; }
+    .lib-params code { background: #f2efe6; padding: .1rem .35rem; border-radius: 5px; font-size: .82rem; }
+
+    .lib-note { margin-top: var(--space-4,1rem); padding: var(--space-4,1rem) var(--space-5,1.25rem); border-left: 3px solid var(--royal-gold,#C8A244); background: #fbf7ec; border-radius: 0 .6rem .6rem 0; font-size: .9rem; line-height: 1.65; color: #5a4e2e; }
+    .lib-note code { background: #f0e8d0; padding: .1rem .35rem; border-radius: 5px; }
+  </style>
+</head>
+
+<body>
+
+  <site-header active="thu-vien-section.html"></site-header>
+  <noscript>
+    <div style="background:#06513c;color:#fff;text-align:center;padding:.6rem 1rem;font-size:.9rem;">
+      Trang hiển thị đầy đủ hơn khi bật JavaScript.
+      <a href="index.html" style="color:#F1D89A;">Trang chủ</a> ·
+      <a href="cau-chuyen-cua-toi.html" style="color:#F1D89A;">Câu chuyện</a> ·
+      <a href="dich-vu-2.html" style="color:#F1D89A;">TINA Awakening</a> ·
+      <a href="lien-he.html" style="color:#F1D89A;">Liên hệ</a>
+    </div>
+  </noscript>
+
+  <main>
+    <glow-blobs></glow-blobs>
+
+    <div class="lib-wrap">
+
+      <!-- ═══ HERO ═══ -->
+      <header class="lib-hero">
+        <span class="badge badge--gold">Tài liệu nội bộ</span>
+        <h1 style="margin-top:.6rem;">Thư viện Section</h1>
+        <p>Các khối giao diện dùng lại được của website Edina Trâm, đã tách khỏi từng trang.
+          Có hai cơ chế: <strong>Web Component</strong> (render ngay, dùng cho phần khung như header/footer)
+          và <strong>Section động</strong> qua <code>&lt;site-section&gt;</code> (tải HTML từ thư mục
+          <code>/sections</code>). Copy đoạn mã ở mỗi mục để tái sử dụng trên trang mới.</p>
+
+        <nav class="lib-toc" aria-label="Mục lục">
+          <a href="#how">Cách hoạt động</a>
+          <a href="#site-header">site-header</a>
+          <a href="#glow-blobs">glow-blobs</a>
+          <a href="#site-footer">site-footer</a>
+          <a href="#instructor">section: instructor</a>
+          <a href="#section-header">Section header</a>
+          <a href="#buttons">Buttons &amp; Badges</a>
+          <a href="#faq">FAQ accordion</a>
+          <a href="#cta">CTA cuối trang</a>
+        </nav>
+      </header>
+
+      <!-- ═══ HOW IT WORKS ═══ -->
+      <section class="lib-item" id="how">
+        <h2>Cách hoạt động</h2>
+        <p class="lib-desc">Mỗi trang chỉ cần nạp ba script (theo đúng thứ tự) rồi dùng các thẻ tuỳ biến.
+          <code>components.js</code> định nghĩa phần khung, <code>sections.js</code> nạp section động,
+          <code>main.js</code> gắn tương tác (reveal, FAQ, counter…) — kể cả cho nội dung vừa được chèn thêm.</p>
+        <div class="lib-code"><pre><code><span class="tok-cmt">&lt;!-- đặt trước &lt;/body&gt; --&gt;</span>
+<span class="tok-tag">&lt;script</span> <span class="tok-attr">src</span>=<span class="tok-attr">"js/components.js"</span> <span class="tok-attr">defer</span><span class="tok-tag">&gt;&lt;/script&gt;</span>
+<span class="tok-tag">&lt;script</span> <span class="tok-attr">src</span>=<span class="tok-attr">"js/sections.js"</span> <span class="tok-attr">defer</span><span class="tok-tag">&gt;&lt;/script&gt;</span>
+<span class="tok-tag">&lt;script</span> <span class="tok-attr">src</span>=<span class="tok-attr">"js/main.js"</span> <span class="tok-attr">defer</span><span class="tok-tag">&gt;&lt;/script&gt;</span></code></pre></div>
+        <div class="lib-note">Section động dùng <code>fetch()</code> nên trang phải chạy qua http(s). Trên GitHub Pages
+          đã sẵn sàng. Xem thử ở máy: chạy <code>python3 -m http.server</code> trong <code>static-site/</code>
+          (mở trực tiếp bằng <code>file://</code> sẽ chặn fetch).</div>
+      </section>
+
+      <!-- ═══ SITE-HEADER ═══ -->
+      <section class="lib-item" id="site-header">
+        <h2>site-header <span class="lib-tag lib-tag--wc">Web Component</span></h2>
+        <p class="lib-desc">Thanh điều hướng chính. Danh sách menu là nguồn duy nhất trong
+          <code>js/components.js</code> (hằng <code>NAV_ITEMS</code>) — sửa một nơi, mọi trang cập nhật.</p>
+        <div class="lib-preview">
+          <div class="lib-preview__label">Xem trực tiếp — bản đang hoạt động ở đầu trang này (active = trang thư viện)</div>
+          <div class="lib-preview__body" style="color:var(--color-fg-muted)">Cuộn lên đầu để xem header thật đang render từ component.</div>
+        </div>
+        <div class="lib-code"><pre><code><span class="tok-cmt">&lt;!-- active = tên file trang hiện tại để tô sáng đúng mục --&gt;</span>
+<span class="tok-tag">&lt;site-header</span> <span class="tok-attr">active</span>=<span class="tok-attr">"dich-vu-2.html"</span><span class="tok-tag">&gt;&lt;/site-header&gt;</span></code></pre></div>
+        <table class="lib-params">
+          <tr><th>Thuộc tính</th><th>Bắt buộc</th><th>Mô tả</th></tr>
+          <tr><td><code>active</code></td><td>Không</td><td>Tên file để đánh dấu mục đang chọn. Bỏ trống → tự suy ra từ URL.</td></tr>
+        </table>
+      </section>
+
+      <!-- ═══ GLOW-BLOBS ═══ -->
+      <section class="lib-item" id="glow-blobs">
+        <h2>glow-blobs <span class="lib-tag lib-tag--wc">Web Component</span></h2>
+        <p class="lib-desc">Hai vệt sáng trang trí (vàng + ngọc lục bảo) đặt ngay sau <code>&lt;main&gt;</code>.
+          Style nằm trong <code>css/backgrounds.css</code>.</p>
+        <div class="lib-code"><pre><code><span class="tok-tag">&lt;main&gt;</span>
+  <span class="tok-tag">&lt;glow-blobs&gt;&lt;/glow-blobs&gt;</span>
+  <span class="tok-cmt">…nội dung trang…</span>
+<span class="tok-tag">&lt;/main&gt;</span></code></pre></div>
+      </section>
+
+      <!-- ═══ SITE-FOOTER ═══ -->
+      <section class="lib-item" id="site-footer">
+        <h2>site-footer <span class="lib-tag lib-tag--wc">Web Component</span></h2>
+        <p class="lib-desc">Chân trang đầy đủ (logo, tagline, cột liên kết, social) kèm luôn nút
+          <em>cuộn lên đầu</em>. Đặt ngay trước các thẻ script.</p>
+        <div class="lib-code"><pre><code><span class="tok-tag">&lt;site-footer&gt;&lt;/site-footer&gt;</span></code></pre></div>
+        <div class="lib-note">Footer trước đây bị lệch giữa các trang (thiếu/thừa cụm social). Component gộp về
+          một bản chuẩn duy nhất — cần đổi liên kết/điện thoại thì sửa trong <code>components.js</code>.</div>
+      </section>
+
+      <!-- ═══ SECTION: INSTRUCTOR ═══ -->
+      <section class="lib-item" id="instructor">
+        <h2>Section: instructor <span class="lib-tag lib-tag--fetch">site-section</span></h2>
+        <p class="lib-desc">Khối “Đôi nét về Edina Trâm” dùng ở cả trang câu chuyện lẫn ba trang dịch vụ.
+          Markup nằm ở <code>sections/instructor.html</code>, tuỳ biến qua token.</p>
+        <div class="lib-preview">
+          <div class="lib-preview__label">Xem trực tiếp — nạp từ sections/instructor.html</div>
+          <div class="lib-preview__body lib-preview__body--flush">
+            <site-section name="instructor" label="Xem thử" alt="Edina Trâm"></site-section>
+          </div>
+        </div>
+        <div class="lib-code"><pre><code><span class="tok-tag">&lt;site-section</span> <span class="tok-attr">name</span>=<span class="tok-attr">"instructor"</span>
+              <span class="tok-attr">label</span>=<span class="tok-attr">"Người đồng hành"</span>
+              <span class="tok-attr">alt</span>=<span class="tok-attr">"Edina Trâm - chương trình TINA Awakening"</span><span class="tok-tag">&gt;&lt;/site-section&gt;</span></code></pre></div>
+        <table class="lib-params">
+          <tr><th>Token</th><th>Mặc định</th><th>Mô tả</th></tr>
+          <tr><td><code>label</code></td><td>Đôi nét về Edina Trâm</td><td>Giá trị <code>aria-label</code> của section.</td></tr>
+          <tr><td><code>alt</code></td><td>Edina Trâm</td><td>Alt của ảnh chân dung (nên gắn tên chương trình).</td></tr>
+          <tr><td><code>img</code></td><td>profile.jpg</td><td>Đường dẫn ảnh chân dung.</td></tr>
+        </table>
+      </section>
+
+      <!-- ═══ PATTERN: SECTION HEADER ═══ -->
+      <section class="lib-item" id="section-header">
+        <h2>Section header <span class="lib-tag lib-tag--css">CSS pattern</span></h2>
+        <p class="lib-desc">Cụm tiêu đề dùng chung: badge + tựa + đường phân cách. Copy-paste, không cần JS.</p>
+        <div class="lib-preview">
+          <div class="lib-preview__label">Xem trực tiếp</div>
+          <div class="lib-preview__body">
+            <div class="section-header">
+              <span class="badge badge--gold">Nhãn phần</span>
+              <h2>Tiêu đề của phần này</h2>
+              <div class="divider"></div>
+              <p>Mô tả ngắn dẫn dắt vào nội dung bên dưới.</p>
+            </div>
+          </div>
+        </div>
+        <div class="lib-code"><pre><code><span class="tok-tag">&lt;div</span> <span class="tok-attr">class</span>=<span class="tok-attr">"section-header"</span><span class="tok-tag">&gt;</span>
+  <span class="tok-tag">&lt;span</span> <span class="tok-attr">class</span>=<span class="tok-attr">"badge badge--gold"</span><span class="tok-tag">&gt;</span>Nhãn phần<span class="tok-tag">&lt;/span&gt;</span>
+  <span class="tok-tag">&lt;h2&gt;</span>Tiêu đề của phần này<span class="tok-tag">&lt;/h2&gt;</span>
+  <span class="tok-tag">&lt;div</span> <span class="tok-attr">class</span>=<span class="tok-attr">"divider"</span><span class="tok-tag">&gt;&lt;/div&gt;</span>
+  <span class="tok-tag">&lt;p&gt;</span>Mô tả ngắn…<span class="tok-tag">&lt;/p&gt;</span>
+<span class="tok-tag">&lt;/div&gt;</span></code></pre></div>
+      </section>
+
+      <!-- ═══ PATTERN: BUTTONS & BADGES ═══ -->
+      <section class="lib-item" id="buttons">
+        <h2>Buttons &amp; Badges <span class="lib-tag lib-tag--css">CSS pattern</span></h2>
+        <p class="lib-desc">Các biến thể nút và nhãn hay dùng trong CTA.</p>
+        <div class="lib-preview">
+          <div class="lib-preview__label">Xem trực tiếp</div>
+          <div class="lib-preview__body" style="display:flex; flex-wrap:wrap; gap:.75rem; align-items:center;">
+            <a href="#buttons" class="btn btn--primary">Nút chính</a>
+            <a href="#buttons" class="btn btn--outline">Nút viền</a>
+            <a href="#buttons" class="btn btn--accent">Nút nhấn</a>
+            <span class="badge badge--gold">Badge vàng</span>
+          </div>
+        </div>
+        <div class="lib-code"><pre><code><span class="tok-tag">&lt;a</span> <span class="tok-attr">class</span>=<span class="tok-attr">"btn btn--primary"</span><span class="tok-tag">&gt;</span>Nút chính<span class="tok-tag">&lt;/a&gt;</span>
+<span class="tok-tag">&lt;a</span> <span class="tok-attr">class</span>=<span class="tok-attr">"btn btn--outline"</span><span class="tok-tag">&gt;</span>Nút viền<span class="tok-tag">&lt;/a&gt;</span>
+<span class="tok-tag">&lt;a</span> <span class="tok-attr">class</span>=<span class="tok-attr">"btn btn--accent"</span><span class="tok-tag">&gt;</span>Nút nhấn<span class="tok-tag">&lt;/a&gt;</span>
+<span class="tok-tag">&lt;span</span> <span class="tok-attr">class</span>=<span class="tok-attr">"badge badge--gold"</span><span class="tok-tag">&gt;</span>Badge vàng<span class="tok-tag">&lt;/span&gt;</span></code></pre></div>
+      </section>
+
+      <!-- ═══ PATTERN: FAQ ═══ -->
+      <section class="lib-item" id="faq">
+        <h2>FAQ accordion <span class="lib-tag lib-tag--css">CSS + main.js</span></h2>
+        <p class="lib-desc">Danh sách câu hỏi đóng/mở. <code>main.js</code> tự gắn sự kiện cho mọi
+          <code>.faq-item</code> — kể cả khi được chèn qua <code>&lt;site-section&gt;</code>.</p>
+        <div class="lib-preview">
+          <div class="lib-preview__label">Xem trực tiếp — bấm để mở</div>
+          <div class="lib-preview__body">
+            <div class="faq-item">
+              <button class="faq-q" aria-expanded="false"><span>Chương trình phù hợp với ai?</span></button>
+              <div class="faq-a"><div><div class="faq-a-inner">Phù hợp với người đang tìm sự rõ ràng và muốn chuyển hoá bền vững.</div></div></div>
+            </div>
+            <div class="faq-item">
+              <button class="faq-q" aria-expanded="false"><span>Tôi cần chuẩn bị gì?</span></button>
+              <div class="faq-a"><div><div class="faq-a-inner">Chỉ cần một tinh thần cởi mở và sẵn sàng nhìn vào bên trong.</div></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="lib-code"><pre><code><span class="tok-tag">&lt;div</span> <span class="tok-attr">class</span>=<span class="tok-attr">"faq-item"</span><span class="tok-tag">&gt;</span>
+  <span class="tok-tag">&lt;button</span> <span class="tok-attr">class</span>=<span class="tok-attr">"faq-q"</span> <span class="tok-attr">aria-expanded</span>=<span class="tok-attr">"false"</span><span class="tok-tag">&gt;&lt;span&gt;</span>Câu hỏi?<span class="tok-tag">&lt;/span&gt;&lt;/button&gt;</span>
+  <span class="tok-tag">&lt;div</span> <span class="tok-attr">class</span>=<span class="tok-attr">"faq-a"</span><span class="tok-tag">&gt;&lt;div&gt;&lt;div</span> <span class="tok-attr">class</span>=<span class="tok-attr">"faq-a-inner"</span><span class="tok-tag">&gt;</span>Câu trả lời.<span class="tok-tag">&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;</span>
+<span class="tok-tag">&lt;/div&gt;</span></code></pre></div>
+      </section>
+
+      <!-- ═══ PATTERN: CTA FINAL ═══ -->
+      <section class="lib-item" id="cta">
+        <h2>CTA cuối trang <span class="lib-tag lib-tag--css">CSS pattern</span></h2>
+        <p class="lib-desc">Khối kêu gọi hành động khép lại trang dịch vụ. Đổi tiêu đề, mô tả và link đặt lịch.</p>
+        <div class="lib-preview">
+          <div class="lib-preview__label">Xem trực tiếp</div>
+          <div class="lib-preview__body lib-preview__body--flush">
+            <section class="srv-cta-final bg-tram-3">
+              <div class="container">
+                <span class="badge badge--dark">Bắt đầu</span>
+                <h2>Sẵn sàng cho bước chuyển hoá tiếp theo?</h2>
+                <p>Đặt một phiên trò chuyện để cùng nhìn rõ điểm bắt đầu của bạn.</p>
+                <a href="lien-he.html" class="btn btn--accent btn--lg">Đặt lịch phiên khám phá</a>
+              </div>
+            </section>
+          </div>
+        </div>
+        <div class="lib-code"><pre><code><span class="tok-tag">&lt;section</span> <span class="tok-attr">class</span>=<span class="tok-attr">"srv-cta-final bg-tram-3"</span><span class="tok-tag">&gt;</span>
+  <span class="tok-tag">&lt;div</span> <span class="tok-attr">class</span>=<span class="tok-attr">"container"</span> <span class="tok-attr">data-reveal</span><span class="tok-tag">&gt;</span>
+    <span class="tok-tag">&lt;span</span> <span class="tok-attr">class</span>=<span class="tok-attr">"badge badge--dark"</span><span class="tok-tag">&gt;</span>Bắt đầu<span class="tok-tag">&lt;/span&gt;</span>
+    <span class="tok-tag">&lt;h2&gt;</span>Sẵn sàng cho bước tiếp theo?<span class="tok-tag">&lt;/h2&gt;</span>
+    <span class="tok-tag">&lt;p&gt;</span>Đặt một phiên trò chuyện…<span class="tok-tag">&lt;/p&gt;</span>
+    <span class="tok-tag">&lt;a</span> <span class="tok-attr">href</span>=<span class="tok-attr">"lien-he.html"</span> <span class="tok-attr">class</span>=<span class="tok-attr">"btn btn--accent btn--lg"</span><span class="tok-tag">&gt;</span>Đặt lịch<span class="tok-tag">&lt;/a&gt;</span>
+  <span class="tok-tag">&lt;/div&gt;</span>
+<span class="tok-tag">&lt;/section&gt;</span></code></pre></div>
+      </section>
+
+    </div>
+  </main>
+
+  <site-footer></site-footer>
+
+  <script src="js/components.js" defer></script>
+  <script src="js/sections.js" defer></script>
+  <script src="js/main.js" defer></script>
+</body>
+
+</html>

@@ -1,30 +1,12 @@
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Liên hệ với Coach Edina Trâm để đặt lịch tư vấn miễn phí và bắt đầu hành trình thay đổi của bạn." />
-  <title>Liên hệ – Coach Edina Trâm</title>
-  <link rel="stylesheet" href="css/style.css" />
-</head>
-<body>
-
-  <!-- ═══ Header ═══ -->
-  <site-header active="lien-he.html"></site-header>
-  <noscript>
-    <div style="background:#06513c;color:#fff;text-align:center;padding:.6rem 1rem;font-size:.9rem;">
-      Trang hiển thị đầy đủ hơn khi bật JavaScript.
-      <a href="index.html" style="color:#F1D89A;">Trang chủ</a> ·
-      <a href="cau-chuyen-cua-toi.html" style="color:#F1D89A;">Câu chuyện</a> ·
-      <a href="dich-vu-2.html" style="color:#F1D89A;">TINA Awakening</a> ·
-      <a href="lien-he.html" style="color:#F1D89A;">Liên hệ</a>
-    </div>
-  </noscript>
-
-  <main>
-    <!-- ═══ Decorative Glow Blobs ═══ -->
-    <glow-blobs></glow-blobs>
-
+<?php
+/**
+ * Template: Liên hệ
+ * Port từ static-site/lien-he.html — nội dung theo bản HTML đã chốt.
+ * Chrome (header/footer/nav/glow-blobs) do get_header()/get_footer() lo.
+ */
+if (!defined('ABSPATH')) exit;
+get_header();
+?>
     <!-- ═══ Contact Hero ═══ -->
     <section class="contact-hero" data-reveal>
       <div class="container">
@@ -169,16 +151,6 @@
         </div>
       </div>
     </section>
-  </main>
+  
 
-  <!-- ═══ Footer ═══ -->
-  <site-footer></site-footer>
-
-
-
-  <!-- ═══ Scripts ═══ -->
-  <script src="js/components.js" defer></script>
-  <script src="js/sections.js" defer></script>
-  <script src="js/main.js" defer></script>
-</body>
-</html>
+<?php get_footer();

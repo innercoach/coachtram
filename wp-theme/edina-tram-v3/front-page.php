@@ -1,13 +1,12 @@
-<!DOCTYPE html>
-<html lang="vi">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description"
-    content="Edina Trâm – Hành trình chuyển hoá tại giao điểm Tâm lý học, Khai vấn, Tâm linh và Tài chính. Đồng hành cùng bạn tìm lại sự rõ ràng, tự tin và kết nối sâu với chính mình.">
-  <title>Edina Trâm – Hành trình chuyển hoá</title>
-  <link rel="stylesheet" href="css/style.css">
+<?php
+/**
+ * Template: Trang chủ
+ * Port từ static-site/index.html — nội dung theo bản HTML đã chốt.
+ * Chrome (header/footer/nav/glow-blobs) do get_header()/get_footer() lo.
+ */
+if (!defined('ABSPATH')) exit;
+get_header();
+?>
   <style>
     /* ── Home — premium callout (editorial declaration) ── */
     .home-callout {
@@ -227,26 +226,7 @@
       }
     }
   </style>
-</head>
-
-<body>
-
-  <!-- ═══ HEADER ═══ -->
-  <site-header active="index.html"></site-header>
-  <noscript>
-    <div style="background:#06513c;color:#fff;text-align:center;padding:.6rem 1rem;font-size:.9rem;">
-      Trang hiển thị đầy đủ hơn khi bật JavaScript.
-      <a href="index.html" style="color:#F1D89A;">Trang chủ</a> ·
-      <a href="cau-chuyen-cua-toi.html" style="color:#F1D89A;">Câu chuyện</a> ·
-      <a href="dich-vu-2.html" style="color:#F1D89A;">TINA Awakening</a> ·
-      <a href="lien-he.html" style="color:#F1D89A;">Liên hệ</a>
-    </div>
-  </noscript>
-
-  <main>
-
     <!-- ═══ GLOW BLOBS ═══ -->
-    <glow-blobs></glow-blobs>
 
 
     <!-- ═══════════════════════════════════════════════════════
@@ -264,7 +244,7 @@
               cho một sự chuyển mình thật sự — rõ ràng hơn, vững vàng hơn, và kết nối sâu hơn với chính mình.</p>
             <div class="home-hero-ctas">
               <a href="#services" class="btn btn--primary btn--lg">Khám phá dịch vụ</a>
-              <a href="lien-he.html" class="btn btn--outline btn--lg">Tư vấn 1:1 miễn phí</a>
+              <a href="<?php echo esc_url(home_url('/lien-he/')); ?>" class="btn btn--outline btn--lg">Tư vấn 1:1 miễn phí</a>
             </div>
 
             <!-- Hero Values Strip -->
@@ -299,7 +279,7 @@
 
           <!-- Hero Image -->
           <div class="home-hero-img" data-reveal="right">
-            <img src="hero_trang_chu.png" alt="Coach Edina Trâm" loading="eager" width="1088" height="1445">
+            <img src="<?php echo edt_asset('images/hero_trang_chu.png'); ?>" alt="Coach Edina Trâm" loading="eager" width="1088" height="1445">
           </div>
 
         </div>
@@ -327,7 +307,7 @@
           <p>Tôi không chỉ truyền đạt lý thuyết. Tôi đã đi qua đúng con đường mà bạn đang đi.</p>
         </div>
         <div style="text-align:center; margin-top: var(--space-6, 1.5rem);" data-reveal>
-          <a href="cau-chuyen-cua-toi.html" class="btn btn--outline">Câu chuyện của Trâm →</a>
+          <a href="<?php echo esc_url(home_url('/cau-chuyen-cua-toi/')); ?>" class="btn btn--outline">Câu chuyện của Trâm →</a>
         </div>
       </div>
     </section>
@@ -453,7 +433,6 @@
                 </radialGradient>
               </defs>
 
-              <!-- Mystical glow + rings -->
               <circle cx="340" cy="360" r="232" fill="url(#emeraldGlow)" />
               <circle cx="340" cy="360" r="250" fill="none" stroke="#C8A244" stroke-opacity="0.22" stroke-width="1" />
               <circle cx="340" cy="360" r="250" fill="none" stroke="#C8A244" stroke-opacity="0.30" stroke-width="1"
@@ -546,7 +525,7 @@
             <h3>TINA Awareness</h3>
             <div class="srv-sub">Nhập môn · 3 buổi kết nối</div>
             <p>Chương trình nhập môn giúp bạn bắt đầu kết nối và tìm hiểu chính mình qua 3 phiên đồng hành 1:1.</p>
-            <a href="dich-vu-1.html" class="btn btn--primary btn--sm">Tìm hiểu thêm →</a>
+            <a href="<?php echo esc_url(home_url('/dich-vu-1/')); ?>" class="btn btn--primary btn--sm">Tìm hiểu thêm →</a>
           </div>
 
           <!-- TINA Awakening -->
@@ -556,7 +535,7 @@
             <div class="srv-sub">90 ngày chuyển hoá 1:1</div>
             <p>Hành trình chuyên sâu 12 module giúp bạn tìm lại sự rõ ràng, tự tin làm chủ và kết nối sâu với chính
               mình.</p>
-            <a href="dich-vu-2.html" class="btn btn--primary btn--sm">Tìm hiểu thêm →</a>
+            <a href="<?php echo esc_url(home_url('/dich-vu-2/')); ?>" class="btn btn--primary btn--sm">Tìm hiểu thêm →</a>
           </div>
 
           <!-- TINA Alignment -->
@@ -566,7 +545,7 @@
             <div class="srv-sub">Đồng hành 6 tháng – 1 năm</div>
             <p>Đồng hành dài hơi để hiện thực hoá tầm nhìn 5–10 năm và những mục tiêu đã xác định từ Module 10 của TINA
               Awakening.</p>
-            <a href="dich-vu-3.html" class="btn btn--primary btn--sm">Tìm hiểu thêm →</a>
+            <a href="<?php echo esc_url(home_url('/dich-vu-3/')); ?>" class="btn btn--primary btn--sm">Tìm hiểu thêm →</a>
           </div>
 
         </div>
@@ -583,7 +562,7 @@
 
           <!-- eBook Image -->
           <div class="book-img" data-reveal="left">
-            <img src="assets/book-mockup.png" alt="eBook Ánh Sáng Của Ước Mơ – Edina Trâm" loading="lazy" width="340"
+            <img src="<?php echo edt_asset('images/book-mockup.png'); ?>" alt="eBook Ánh Sáng Của Ước Mơ – Edina Trâm" loading="lazy" width="340"
               height="420">
           </div>
 
@@ -594,7 +573,7 @@
             <p>Món quà miễn phí dành cho bạn: những trang viết chia sẻ hành trình chuyển hoá cá nhân và các bài học trên
               con đường tìm lại sự rõ ràng, bình an và mục đích sống. Tải về để bắt đầu hành trình của riêng mình.</p>
             <div class="book-ctas">
-              <a href="lien-he.html" class="btn btn--accent btn--lg">Tải eBook miễn phí</a>
+              <a href="<?php echo esc_url(home_url('/lien-he/')); ?>" class="btn btn--accent btn--lg">Tải eBook miễn phí</a>
               <a href="#services" class="btn btn--outline-light btn--lg">Khám phá chương trình</a>
             </div>
           </div>
@@ -621,7 +600,7 @@
           <div class="testi-card" data-reveal>
             <div class="testi-head">
               <div class="testi-avatar-wrap">
-                <img class="testi-avatar" src="assets/testi/hoang-huong.jpg" alt="Chị Hoàng Hương" loading="lazy"
+                <img class="testi-avatar" src="<?php echo edt_asset('images/testi/hoang-huong.jpg'); ?>" alt="Chị Hoàng Hương" loading="lazy"
                   width="64" height="64">
               </div>
               <div>
@@ -637,7 +616,7 @@
           <div class="testi-card" data-reveal>
             <div class="testi-head">
               <div class="testi-avatar-wrap">
-                <img class="testi-avatar" src="assets/testi/minh-huong.jpg" alt="Chị Minh Hương" loading="lazy"
+                <img class="testi-avatar" src="<?php echo edt_asset('images/testi/minh-huong.jpg'); ?>" alt="Chị Minh Hương" loading="lazy"
                   width="64" height="64">
               </div>
               <div>
@@ -653,7 +632,7 @@
           <div class="testi-card" data-reveal>
             <div class="testi-head">
               <div class="testi-avatar-wrap">
-                <img class="testi-avatar" src="assets/testi/le-the-hao.jpg" alt="Anh Lê Thế Hào" loading="lazy"
+                <img class="testi-avatar" src="<?php echo edt_asset('images/testi/le-the-hao.jpg'); ?>" alt="Anh Lê Thế Hào" loading="lazy"
                   width="64" height="64">
               </div>
               <div>
@@ -679,21 +658,10 @@
         <span class="badge badge--dark">Bắt đầu hành trình</span>
         <h2>Bạn đã sẵn sàng cho phiên bản<br>tuyệt vời nhất?</h2>
         <p>Đặt lịch tư vấn miễn phí để cùng tôi tìm ra chương trình phù hợp nhất cho hành trình chuyển hoá của bạn.</p>
-        <a href="lien-he.html" class="btn btn--accent btn--lg">Đặt lịch Tư vấn miễn phí</a>
+        <a href="<?php echo esc_url(home_url('/lien-he/')); ?>" class="btn btn--accent btn--lg">Đặt lịch Tư vấn miễn phí</a>
       </div>
     </section>
 
-  </main>
+  
 
-
-  <!-- ═══ FOOTER ═══ -->
-  <site-footer></site-footer>
-
-
-
-  <script src="js/components.js" defer></script>
-  <script src="js/sections.js" defer></script>
-  <script src="js/main.js" defer></script>
-</body>
-
-</html>
+<?php get_footer();

@@ -1,11 +1,22 @@
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>90 Ngày Chuyển Hoá TINA Awakening - Coach Edina Trâm</title>
-  <meta name="description" content="Chương trình Coaching & Mentoring 1:1 trong 90 ngày, 12 module, giúp bạn chuyển hoá nhận thức, phục hồi nội lực và kiến tạo một hướng đi mới cho cuộc đời.">
-  <link rel="stylesheet" href="css/style.css">
+<?php
+/**
+ * Template: TINA Awakening
+ * Port từ static-site/dich-vu-2.html — nội dung theo bản HTML đã chốt.
+ * Chrome (header/footer/nav/glow-blobs) do get_header()/get_footer() lo.
+ */
+if (!defined('ABSPATH')) exit;
+get_header();
+?>
+  <!-- ═══ STICKY CTA BAR ═══ -->
+  <div class="sticky-cta" role="banner" aria-label="Đăng ký nhanh">
+    <div class="sticky-cta-dot"></div>
+    <div class="sticky-cta-info">
+      <span class="sticky-cta-title">TINA Awakening - 90 ngày chuyển hoá</span>
+      <span class="sticky-cta-meta">Coaching &amp; Mentoring 1:1 · 12 module</span>
+    </div>
+    <a href="https://calendly.com/edinatram/phien-kham-pha" target="_blank" rel="noopener" class="btn btn--accent">Đặt lịch phiên khám phá</a>
+  </div>
+
   <style>
     :root {
       --page-accent: #005B45;
@@ -490,36 +501,6 @@
       }
     }
   </style>
-</head>
-<body>
-
-  <!-- ═══ STICKY CTA BAR ═══ -->
-  <div class="sticky-cta" role="banner" aria-label="Đăng ký nhanh">
-    <div class="sticky-cta-dot"></div>
-    <div class="sticky-cta-info">
-      <span class="sticky-cta-title">TINA Awakening - 90 ngày chuyển hoá</span>
-      <span class="sticky-cta-meta">Coaching & Mentoring 1:1 · 12 module</span>
-    </div>
-    <a href="https://calendly.com/edinatram/phien-kham-pha" target="_blank" rel="noopener" class="btn btn--accent">Đặt lịch phiên khám phá</a>
-  </div>
-
-  <!-- ═══ HEADER ═══ -->
-  <site-header active="dich-vu-2.html"></site-header>
-  <noscript>
-    <div style="background:#06513c;color:#fff;text-align:center;padding:.6rem 1rem;font-size:.9rem;">
-      Trang hiển thị đầy đủ hơn khi bật JavaScript.
-      <a href="index.html" style="color:#F1D89A;">Trang chủ</a> ·
-      <a href="cau-chuyen-cua-toi.html" style="color:#F1D89A;">Câu chuyện</a> ·
-      <a href="dich-vu-2.html" style="color:#F1D89A;">TINA Awakening</a> ·
-      <a href="lien-he.html" style="color:#F1D89A;">Liên hệ</a>
-    </div>
-  </noscript>
-
-  <main>
-
-    <!-- Decorative glow blobs -->
-    <glow-blobs></glow-blobs>
-
     <!-- ═══ S1: HERO ═══ -->
     <section class="srv-hero" aria-label="Giới thiệu chương trình TINA Awakening">
       <div class="container srv-hero-grid">
@@ -547,7 +528,7 @@
           <a href="https://calendly.com/edinatram/phien-kham-pha" target="_blank" rel="noopener" class="btn btn--accent btn--lg">Đặt lịch phiên khám phá</a>
         </div>
         <div class="srv-hero-img" data-reveal="right">
-          <img src="hero_trang_tina_awakening.jpg" alt="Edina Trâm - TINA Awakening" loading="eager" fetchpriority="high" width="1707" height="2560">
+          <img src="<?php echo edt_asset('images/hero_trang_tina_awakening.jpg'); ?>" alt="Edina Trâm - TINA Awakening" loading="eager" fetchpriority="high" width="1707" height="2560">
         </div>
       </div>
     </section>
@@ -727,7 +708,6 @@
                 </radialGradient>
               </defs>
 
-              <!-- Mystical glow + rings -->
               <circle cx="340" cy="360" r="232" fill="url(#emeraldGlow)" />
               <circle cx="340" cy="360" r="250" fill="none" stroke="#C8A244" stroke-opacity="0.22" stroke-width="1" />
               <circle cx="340" cy="360" r="250" fill="none" stroke="#C8A244" stroke-opacity="0.30" stroke-width="1"
@@ -901,7 +881,7 @@
           </div>
           <!-- Right 1/3: image -->
           <div class="outcome-img" data-reveal="right">
-            <img src="tina_awakening_success_sau_90_ngay.jpg" alt="Kết quả sau 90 ngày TINA Awakening" loading="lazy">
+            <img src="<?php echo edt_asset('images/tina_awakening_success_sau_90_ngay.jpg'); ?>" alt="Kết quả sau 90 ngày TINA Awakening" loading="lazy">
           </div>
         </div>
       </div>
@@ -943,7 +923,7 @@
     </section>
 
     <!-- ═══ S11: INSTRUCTOR ═══ -->
-    <site-section name="instructor" label="Người đồng hành" alt="Edina Trâm - người đồng hành trong chương trình TINA Awakening"></site-section>
+    <?php edt_section('instructor', ['label' => 'Người đồng hành', 'alt' => 'Edina Trâm - người đồng hành trong chương trình TINA Awakening']); ?>
 
     <!-- ═══ S12: NEXT JOURNEY / OFFER ═══ -->
     <section class="srv-section" aria-label="Bắt đầu hành trình 90 ngày">
@@ -1029,15 +1009,6 @@
       </div>
     </section>
 
-  </main>
+  
 
-  <!-- ═══ FOOTER ═══ -->
-  <site-footer></site-footer>
-
-
-
-  <script src="js/components.js" defer></script>
-  <script src="js/sections.js" defer></script>
-  <script src="js/main.js" defer></script>
-</body>
-</html>
+<?php get_footer();

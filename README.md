@@ -31,8 +31,13 @@ static-site/            ← Bản HTML/CSS/JS tĩnh để tham khảo/backup
   index.html
   dich-vu-*.html
   lien-he.html
+  thu-vien-section.html ← Thư viện section/component (preview + mã copy-paste)
   css/
   js/
+    components.js       ← Web Components: <site-header>, <glow-blobs>, <site-footer>
+    sections.js         ← <site-section> nạp partial từ sections/
+    main.js             ← Nav, reveal, FAQ, countdown, counter…
+  sections/             ← Section động dùng lại (partial HTML) — xem sections/README.md
   assets/
 
 content/                ← Tư liệu nội dung, kịch bản, slide nguồn

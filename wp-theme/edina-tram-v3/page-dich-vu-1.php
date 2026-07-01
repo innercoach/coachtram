@@ -1,11 +1,12 @@
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TINA Awareness - Gói kết nối 3 buổi | Edina Trâm</title>
-  <meta name="description" content="TINA Awareness là gói nhập môn 3 ngày, 3 phiên kết nối 1:1 giúp bạn bắt đầu hiểu mình, gọi tên điều đang mắc kẹt và chọn bước đi phù hợp.">
-  <link rel="stylesheet" href="css/style.css">
+<?php
+/**
+ * Template: TINA Awareness
+ * Port từ static-site/dich-vu-1.html — nội dung theo bản HTML đã chốt.
+ * Chrome (header/footer/nav/glow-blobs) do get_header()/get_footer() lo.
+ */
+if (!defined('ABSPATH')) exit;
+get_header();
+?>
   <style>
     :root { --page-accent: #0B8A66; --page-accent-rgb: 11, 138, 102; }
     body { padding-bottom: 80px; }
@@ -25,23 +26,6 @@
     .awareness-callout p { margin:0; color:#fff; font-family: var(--font-heading); font-size: clamp(1.5rem, 3vw, 1.9rem); font-weight:600; line-height:1.45; }
     @media (max-width: 860px) { .intro-grid, .fit-grid { grid-template-columns: 1fr; } .journey-item { grid-template-columns: 1fr; } }
   </style>
-</head>
-<body>
-
-  <site-header active="dich-vu-1.html"></site-header>
-  <noscript>
-    <div style="background:#06513c;color:#fff;text-align:center;padding:.6rem 1rem;font-size:.9rem;">
-      Trang hiển thị đầy đủ hơn khi bật JavaScript.
-      <a href="index.html" style="color:#F1D89A;">Trang chủ</a> ·
-      <a href="cau-chuyen-cua-toi.html" style="color:#F1D89A;">Câu chuyện</a> ·
-      <a href="dich-vu-2.html" style="color:#F1D89A;">TINA Awakening</a> ·
-      <a href="lien-he.html" style="color:#F1D89A;">Liên hệ</a>
-    </div>
-  </noscript>
-
-  <main>
-    <glow-blobs></glow-blobs>
-
     <section class="srv-hero">
       <div class="container srv-hero-grid">
         <div class="srv-hero-content" data-reveal>
@@ -55,11 +39,11 @@
           </div>
           <div class="price-badge">3.000.000 VNĐ</div>
           <div style="margin-top: var(--space-6);">
-            <a href="lien-he.html?program=awareness" class="btn btn--accent btn--lg">Đăng ký gói 3 buổi</a>
+            <a href="<?php echo esc_url(home_url('/lien-he/?program=awareness')); ?>" class="btn btn--accent btn--lg">Đăng ký gói 3 buổi</a>
           </div>
         </div>
         <div class="srv-hero-img" data-reveal="right">
-          <img src="hero_trang_tina_awareness.jpg" alt="Edina Trâm - TINA Awareness" loading="eager" fetchpriority="high" width="2072" height="2560">
+          <img src="<?php echo edt_asset('images/hero_trang_tina_awareness.jpg'); ?>" alt="Edina Trâm - TINA Awareness" loading="eager" fetchpriority="high" width="2072" height="2560">
         </div>
       </div>
     </section>
@@ -156,7 +140,7 @@
     </section>
 
     <!-- ═══ ĐÔI NÉT VỀ EDINA TRÂM ═══ -->
-    <site-section name="instructor" alt="Edina Trâm - người đồng hành trong chương trình TINA Awareness"></site-section>
+    <?php edt_section('instructor', ['alt' => 'Edina Trâm - người đồng hành trong chương trình TINA Awareness']); ?>
 
     <!-- ═══ CÂU HỎI THƯỜNG GẶP ═══ -->
     <section class="srv-section--alt" aria-label="Câu hỏi thường gặp">
@@ -207,15 +191,9 @@
         <span class="badge badge--dark">TINA AWARENESS</span>
         <h2>Bắt đầu bằng một cuộc gặp đủ thành thật</h2>
         <p>Đặt lịch để cùng Trâm xem gói 3 buổi có phù hợp với giai đoạn hiện tại của bạn không.</p>
-        <a href="lien-he.html?program=awareness" class="btn btn--accent btn--lg">Đăng ký TINA Awareness</a>
+        <a href="<?php echo esc_url(home_url('/lien-he/?program=awareness')); ?>" class="btn btn--accent btn--lg">Đăng ký TINA Awareness</a>
       </div>
     </section>
-  </main>
+  
 
-  <site-footer></site-footer>
-
-  <script src="js/components.js" defer></script>
-  <script src="js/sections.js" defer></script>
-  <script src="js/main.js" defer></script>
-</body>
-</html>
+<?php get_footer();

@@ -1,0 +1,242 @@
+/* ═══════════════════════════════════════════════════════════
+   BACKGROUNDS — Edina Trâm V2
+   Reusable background depth utilities.
+   The utilities are self-contained: they establish their own
+   positioning context and raise direct children above the
+   decorative pseudo-element layers.
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── Shared Emerald Veil tokens — used by the utility class and
+   bridge selectors in design-system/home/service CSS.          */
+:root {
+  --ev-gradient:
+    radial-gradient(ellipse 800px 400px at 12% 15%, rgba(241, 216, 154, 0.20), transparent 60%),
+    radial-gradient(ellipse 620px 380px at 88% 88%, rgba(11, 138, 102, 0.35), transparent 58%),
+    linear-gradient(138deg, #012E24 0%, #014F3D 46%, #0B1F19 100%);
+  --ev-veil: linear-gradient(
+    115deg,
+    transparent 0% 41%,
+    rgba(255, 255, 255, 0.04) 41% 44%,
+    transparent 44% 100%
+  );
+}
+
+/* ── Shared containment ─────────────────────────────────────
+   Pseudo-element patterns use negative insets and rotation, so
+   the host must clip them. Direct children (usually `.container`)
+   are raised above the overlays so text/buttons stay readable
+   and clickable.                                               */
+.bg-emerald-veil,
+.bg-sacred-pattern,
+.bg-silk-orbit {
+  position: relative;
+  overflow: hidden;
+}
+
+.bg-emerald-veil > *,
+.bg-sacred-pattern > *,
+.bg-silk-orbit > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ── 1. Emerald Veil — default rich dark depth ─────────────
+   Replaces the flat linear-gradient used on dark sections.
+   Champagne glow top-left, emerald pulse bottom-right,
+   diagonal light veil at low opacity.                        */
+.bg-emerald-veil {
+  background: var(--ev-gradient);
+}
+
+/* Subtle diagonal veil overlay via pseudo-element */
+.bg-emerald-veil::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: var(--ev-veil);
+}
+
+/* ── 2. Sacred Paper — signature geometric pattern ──────────
+   Deep emerald base + very low-opacity dot/grid pattern.
+   Used on 1–2 conceptual sections (3C, gốc rễ chuyển hoá).
+   Pattern lives in ::before; vignette in ::after.            */
+.bg-sacred-pattern {
+  background:
+    radial-gradient(ellipse at 22% 12%, rgba(241, 216, 154, 0.16), transparent 28%),
+    linear-gradient(160deg, #0B1F19 0%, #012E24 100%);
+}
+
+.bg-sacred-pattern::before {
+  content: "";
+  position: absolute;
+  inset: -60px;
+  pointer-events: none;
+  opacity: 0.10;
+  background-image:
+    radial-gradient(circle at center, rgba(241, 216, 154, 0.70) 0px 1px, transparent 1.5px),
+    repeating-linear-gradient(60deg,  transparent 0 18px, rgba(241, 216, 154, 0.22) 18px 19px),
+    repeating-linear-gradient(120deg, transparent 0 22px, rgba(255, 255, 255, 0.12) 22px 23px);
+  background-size: 20px 20px, 80px 80px, 96px 96px;
+  transform: rotate(-6deg);
+}
+
+.bg-sacred-pattern::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse at 50% 50%, transparent 38%, rgba(0, 0, 0, 0.16) 100%);
+}
+
+/* Sacred Paper sits on a dark base — set a base light color so any
+   text added directly to the section is legible. Cards (.method-col)
+   pin their own dark color explicitly in service.css.                */
+.bg-sacred-pattern {
+  color: #fff;
+}
+
+.bg-sacred-pattern p {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.bg-sacred-pattern .section-header h2,
+.bg-sacred-pattern .section-header h3 {
+  color: #fff;
+}
+
+.bg-sacred-pattern .section-header p {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.bg-sacred-pattern .tina-callout--emerald p {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.bg-sacred-pattern .tina-callout:not(.tina-callout--emerald):not(.tina-callout--gold) p {
+  color: var(--color-fg, #0b1f19);
+}
+
+.bg-sacred-pattern .tina-callout--gold p {
+  color: #0b1f19;
+}
+
+/* ── 3. Silk Orbit — cinematic CTA depth ───────────────────
+   Conic orbital light field + double radial washes.
+   Only for final CTA sections.                               */
+.bg-silk-orbit {
+  background:
+    linear-gradient(rgba(1, 46, 36, 0.72), rgba(11, 31, 25, 0.92)),
+    radial-gradient(ellipse at 18% 22%, rgba(241, 216, 154, 0.22), transparent 40%),
+    radial-gradient(ellipse at 80% 76%, rgba(11, 138, 102, 0.30), transparent 42%),
+    linear-gradient(130deg, #014F3D, #0B1F19);
+}
+
+.bg-silk-orbit::before {
+  content: "";
+  position: absolute;
+  inset: -80px;
+  pointer-events: none;
+  background: conic-gradient(
+    from 22deg at 50% 50%,
+    transparent,
+    rgba(241, 216, 154, 0.13),
+    transparent,
+    rgba(255, 255, 255, 0.045),
+    transparent
+  );
+  opacity: 0.72;
+}
+
+/* Fine silk-line overlay */
+.bg-silk-orbit::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: linear-gradient(115deg, rgba(255, 255, 255, 0.07) 0px 1px, transparent 1px 12px);
+  background-size: 12px 12px;
+  opacity: 0.22;
+}
+
+/* ── 4. Soft Depth — light section richness ─────────────────
+   Used on `.section--alt` and hero to break ivory flatness.
+   Very subtle; must not darken text or card contrast.        */
+.bg-soft-depth {
+  background:
+    radial-gradient(ellipse 680px 320px at 8% 12%, rgba(11, 138, 102, 0.06), transparent 55%),
+    radial-gradient(ellipse 560px 280px at 90% 88%, rgba(200, 162, 68, 0.07), transparent 55%),
+    var(--color-bg-alt);
+}
+
+/* ── Reduced motion: collapse pseudo-element patterns ───── */
+@media (prefers-reduced-motion: reduce) {
+  .bg-sacred-pattern::before,
+  .bg-silk-orbit::before,
+  .bg-silk-orbit::after {
+    opacity: 0;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   IMAGE BACKGROUNDS — tram-bg photo set (emerald + gold)
+   Self-contained: each utility lays its own dark readability
+   veil over the photo so the existing white section text stays
+   legible. Declared last in this file so the longhand
+   background-image overrides any earlier `background:` shorthand
+   set by .bg-sacred-pattern / .bg-silk-orbit on the same element.
+   Page-level defaults (home/service/.book-section) opt out via
+   :not([class*="bg-tram"]) guards in their own stylesheets.
+   ═══════════════════════════════════════════════════════════ */
+.bg-tram-1,
+.bg-tram-2,
+.bg-tram-3,
+.bg-tram-4 {
+  position: relative;
+  overflow: hidden;
+  background-color: #0B1F19;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.bg-tram-1 > *,
+.bg-tram-2 > *,
+.bg-tram-3 > *,
+.bg-tram-4 > * {
+  position: relative;
+  z-index: 1;
+}
+
+.bg-tram-1 {
+  background-image:
+    linear-gradient(rgba(1, 31, 25, 0.55), rgba(1, 31, 25, 0.68)),
+    url('../assets/images/tram-bg-1.jpeg');
+}
+
+.bg-tram-2 {
+  background-image:
+    linear-gradient(rgba(1, 31, 25, 0.55), rgba(1, 31, 25, 0.68)),
+    url('../assets/images/tram-bg-2.jpeg');
+}
+
+.bg-tram-3 {
+  background-image:
+    linear-gradient(rgba(1, 31, 25, 0.58), rgba(1, 31, 25, 0.72)),
+    url('../assets/images/tram-bg-3.jpeg');
+}
+
+.bg-tram-4 {
+  background-image:
+    linear-gradient(rgba(1, 31, 25, 0.50), rgba(1, 31, 25, 0.62)),
+    url('../assets/images/tram-bg-4.jpeg');
+}
+
+/* Suppress the legacy gradient/pattern pseudo-decorations whenever a
+   photo background is layered on the same section, for any bg-tram pairing. */
+.bg-sacred-pattern[class*="bg-tram"]::before,
+.bg-sacred-pattern[class*="bg-tram"]::after,
+.bg-silk-orbit[class*="bg-tram"]::before,
+.bg-silk-orbit[class*="bg-tram"]::after {
+  display: none;
+}
