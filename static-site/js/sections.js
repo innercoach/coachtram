@@ -27,6 +27,10 @@ class SiteSection extends HTMLElement {
       return;
     }
     const base = this.getAttribute('base') || 'sections/';
+    // Any markup the author put inside the tag is kept as a fallback and only
+    // replaced once the partial loads — so the section is never blank if the
+    // fetch fails (offline, file:// preview, 404…).
+    const fallback = this.innerHTML.trim();
 
     try {
       const res = await fetch(`${base}${name}.html`);
@@ -38,13 +42,28 @@ class SiteSection extends HTMLElement {
       }));
     } catch (err) {
       console.warn(`[site-section] could not load "${name}":`, err.message);
+      if (!fallback) this.renderFallbackNotice();
     }
+  }
+
+  // Minimal, unobtrusive placeholder so a failed load degrades to *something*
+  // (a link back home) instead of an empty gap.
+  renderFallbackNotice() {
+    this.innerHTML = `
+    <section class="srv-section--alt" aria-label="Nội dung chưa tải được" style="text-align:center;">
+      <div class="container">
+        <p style="color:var(--color-fg-muted,#4A5B54);">Không tải được phần nội dung này.
+          <a href="index.html" style="color:var(--color-primary,#005B45);text-decoration:underline;">Về trang chủ</a>.</p>
+      </div>
+    </section>`;
   }
 
   // {{key}} → attribute/data-* value; {{key|fallback}} → value or fallback.
   interpolate(html) {
     return html.replace(/\{\{\s*([\w-]+)\s*(?:\|([^}]*))?\}\}/g, (_, key, fallback) => {
-      const value = this.getAttribute(key) ?? this.dataset[key];
+      // Support both key and kebab-case (data-foo-bar → dataset.fooBar).
+      const camel = key.replace(/-([a-z])/g, (_, c) => c.toUpperCase());
+      const value = this.getAttribute(key) ?? this.dataset[key] ?? this.dataset[camel];
       return value != null ? value : (fallback != null ? fallback : '');
     });
   }
